@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-AzKeyVaultManagedStorageSasDefinition
 
 ## SYNOPSIS
-Sets a Shared Access Signature (SAS) definition with Key Vault for a given Key Vault managed Azure Storage Account.
+Sets a Shared Access Signature (SAS) definition with Key Vault for a given Key Vault-managed Azure Storage Account.
 
 ## SYNTAX
 
@@ -30,8 +30,8 @@ Set-AzKeyVaultManagedStorageSasDefinition [-InputObject] <PSKeyVaultManagedStora
 ## DESCRIPTION
 Sets a Shared Access Signature (SAS) definition with a given Key Vault managed Azure Storage
 Account. This also sets a secret which can be used to get the SAS token per this SAS definition.
-SAS token is generated using these parameters and the active key of the Key Vault managed Azure
-Storage Account.
+An SAS token is generated using the provided parameters and the active key of the Key Vault-managed
+Azure Storage Account.
 
 ## EXAMPLES
 
@@ -48,20 +48,21 @@ PS C:\> $sas = Set-AzKeyVaultManagedStorageSasDefinition -AccountName $sa.Storag
 PS C:\> Get-AzKeyVaultSecret -VaultName $kv.VaultName -Name $sas.Sid.Substring($sas.Sid.LastIndexOf('/')+1)
 ```
 
-Sets an account SAS definition 'accountsas' on a KeyVault-managed storage account 'mysa' in vault 'mykv'. Specifically, the sequence above performs the following:
+Sets an account SAS definition `accountsas` on a KeyVault-managed storage account `mysa` in vault `mykv`. Specifically, the sequence above performs the following:
   - gets a (pre-existing) storage account
   - gets a (pre-existing) key vault
-  - adds a KeyVault-managed storage account to the vault, setting Key1 as the active key, and with a regeneration period of 180 days
-  - sets a storage context for the specified storage account, with Key1
-  - creates an account SAS token for services Blob, File, Table and Queue, for resource types Service, Container and Object, with all permissions, over https and with the specified start and end dates
-  - sets a KeyVault-managed storage SAS definition in the vault, with the template uri as the SAS token created above, of SAS type 'account' and valid for 30 days
-  - retrieves the actual access token from the KeyVault secret corresponding to the SAS definition
+  - adds a Key Vault-managed storage account to the vault, setting Key1 as the active key with a regeneration period of 180 days
+  - sets a storage context for the specified storage account with Key1
+  - creates an account SAS token for services Blob, File, Table and Queue, for resource types Service, Container and Object, with all permissions, over HTTPS and with the specified start and end dates
+  - sets a Key Vault-managed storage SAS definition in the vault, with the template URI as the SAS token created above, of SAS type `account` and valid for 30 days
+  - retrieves the actual access token from the Key Vault secret corresponding to the SAS definition
 
 ## PARAMETERS
 
 ### -AccountName
-Key Vault managed storage account name. Cmdlet constructs the FQDN of a managed storage account
-name from vault name, currently selected environment and manged storage account name.
+Key Vault managed storage account name. This cmdlet constructs the FQDN of a
+storage SAS definition from the vault name, currently selected environment, storage account
+name, and SAS definition name.
 
 ```yaml
 Type: System.String
@@ -76,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -91,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disable
-Disables the use of sas definition for generation of sas token.
+Disables the use of SAS definition for generation of an SAS token.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -106,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-ManagedStorageAccount object.
+A ManagedStorageAccount object.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccountIdentityItem
@@ -121,8 +122,9 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Storage sas definition name. Cmdlet constructs the FQDN of a storage sas definition from vault
-name, currently selected environment, storage account name and sas definition name.
+The name of the storage SAS definition to be created. This cmdlet constructs the FQDN of a
+storage SAS definition from the vault name, currently selected environment, storage account
+name, and SAS definition name.
 
 ```yaml
 Type: System.String
@@ -183,10 +185,10 @@ Accept wildcard characters: False
 ```
 
 ### -ValidityPeriod
-Validity period that will get used to set the expiry time of sas token from the time it gets generated
+Validity period of the generated SAS token; used to set the expiry time.
 
 ```yaml
-Type: System.Nullable`1[System.TimeSpan]
+Type: System.Nullable<System.TimeSpan>
 Parameter Sets: (All)
 Aliases:
 
@@ -198,8 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Vault name.
-Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.
+Name of the key vault that will manage the SAS token.
 
 ```yaml
 Type: System.String
@@ -214,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.
+Prompts for confirmation before running the cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -245,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -259,4 +260,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Azureâ€‹RM.â€‹Keyâ€‹Vault](/powershell/module/az.keyvault/)
+[Az.KeyVault](/powershell/module/az.keyvault/)
