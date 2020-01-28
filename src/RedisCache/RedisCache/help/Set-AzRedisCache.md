@@ -125,7 +125,13 @@ Specifies the connection string to the Storage account for Redis data persistenc
 Premium tier only.
 - rdb-backup-frequency.
 Specifies the backup frequency for Redis data persistence.
-Premium tier only. 
+Premium tier only.
+- aof-backup-enabled.
+Specifies that Redis data persistence is enabled.
+Premium tier only.
+- aof-storage-connection-string-0, aof-storage-connection-string-1.
+Specifies the connection string to the Storage account for Redis data persistence.
+Premium tier only.
 - maxmemory-reserved.
 Configures the memory reserved for non-cache processes.
 Standard and Premium tiers. 
@@ -154,7 +160,7 @@ Standard and Premium tiers.
 Configures the number of databases.
 This property can be configured only at cache creation.
 Standard and Premium tiers.
-For more information, see Manage Azure Redis Cache with Azure PowerShellhttp://go.microsoft.com/fwlink/?LinkId=800051 (http://go.microsoft.com/fwlink/?LinkId=800051).
+For more information, see Manage Azure Redis Cache with Azure PowerShell [http://go.microsoft.com/fwlink/?LinkId=800051](http://go.microsoft.com/fwlink/?LinkId=800051).
 
 ```yaml
 Type: System.Collections.Hashtable
