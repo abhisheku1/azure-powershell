@@ -93,6 +93,13 @@ psd1: Azs.Subscriptions.psd1
 psm1: Azs.Subscriptions.psm1
 
 directive:
+  ## rename/alias parameters
+  - where:
+      verb: Get
+      subject: DelegatedProviderOffer
+      parameter-name: OfferName
+    set:
+      alias: Name
   ## Set default parameter value
   - where:
       verb: New
@@ -108,9 +115,19 @@ directive:
     set:
       default:
         script: "$([Guid]::NewGuid().ToString())"
-  ## variant removal (parameter *Definition*) from all New cmdlets -- parameter set Create
+  ## variant removal (parameter *Definition*) from New cmdlet -- parameter set Create
   - where:
       verb: New
       variant: Create
     remove: true
+  ## variant removal (parameter InputObject) from New cmdlet -- parameter sets CreateViaIdentity and CreateViaIdentityExpanded
+  - where:
+      verb: New
+      variant: ^CreateViaIdentity(.*)
+    remove: true
+  ## hide autorest generated cmdlet to use the custom one
+  - where:
+      verb: New|Set
+      subject: Subscription
+    hide: true
 ```
