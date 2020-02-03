@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Azs.Subscriptions
+# Azs.Subscription
 This directory contains the PowerShell module for the Subscription service.
 
 ---
 ## Status
-[![Azs.Subscriptions](https://img.shields.io/powershellgallery/v/Azs.Subscriptions.svg?style=flat-square&label=Azs.Subscriptions "Azs.Subscriptions")](https://www.powershellgallery.com/packages/Azs.Subscriptions/)
+[![Azs.Subscription](https://img.shields.io/powershellgallery/v/Azs.Subscription.svg?style=flat-square&label=Azs.Subscription "Azs.Subscription")](https://www.powershellgallery.com/packages/Azs.Subscription/)
 
 ## Info
 - Modifiable: yes
@@ -23,7 +23,7 @@ This module was primarily generated via [AutoRest](https://github.com/Azure/auto
 AutoRest does not generate authentication code for the module. Authentication is handled via Az.Accounts by altering the HTTP payload before it is sent.
 
 ## Development
-For information on how to develop for `Azs.Subscriptions`, see [how-to.md](how-to.md).
+For information on how to develop for `Azs.Subscription`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ## Generation Requirements
@@ -45,31 +45,72 @@ In this directory, run AutoRest:
 ### AutoRest Configuration
 > see https://aka.ms/autorest
 
+# Azure PowerShell AutoRest Configuration
+
+> Values
 ``` yaml
-require:
-  - $(this-folder)/../readme.azurestack.md
-  - $(repo)/specification/azsadmin/resource-manager/user-subscriptions/readme.azsautogen.md
+azure: true
+powershell: true
+branch: stackadmin
+repo: https://github.com/rakku-ms/azure-rest-api-specs/tree/$(branch)
+metadata:
+  authors: Microsoft Corporation
+  owners: Microsoft Corporation
+  description: 'Microsoft Azure PowerShell: $(service-name) cmdlets'
+  copyright: Microsoft Corporation. All rights reserved.
+  tags: Azure ResourceManager ARM PSModule $(service-name)
+  companyName: Microsoft Corporation
+  requireLicenseAcceptance: true
+  licenseUri: https://aka.ms/azps-license
+  projectUri: https://github.com/Azure/azure-powershell
+```
+
+> Names
+``` yaml
+prefix: Azs
+module-name: $(prefix).$(service-name)
+namespace: Microsoft.Azure.PowerShell.Cmdlets.$(service-name)
+```
+
+> Folders
+``` yaml
+clear-output-folder: true
+output-folder: .
 ```
 
 ``` yaml
+require:
+  - $(repo)/specification/azsadmin/resource-manager/user-subscriptions/readme.azsautogen.md
+
 subject-prefix: ''
 module-version: 0.0.1
 sanitize-names: false
-```
 
-``` yaml
 ### File Renames 
 module-name: Azs.Subscriptions 
 csproj: Azs.Subscriptions.csproj 
 psd1: Azs.Subscriptions.psd1 
 psm1: Azs.Subscriptions.psm1
-```
 
-### Parameter default values
-``` yaml
 directive:
+  ## Set default parameter value
   - where:
-      parameter-name: OfferName
+      verb: New
+      subject: Subscription
+      parameter-name: State
     set:
-      parameter-name: Name
+      default:
+        script: Write-Output "Enabled"
+  - where:
+      verb: New
+      subject: Subscription
+      parameter-name: SubscriptionId
+    set:
+      default:
+        script: "$([Guid]::NewGuid().ToString())"
+  ## variant removal (parameter *Definition*) from all New cmdlets -- parameter set Create
+  - where:
+      verb: New
+      variant: Create
+    remove: true
 ```
