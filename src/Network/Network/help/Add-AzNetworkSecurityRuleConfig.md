@@ -252,7 +252,10 @@ Specifies the network protocol that a rule configuration applies to.
 The acceptable values for this parameter are:
 - Tcp
 - Udp
-- Wildcard character (*) to match both
+- Ah
+- Esp
+- Icmp
+- Wildcard character (*) to match all available options
 
 ```yaml
 Type: System.String
