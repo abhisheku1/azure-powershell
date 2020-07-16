@@ -46,7 +46,7 @@ PS C:\> Get-AzDataBoxEdgeRole -ResourceGroupName resourceGroupName -DeviceName d
 
 Name    IoTHostHub             Platform Status  IotEdgeDeviceId   IotDeviceId  ResourceGroupName
 ----    ----------             -------- ------  ---------------   -----------  -----------------
-iotrole ehub.azure-devices.net Linux    Enabled iotEdgeDeviceUd   iotDevice    resourceGroupName
+IotRole ehub.azure-devices.net Linux    Enabled iotEdgeDeviceUd   iotDevice    resourceGroupName
 ```
 
 ## PARAMETERS
