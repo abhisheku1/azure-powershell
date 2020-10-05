@@ -18,6 +18,7 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+*Updated URL in Backup Storage Redundancy warnings 
 
 ## Version 2.11.0
 * Added BackupStorageRedundancy to the following: 
