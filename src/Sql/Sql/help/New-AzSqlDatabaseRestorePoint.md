@@ -9,7 +9,7 @@ schema: 2.0.0
 # New-AzSqlDatabaseRestorePoint
 
 ## SYNOPSIS
-Creates a new restore point from which a SQL Database can be restored.
+Creates a new restore point from which an Azure SQL Data Warehouse can be restored.
 
 ## SYNTAX
 
