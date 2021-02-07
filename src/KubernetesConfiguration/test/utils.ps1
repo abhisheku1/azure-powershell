@@ -16,9 +16,9 @@ function setupEnv() {
 
     # Can't Azure Arc enabled Kubernetes via powershell(Kubernetes model not released) and New-AzDeployment(The template file Can't exported.)
     # TODO: Kubernetes model be release or The template file can be export.
-    $env.resourceGroup = 'connaks-rg-w9vlnp' # 'kubconfig-rg-' + (RandomString -allChars $false -len 6)
+    $env.resourceGroup = 'youriaks' # 'kubconfig-rg-' + (RandomString -allChars $false -len 6)
     # kubernetes in connaks-rg-w9vlnp
-    $env.kubernetesName00 = 'connaks-d983yc' 
+    $env.kubernetesName00 = 'youriKubtest' 
     $env.kubernetesName01 = 'connaks-dkc29c'
 
     $env.kubConf00 = 'kubconf-' + (RandomString -allChars $false -len 6) + '-test'
