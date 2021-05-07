@@ -12,35 +12,23 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-
 namespace Microsoft.Azure.Commands.StorageSync.Models
 {
-    public class PSPrivateLinkServiceConnectionState
+    /// <summary>
+    /// Class PSFilesNotTieringError.
+    /// </summary>
+    public class PSFilesNotTieringError
     {
         /// <summary>
-        /// Gets the status.
+        /// Gets or sets the error code.
         /// </summary>
-        /// <value></value>
-        public string Status { get; internal set; }
+        /// <value>The error code.</value>
+        public int? ErrorCode { get; set; }
 
         /// <summary>
-        /// Gets the description.
+        /// Gets or sets the file count.
         /// </summary>
-        /// <value></value>
-        public string Description { get; internal set; }
-
-        /// <summary>
-        /// Gets the action required.
-        /// </summary>
-        /// <value></value>
-        [Obsolete]
-        public string ActionRequired { get; internal set; }
-
-        /// <summary>
-        /// Gets the action required.
-        /// </summary>
-        /// <value></value>
-        public string ActionsRequired { get; internal set; }
+        /// <value>The count of files hitting the error.</value>
+        public long? FileCount { get; set; }
     }
 }
