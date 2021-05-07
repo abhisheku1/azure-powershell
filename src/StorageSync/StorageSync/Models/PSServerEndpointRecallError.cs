@@ -12,35 +12,23 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-
 namespace Microsoft.Azure.Commands.StorageSync.Models
 {
-    public class PSPrivateLinkServiceConnectionState
+    /// <summary>
+    /// Class PSServerEndpointRecallError.
+    /// </summary>
+    public class PSServerEndpointRecallError
     {
         /// <summary>
-        /// Gets the status.
+        /// Gets or sets the error code.
         /// </summary>
-        /// <value></value>
-        public string Status { get; internal set; }
+        /// <value>The error code.</value>
+        public int? ErrorCode { get; set; }
 
         /// <summary>
-        /// Gets the description.
+        /// Gets or sets the number of times the error occured.
         /// </summary>
-        /// <value></value>
-        public string Description { get; internal set; }
-
-        /// <summary>
-        /// Gets the action required.
-        /// </summary>
-        /// <value></value>
-        [Obsolete]
-        public string ActionRequired { get; internal set; }
-
-        /// <summary>
-        /// Gets the action required.
-        /// </summary>
-        /// <value></value>
-        public string ActionsRequired { get; internal set; }
+        /// <value>The number of times the error occured.</value>
+        public long? Count { get; set; }
     }
 }

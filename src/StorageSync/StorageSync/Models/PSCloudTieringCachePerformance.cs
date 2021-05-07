@@ -12,35 +12,37 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-
 namespace Microsoft.Azure.Commands.StorageSync.Models
 {
-    public class PSPrivateLinkServiceConnectionState
+    using System;
+
+    /// <summary>
+    /// Class PSCloudTieringCachePerformance.
+    /// </summary>
+    public class PSCloudTieringCachePerformance
     {
         /// <summary>
-        /// Gets the status.
+        /// Gets or sets the last updated timestamp.
         /// </summary>
-        /// <value></value>
-        public string Status { get; internal set; }
+        /// <value>The name of the sync group.</value>
+        public DateTime? LastUpdatedTimestamp { get; set; }
 
         /// <summary>
-        /// Gets the description.
+        /// Gets or sets the count of bytes served locally from the cache.
         /// </summary>
-        /// <value></value>
-        public string Description { get; internal set; }
+        /// <value>The count of bytes served locally from the cache.</value>
+        public long? CacheHitBytes { get; set; }
 
         /// <summary>
-        /// Gets the action required.
+        /// Gets or sets the count of bytes served from recall.
         /// </summary>
-        /// <value></value>
-        [Obsolete]
-        public string ActionRequired { get; internal set; }
+        /// <value>The count of bytes served from recall.</value>
+        public long? CacheMissBytes { get; set; }
 
         /// <summary>
-        /// Gets the action required.
+        /// Gets or sets the cache hit percentage.
         /// </summary>
-        /// <value></value>
-        public string ActionsRequired { get; internal set; }
+        /// <value>The cache hit percentage.</value>
+        public int? CacheHitBytesPercent { get; set; }
     }
 }

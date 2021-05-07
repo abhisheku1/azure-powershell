@@ -12,35 +12,31 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-
 namespace Microsoft.Azure.Commands.StorageSync.Models
 {
-    public class PSPrivateLinkServiceConnectionState
+    using System;
+
+    /// <summary>
+    /// Class PSCloudTieringVolumeFreeSpacePolicyStatus.
+    /// </summary>
+    public class PSCloudTieringVolumeFreeSpacePolicyStatus
     {
         /// <summary>
-        /// Gets the status.
+        /// Gets or sets the last updated timestamp.
         /// </summary>
-        /// <value></value>
-        public string Status { get; internal set; }
+        /// <value>The last updated timestamp.</value>
+        public DateTime? LastUpdatedTimestamp { get; set; }
 
         /// <summary>
-        /// Gets the description.
+        /// Gets or sets the effective volume free space policy.
         /// </summary>
-        /// <value></value>
-        public string Description { get; internal set; }
+        /// <value>The effective volume free space policy.</value>
+        public int? EffectiveVolumeFreeSpacePolicy { get; set; }
 
         /// <summary>
-        /// Gets the action required.
+        /// Gets or sets the current volume free space percent.
         /// </summary>
-        /// <value></value>
-        [Obsolete]
-        public string ActionRequired { get; internal set; }
-
-        /// <summary>
-        /// Gets the action required.
-        /// </summary>
-        /// <value></value>
-        public string ActionsRequired { get; internal set; }
+        /// <value>The current volume free space percent.</value>
+        public int? CurrentVolumeFreeSpacePercent { get; set; }
     }
 }
