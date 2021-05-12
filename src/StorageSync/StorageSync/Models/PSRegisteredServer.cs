@@ -75,7 +75,13 @@ namespace Microsoft.Azure.Commands.StorageSync.Models
         /// Gets or sets the last heart beat.
         /// </summary>
         /// <value>The last heart beat.</value>
-        public DateTime? LastHeartBeat { get; set; }
+        public string LastHeartBeat { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last heart beat.
+        /// </summary>
+        /// <value>The last heart beat.</value>
+        public DateTime? LastHeartBeatTimestamp { get; set; }
 
         /// <summary>
         /// Gets or sets the state of the provisioning.
