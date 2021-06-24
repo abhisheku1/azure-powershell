@@ -1,7 +1,7 @@
 @{
   GUID = 'dc0410d0-8396-4441-a4d3-fdaaa915369d'
   RootModule = './Az.Maps.psm1'
-  ModuleVersion = '1.0.0'
+  ModuleVersion = '0.8.0'
   CompatiblePSEditions = 'Core', 'Desktop'
   Author = 'Microsoft Corporation'
   CompanyName = 'Microsoft Corporation'
