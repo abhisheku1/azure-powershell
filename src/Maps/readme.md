@@ -36,7 +36,7 @@ require:
 input-file:
   - $(repo)/specification/maps/resource-manager/Microsoft.Maps/stable/2021-02-01/maps-management.json
 
-module-version: 1.0.0
+module-version: 0.8.0
 title: Maps
 subject-prefix: $(service-name)
 identity-correction-for-post: true
