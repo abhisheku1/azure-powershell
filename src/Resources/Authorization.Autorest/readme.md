@@ -38,14 +38,31 @@ input-file:
   - https://github.com/Azure/azure-rest-api-specs/blob/0023223a23b7a8c1693f7d88678787e50fee6c96/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleEligibilitySchedule.json
   - https://github.com/Azure/azure-rest-api-specs/blob/0023223a23b7a8c1693f7d88678787e50fee6c96/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleEligibilityScheduleRequest.json
 
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/EligibleChildResources.json
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleAssignmentSchedule.json
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleAssignmentScheduleInstance.json  
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleAssignmentScheduleRequest.json
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/RoleEligibilityScheduleInstance.json
-#   - https://github.com/Azure/azure-rest-api-specs/blob/master/specification/authorization/resource-manager/Microsoft.Authorization/preview/2020-10-01-preview/authorization-RoleAssignmentsCalls.json
-
 title: Authorization
-module-version: 2.0.0
-subject-prefix: Authorization
+module-version: 4.2.0
+# remove subject-prefix for all generated cmdlets.
+subject-prefix: ''
 identity-correction-for-post: true
+
+directive:
+
+  # Remove "GetViaIdentity" syntax variant of the cmdlets. Because of unable create corresponding "ViaIdentity" with the cmdlet in az powershell.
+  - where:
+      verb: Get
+      variant: ^GetViaIdentity$
+      subject: RoleEligibilitySchedule$
+    remove: true
+
+  # Remove "ViaIdentity" syntax variant of the cmdlets. Because of unable create corresponding "ViaIdentity" with the cmdlet in az powershell.
+  - where:
+      variant: ^GetViaIdentity$|^DeleteViaIdentity$|^Update$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
+      subject: RoleManagementPolicy$
+    remove: true
+
+  # Remove "Create", "CreateViaIdentity", "CreateViaIdentityExpanded" syntax variant of the cmdlets. Because of new cmdlet does unsupport.
+  - where:
+      verb: New
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+      subject: RoleEligibilityScheduleRequest$|RoleManagementPolicyAssignment$
+    remove: true
+```
