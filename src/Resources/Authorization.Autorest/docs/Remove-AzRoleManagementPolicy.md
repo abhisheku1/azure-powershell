@@ -12,8 +12,15 @@ Delete a role management policy
 
 ## SYNTAX
 
+### Delete (Default)
 ```
 Remove-AzRoleManagementPolicy -Name <String> -Scope <String> [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentity
+```
+Remove-AzRoleManagementPolicy -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -57,12 +64,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.IAuthorizationIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
 The name (guid) of the role management policy to upsert.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases: RoleManagementPolicyName
 
 Required: True
@@ -92,7 +115,7 @@ The scope of the role management policy to upsert.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -138,6 +161,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.IAuthorizationIdentity
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -145,6 +170,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IAuthorizationIdentity>: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[RoleEligibilityScheduleName <String>]`: The name (guid) of the role eligibility schedule to get.
+  - `[RoleEligibilityScheduleRequestName <String>]`: The name of the role eligibility to create. It can be any valid GUID.
+  - `[RoleManagementPolicyAssignmentName <String>]`: The name of format {guid_guid} the role management policy assignment to get.
+  - `[RoleManagementPolicyName <String>]`: The name (guid) of the role management policy to get.
+  - `[Scope <String>]`: The scope of the role management policy.
 
 ## RELATED LINKS
 

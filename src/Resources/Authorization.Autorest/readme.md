@@ -46,23 +46,33 @@ identity-correction-for-post: true
 
 directive:
 
-  # Remove "GetViaIdentity" syntax variant of the cmdlets. Because of unable create corresponding "ViaIdentity" with the cmdlet in az powershell.
-  - where:
-      verb: Get
-      variant: ^GetViaIdentity$
-      subject: RoleEligibilitySchedule$
-    remove: true
-
-  # Remove "ViaIdentity" syntax variant of the cmdlets. Because of unable create corresponding "ViaIdentity" with the cmdlet in az powershell.
-  - where:
-      variant: ^GetViaIdentity$|^DeleteViaIdentity$|^Update$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
-      subject: RoleManagementPolicy$
-    remove: true
-
   # Remove "Create", "CreateViaIdentity", "CreateViaIdentityExpanded" syntax variant of the cmdlets. Because of new cmdlet does unsupport.
   - where:
       verb: New
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
       subject: RoleEligibilityScheduleRequest$|RoleManagementPolicyAssignment$
     remove: true
+
+  # Remove "Update", "UpdateViaIdentity", syntax variant of the cmdlets. Because of update cmdlet does unsupport.
+  - where:
+      verb: Update
+      variant: ^Update$|^UpdateViaIdentity$
+      subject: RoleManagementPolicy$
+    remove: true
+  
+  # The parameter is not friendly and needs to be renamed.
+  - where:
+      parameter-name: ^TicketInfoTicketNumber$
+    set:
+      parameter-name: TicketNumber
+  - where:
+      parameter-name: ^TicketInfoTicketSystem$
+    set:
+      parameter-name: TicketSystem
+      
+  # Generate cmdlet for RoleManagementPolicyRule memory object and copy to the custom folder for rename cmdlet.
+  # Then cancel configuration of it.   
+  # - model-cmdlet:
+  #   - RoleManagementPolicyRule
+    
 ```

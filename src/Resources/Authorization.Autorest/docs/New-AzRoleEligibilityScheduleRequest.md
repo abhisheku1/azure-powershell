@@ -18,8 +18,8 @@ New-AzRoleEligibilityScheduleRequest -Name <String> -Scope <String> [-Condition 
  [-ExpirationType <Type>] [-Justification <String>] [-PrincipalId <String>] [-RequestType <RequestType>]
  [-RoleDefinitionId <String>] [-ScheduleInfoStartDateTime <DateTime>]
  [-TargetRoleEligibilityScheduleId <String>] [-TargetRoleEligibilityScheduleInstanceId <String>]
- [-TicketInfoTicketNumber <String>] [-TicketInfoTicketSystem <String>] [-DefaultProfile <PSObject>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TicketNumber <String>] [-TicketSystem <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -279,7 +279,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TicketInfoTicketNumber
+### -TicketNumber
 Ticket number for the role eligibility
 
 ```yaml
@@ -294,7 +294,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TicketInfoTicketSystem
+### -TicketSystem
 Ticket system name for the role eligibility
 
 ```yaml

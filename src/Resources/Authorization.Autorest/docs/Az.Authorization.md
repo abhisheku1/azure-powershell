@@ -29,6 +29,9 @@ Creates a role eligibility schedule request.
 ### [New-AzRoleManagementPolicyAssignment](New-AzRoleManagementPolicyAssignment.md)
 Create a role management policy assignment
 
+### [New-AzRoleManagementPolicyRuleObject](New-AzRoleManagementPolicyRuleObject.md)
+Create a in-memory object for RoleManagementPolicyRule
+
 ### [Remove-AzRoleManagementPolicy](Remove-AzRoleManagementPolicy.md)
 Delete a role management policy
 
