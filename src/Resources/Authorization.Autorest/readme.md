@@ -45,7 +45,25 @@ subject-prefix: ''
 identity-correction-for-post: true
 
 directive:
+  # Swaager bug: The scope should be readonly according to the server response.
+  - from: swagger-document
+    where: $.definitions.RoleManagementPolicyProperties.properties.scope
+    transform: >-
+      return {
+        "type": "string",
+        "readOnly": true,
+        "description": "The role management policy scope."
+      }
 
+  - from: swagger-document
+    where: $.definitions.RoleManagementPolicyAssignmentProperties.properties.scope
+    transform: >-
+      return {
+        "type": "string",
+        "readOnly": true,
+        "description": "The role management policy scope."
+      }
+      
   # Remove "Create", "CreateViaIdentity", "CreateViaIdentityExpanded" syntax variant of the cmdlets. Because of new cmdlet does unsupport.
   - where:
       verb: New
@@ -69,7 +87,7 @@ directive:
       parameter-name: ^TicketInfoTicketSystem$
     set:
       parameter-name: TicketSystem
-      
+
   # Generate cmdlet for RoleManagementPolicyRule memory object and copy to the custom folder for rename cmdlet.
   # Then cancel configuration of it.   
   # - model-cmdlet:

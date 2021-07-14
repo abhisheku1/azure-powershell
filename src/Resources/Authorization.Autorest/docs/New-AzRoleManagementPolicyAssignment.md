@@ -14,8 +14,7 @@ Create a role management policy assignment
 
 ```
 New-AzRoleManagementPolicyAssignment -Name <String> -Scope <String> [-PolicyId <String>]
- [-PropertiesScope <String>] [-RoleDefinitionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleDefinitionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +74,6 @@ Accept wildcard characters: False
 
 ### -PolicyId
 The policy id role management policy assignment.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PropertiesScope
-The role management policy scope.
 
 ```yaml
 Type: System.String

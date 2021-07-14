@@ -15,13 +15,13 @@ Update a role management policy
 ### UpdateExpanded (Default)
 ```
 Update-AzRoleManagementPolicy -Name <String> -Scope <String> [-Description <String>] [-DisplayName <String>]
- [-IsOrganizationDefault] [-PropertiesScope <String>] [-Rule <IRoleManagementPolicyRule[]>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsOrganizationDefault] [-Rule <IRoleManagementPolicyRule[]>] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzRoleManagementPolicy -InputObject <IAuthorizationIdentity> [-Scope <String>] [-Description <String>]
+Update-AzRoleManagementPolicy -InputObject <IAuthorizationIdentity> [-Description <String>]
  [-DisplayName <String>] [-IsOrganizationDefault] [-Rule <IRoleManagementPolicyRule[]>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -142,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PropertiesScope
-The role management policy scope.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Rule
 The rule applied to the policy.
 To construct, see NOTES section for RULE properties and create a hash table.
@@ -178,7 +163,7 @@ The scope of the role management policy to upsert.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
