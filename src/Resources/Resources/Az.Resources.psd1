@@ -23,7 +23,7 @@ GUID = '48bb344d-4c24-441e-8ea0-589947784700'
 # Author of this module
 Author = 'Microsoft Corporation'
 
-# Company or vendor of this module
+# Company or vendor of this modulef
 CompanyName = 'Microsoft Corporation'
 
 # Copyright statement for this module
@@ -66,7 +66,8 @@ RequiredAssemblies = 'Microsoft.Azure.Management.Authorization.dll',
                'Microsoft.Extensions.Options.dll', 
                'Microsoft.Extensions.Primitives.dll', 
                'Microsoft.Azure.Graph.RBAC.dll', 
-               'System.Runtime.CompilerServices.Unsafe.dll', 'AutoMapper.dll'
+               'System.Runtime.CompilerServices.Unsafe.dll', 'AutoMapper.dll', 
+               'Authorization.Autorest\bin\Az.Authorization.private.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
@@ -76,15 +77,17 @@ RequiredAssemblies = 'Microsoft.Azure.Management.Authorization.dll',
 
 # Format files (.ps1xml) to be loaded when importing this module
 FormatsToProcess = 'Resources.format.ps1xml', 'ResourceManager.format.ps1xml', 
-               'ResourceManager.generated.format.ps1xml', 'Tags.format.ps1xml'
+               'ResourceManager.generated.format.ps1xml', 'Tags.format.ps1xml',
+               'Authorization.Autorest\Az.Authorization.format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = @('Microsoft.Azure.PowerShell.Cmdlets.Resources.dll', 
                'Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll', 
-               'Microsoft.Azure.PowerShell.Cmdlets.Tags.dll')
+               'Microsoft.Azure.PowerShell.Cmdlets.Tags.dll',
+               'Az.Resources.psm1', 'Authorization.Autorest\Az.Authorization.psm1')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+FunctionsToExport = @('Get-AzRoleEligibilitySchedule', 'Get-AzRoleEligibilityScheduleRequest', 'Get-AzRoleManagementPolicy', 'Get-AzRoleManagementPolicyAssignment', 'New-AzRoleEligibilityScheduleRequest', 'New-AzRoleManagementPolicyAssignment', 'New-AzRoleManagementPolicyRuleObject', 'Remove-AzRoleManagementPolicy', 'Remove-AzRoleManagementPolicyAssignment', 'Stop-AzRoleEligibilityScheduleRequest', 'Update-AzRoleManagementPolicy')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-AzProviderOperation', 'Remove-AzRoleAssignment', 

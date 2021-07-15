@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ManualPsModuleName>Resources</ManualPsModuleName>
+    <PsModuleName>Authorization</PsModuleName>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Az.autorest.hybrid.props" />
+
+</Project>
