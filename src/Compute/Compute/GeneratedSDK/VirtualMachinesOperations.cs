@@ -14,6 +14,7 @@ namespace Microsoft.Azure.Management.Compute
     using Microsoft.Rest.Azure;
     using Models;
     using Newtonsoft.Json;
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
@@ -3443,13 +3444,24 @@ namespace Microsoft.Azure.Management.Compute
             {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
             }
+            ServiceClientTracing.Information("Before cancellationToken.ThrowIfCancellationRequested();");
             cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            ServiceClientTracing.Information("Before Client.HttpClient.SendAsync();");
+            try
+            {
+                _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                ServiceClientTracing.Error("ConfigureAwait", e);
+            }
+            ServiceClientTracing.Information("After Client.HttpClient.SendAsync();");
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
             }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            ServiceClientTracing.Information($"_httpResponse.StatusCode = {_statusCode}");
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
             if ((int)_statusCode != 200 && (int)_statusCode != 202)
@@ -3789,13 +3801,24 @@ namespace Microsoft.Azure.Management.Compute
             {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
             }
+            ServiceClientTracing.Information("Before cancellationToken.ThrowIfCancellationRequested();");
             cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            ServiceClientTracing.Information("Before Client.HttpClient.SendAsync();");
+            try
+            {
+                _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                ServiceClientTracing.Error("ConfigureAwait", e);
+            }
+            ServiceClientTracing.Information("After Client.HttpClient.SendAsync();");
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
             }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            ServiceClientTracing.Information($"_httpResponse.StatusCode = {_statusCode}");
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
             if ((int)_statusCode != 200 && (int)_statusCode != 202)
@@ -3962,13 +3985,24 @@ namespace Microsoft.Azure.Management.Compute
             {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
             }
+            ServiceClientTracing.Information("Before cancellationToken.ThrowIfCancellationRequested();");
             cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            ServiceClientTracing.Information("Before Client.HttpClient.SendAsync();");
+            try
+            {
+                _httpResponse = await Client.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                ServiceClientTracing.Error("ConfigureAwait", e);
+            }
+            ServiceClientTracing.Information("After Client.HttpClient.SendAsync();");
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
             }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            ServiceClientTracing.Information($"_httpResponse.StatusCode = {_statusCode}");
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
             if ((int)_statusCode != 200 && (int)_statusCode != 202)
