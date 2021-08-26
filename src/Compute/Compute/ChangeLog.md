@@ -32,6 +32,11 @@
     - 'Remove-AzRestorePoint'
     - 'Remove-AzRestorePointCollection'
 * Added new parameters '-EnableSpotRestore' and '-SpotRestoreTimeout' to 'New-AzVMSSConfig' to enable Spot Restore Policy 
+* Added new parameter `UserData` to the following cmdlets:
+    - `New-AzVm`
+    - `New-AzVmConfig`
+    - `Update-AzVm`
+    - `Get-AzVm`
 
 ## Version 4.16.0
 * Fixed the warning in `New-AzVM` cmdlet stating the sku of the VM is being defaulted even if a sku size is provided by the user. Now it only occurs when the user does not provide a sku size.

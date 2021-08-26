@@ -26,6 +26,8 @@ namespace Microsoft.Azure.Commands.Compute
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VMConfig", DefaultParameterSetName = "DefaultParameterSet"), OutputType(typeof(PSVirtualMachine))]
     public class NewAzureVMConfigCommand : Microsoft.Azure.Commands.ResourceManager.Common.AzureRMCmdlet
     {
+        private const string DefaultParameterSetName = "DefaultParameterSet", ExplicitIdentityParameterSet = "ExplicitIdentityParameterSet";
+
         [Alias("ResourceName", "Name")]
         [Parameter(
             Mandatory = true,
@@ -59,14 +61,14 @@ namespace Microsoft.Azure.Commands.Compute
         [Parameter(
             Position = 4,
             Mandatory = true,
-            ParameterSetName = "ExplicitIdentityParameterSet",
+            ParameterSetName = ExplicitIdentityParameterSet,
             ValueFromPipelineByPropertyName = false)]
         [ValidateNotNullOrEmpty]
         public ResourceIdentityType? IdentityType { get; set; }
 
         [Parameter(
             Mandatory = false,
-            ParameterSetName = "ExplicitIdentityParameterSet",
+            ParameterSetName = ExplicitIdentityParameterSet,
             ValueFromPipelineByPropertyName = true)]
         public string[] IdentityId { get; set; }
 
@@ -129,6 +131,8 @@ namespace Microsoft.Azure.Commands.Compute
             HelpMessage = "Id of the capacity reservation Group that is used to allocate.")]
         [ResourceIdCompleter("Microsoft.Compute/capacityReservationGroups")]
         public string CapacityReservationGroupId { get; set; }
+
+
 
         protected override bool IsUsageMetricEnabled
         {
