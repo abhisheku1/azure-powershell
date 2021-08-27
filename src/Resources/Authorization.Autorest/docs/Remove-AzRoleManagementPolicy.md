@@ -178,6 +178,10 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IAuthorizationIdentity>: Identity Parameter
   - `[Id <String>]`: Resource identity path
+  - `[RoleAssignmentScheduleInstanceName <String>]`: The name (hash of schedule name + time) of the role assignment schedule to get.
+  - `[RoleAssignmentScheduleName <String>]`: The name (guid) of the role assignment schedule to get.
+  - `[RoleAssignmentScheduleRequestName <String>]`: The name of the role assignment to create. It can be any valid GUID.
+  - `[RoleEligibilityScheduleInstanceName <String>]`: The name (hash of schedule name + time) of the role eligibility schedule to get.
   - `[RoleEligibilityScheduleName <String>]`: The name (guid) of the role eligibility schedule to get.
   - `[RoleEligibilityScheduleRequestName <String>]`: The name of the role eligibility to create. It can be any valid GUID.
   - `[RoleManagementPolicyAssignmentName <String>]`: The name of format {guid_guid} the role management policy assignment to get.

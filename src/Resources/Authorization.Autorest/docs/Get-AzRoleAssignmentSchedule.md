@@ -1,36 +1,36 @@
 ---
 external help file:
 Module Name: Az.Authorization
-online version: https://docs.microsoft.com/powershell/module/az.authorization/get-azrolemanagementpolicyassignment
+online version: https://docs.microsoft.com/powershell/module/az.authorization/get-azroleassignmentschedule
 schema: 2.0.0
 ---
 
-# Get-AzRoleManagementPolicyAssignment
+# Get-AzRoleAssignmentSchedule
 
 ## SYNOPSIS
-Get the specified role management policy assignment for a resource scope
+Get the specified role assignment schedule for a resource scope
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-AzRoleManagementPolicyAssignment -Scope <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzRoleAssignmentSchedule -Scope <String> [-Filter <String>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-AzRoleManagementPolicyAssignment -Name <String> -Scope <String> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzRoleAssignmentSchedule -Name <String> -Scope <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-AzRoleManagementPolicyAssignment -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>]
+Get-AzRoleAssignmentSchedule -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the specified role management policy assignment for a resource scope
+Get the specified role assignment schedule for a resource scope
 
 ## EXAMPLES
 
@@ -69,6 +69,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Filter
+The filter to apply on the operation.
+Use $filter=atScope() to return all role assignment schedules at or above the scope.
+Use $filter=principalId eq {id} to return all role assignment schedules at, above or below the scope for the specified principal.
+Use $filter=assignedTo('{userId}') to return all role assignment schedules for the current user.
+Use $filter=asTarget() to return all role assignment schedules created for the current user.
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -86,12 +105,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of format {guid_guid} the role management policy assignment to get.
+The name (guid) of the role assignment schedule to get.
 
 ```yaml
 Type: System.String
 Parameter Sets: Get
-Aliases: RoleManagementPolicyAssignmentName
+Aliases: RoleAssignmentScheduleName
 
 Required: True
 Position: Named
@@ -101,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-The scope of the role management policy.
+The scope of the role assignment schedule.
 
 ```yaml
 Type: System.String
@@ -124,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.Api20201001Preview.IRoleManagementPolicyAssignment
+### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.Api20201001Preview.IRoleAssignmentSchedule
 
 ## NOTES
 

@@ -1,36 +1,31 @@
 ---
 external help file:
 Module Name: Az.Authorization
-online version: https://docs.microsoft.com/powershell/module/az.authorization/get-azrolemanagementpolicyassignment
+online version: https://docs.microsoft.com/powershell/module/az.authorization/get-azeligiblechildresource
 schema: 2.0.0
 ---
 
-# Get-AzRoleManagementPolicyAssignment
+# Get-AzEligibleChildResource
 
 ## SYNOPSIS
-Get the specified role management policy assignment for a resource scope
+Get the child resources of a resource on which user has eligible access
 
 ## SYNTAX
 
-### List (Default)
+### Get (Default)
 ```
-Get-AzRoleManagementPolicyAssignment -Scope <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzRoleManagementPolicyAssignment -Name <String> -Scope <String> [-DefaultProfile <PSObject>]
+Get-AzEligibleChildResource -Scope <String> [-Filter <String>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-AzRoleManagementPolicyAssignment -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzEligibleChildResource -InputObject <IAuthorizationIdentity> [-Filter <String>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the specified role management policy assignment for a resource scope
+Get the child resources of a resource on which user has eligible access
 
 ## EXAMPLES
 
@@ -69,6 +64,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Filter
+The filter to apply on the operation.
+Use $filter=resourceType+eq+'Subscription' to filter on only resource of type = 'Subscription'.
+Use $filter=resourceType+eq+'subscription'+or+resourceType+eq+'resourcegroup' to filter on resource of type = 'Subscription' or 'ResourceGroup'
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -85,27 +97,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-The name of format {guid_guid} the role management policy assignment to get.
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases: RoleManagementPolicyAssignmentName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Scope
 The scope of the role management policy.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -124,7 +121,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.Api20201001Preview.IRoleManagementPolicyAssignment
+### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.Api20201001Preview.IEligibleChildResource
 
 ## NOTES
 

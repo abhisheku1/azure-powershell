@@ -1,36 +1,31 @@
 ---
 external help file:
 Module Name: Az.Authorization
-online version: https://docs.microsoft.com/powershell/module/az.authorization/get-azrolemanagementpolicyassignment
+online version: https://docs.microsoft.com/powershell/module/az.authorization/stop-azroleassignmentschedulerequest
 schema: 2.0.0
 ---
 
-# Get-AzRoleManagementPolicyAssignment
+# Stop-AzRoleAssignmentScheduleRequest
 
 ## SYNOPSIS
-Get the specified role management policy assignment for a resource scope
+Cancels a pending role assignment schedule request.
 
 ## SYNTAX
 
-### List (Default)
+### Cancel (Default)
 ```
-Get-AzRoleManagementPolicyAssignment -Scope <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzRoleManagementPolicyAssignment -Name <String> -Scope <String> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Stop-AzRoleAssignmentScheduleRequest -Name <String> -Scope <String> [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### CancelViaIdentity
 ```
-Get-AzRoleManagementPolicyAssignment -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Stop-AzRoleAssignmentScheduleRequest -InputObject <IAuthorizationIdentity> [-DefaultProfile <PSObject>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the specified role management policy assignment for a resource scope
+Cancels a pending role assignment schedule request.
 
 ## EXAMPLES
 
@@ -75,7 +70,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.IAuthorizationIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: CancelViaIdentity
 Aliases:
 
 Required: True
@@ -86,12 +81,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of format {guid_guid} the role management policy assignment to get.
+The name of the role assignment request to cancel.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: RoleManagementPolicyAssignmentName
+Parameter Sets: Cancel
+Aliases: RoleAssignmentScheduleRequestName
 
 Required: True
 Position: Named
@@ -100,15 +95,61 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Scope
-The scope of the role management policy.
+The scope of the role assignment request to cancel.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Cancel
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -124,7 +165,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Authorization.Models.Api20201001Preview.IRoleManagementPolicyAssignment
+### System.Boolean
 
 ## NOTES
 
