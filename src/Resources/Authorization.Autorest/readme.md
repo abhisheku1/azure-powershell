@@ -96,7 +96,7 @@ directive:
     set:
       parameter-name: TicketSystem
 
-  # Generate cmdlet for RoleManagementPolicyRule memory object and copy to the custom folder for rename cmdlet.
+  # Generate cmdlet for RoleManagementPolicyRule memory object and copy to the custom folder for rename cmdlet(New-AzAuthorizationRoleManagementPolicyRuleObject --> New-AzRoleManagementPolicyRuleObject).
   # Then cancel configuration of it.   
   # - model-cmdlet:
   #   - RoleManagementPolicyRule
