@@ -51,6 +51,7 @@ module-version: 4.2.0
 # remove subject-prefix for all generated cmdlets.
 subject-prefix: ''
 identity-correction-for-post: true
+resourcegroup-append: true
 
 directive:
   # Swaager bug: The scope should be readonly according to the server response.
@@ -100,5 +101,100 @@ directive:
   # Then cancel configuration of it.   
   # - model-cmdlet:
   #   - RoleManagementPolicyRule
-    
+  
+  - where:
+      model-name: EligibleChildResource
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+  - where:
+      model-name: RoleAssignmentSchedule
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleAssignmentScheduleInstance
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleAssignmentScheduleRequest
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleEligibilitySchedule
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleEligibilityScheduleInstance
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleEligibilityScheduleRequest
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PrincipalId
+  - where:
+      model-name: RoleManagementPolicy
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+  - where:
+      model-name: RoleManagementPolicyAssignment
+    set:
+      format-table:
+        properties:
+          - Name
+          - Id
+          - Type
+          - Scope
+          - RoleDefinitionId
+          - PolicyId
+          
 ```
