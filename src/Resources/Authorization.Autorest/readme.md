@@ -52,6 +52,7 @@ module-version: 4.2.0
 subject-prefix: ''
 identity-correction-for-post: true
 resourcegroup-append: true
+default-exclude-tableview-properties: false
 
 directive:
   # Swaager bug: The scope should be readonly according to the server response.
