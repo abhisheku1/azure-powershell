@@ -2852,7 +2852,8 @@ function Test-VirtualMachineScaleSetFlexibleOModeDefaulting
 
         $credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword);
 
-        # Create VMSS with minimal inputs to allow defaulting
+        # Create VMSS with minimal inputs to allow defaulting.
+        # Default parameter set
         $vmss = New-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssname -Credential $credential -OrchestrationMode $omode -DomainNameLabel $domainNameLabel;
         Assert-NotNull $vmss;
         Assert-AreEqual $vmss.OrchestrationMode $omode;
@@ -2865,6 +2866,173 @@ function Test-VirtualMachineScaleSetFlexibleOModeDefaulting
             $vmssError = New-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssname -Credential $credential -OrchestrationMode $omode -SinglePlacementGroup; `
         } ` 
         "The value provided for SinglePlacementGroup cannot be used for a VMSS with OrchestrationMode set to Flexible. Please use SinglePlacementGroup 'false' instead.";
+
+    }
+    finally
+    {
+        # Cleanup
+        Clean-ResourceGroup $rgname;
+    }
+}
+
+
+<#
+.SYNOPSIS
+Test the VMSS Flexible orchestration mode defaulting. 
+#>
+function Test-VMSSFlexOModeDefaultingDefaultParamSet
+{
+
+    # Setup
+    $rgname = Get-ComputeTestResourceName;
+    
+
+    try
+    {
+
+        $loc = "eastus";
+        New-AzResourceGroup -Name $rgname -Location $loc -Force;
+        
+        $networkAPIVersionFlexible = "2020-11-01";
+        $flexiblePFDC = 1;
+        $flexibleSinglePlacementGroup = $false;
+        $vmssName = "myVmssSlb";
+        $vmNamePrefix = "vmSlb";
+        $vmssInstanceCount = 5;
+        $vmssSku = "Standard_DS1_v2";
+        $pass = $PLACEHOLDER;
+        $user = "azureuser";
+
+        $securePassword = ConvertTo-SecureString $pass -AsPlainText -Force;
+        $cred = New-Object System.Management.Automation.PSCredential ($user, $securePassword);
+
+        $vnetname = "myVnet";
+        $vnetAddress = "10.0.0.0/16";
+        $subnetname = "default-slb";
+        $subnetAddress = "10.0.2.0/24";
+
+        # set up networking
+        # VMSS Flex requires explicit outbound access
+
+        # Create a virtual network 
+
+        $frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name $subnetname -AddressPrefix $subnetAddress ;
+        $virtualNetwork = New-AzVirtualNetwork -Name $vnetname -ResourceGroupName $rgname -Location $loc -AddressPrefix $vnetAddress -Subnet $frontendSubnet;
+
+        #Optionally you can place instances behind a standard load balancer
+        # # Create a public IP address
+        $publicIP = New-AzPublicIpAddress `
+            -ResourceGroupName $rgname `
+            -Location $loc `
+            -AllocationMethod Static `
+            -Sku "Standard" `
+            -IpAddressVersion "IPv4" `
+            -Name "myLBPublicIP";
+
+        # # Create a frontend and backend IP pool
+        $frontendIP = New-AzLoadBalancerFrontendIpConfig `
+            -Name "myFrontEndPool" `
+            -PublicIpAddress $publicIP;
+
+        $backendPool = New-AzLoadBalancerBackendAddressPoolConfig `
+            -Name "myBackEndPool" ;
+
+        # # Create the load balancer
+        $lb = New-AzLoadBalancer `
+            -ResourceGroupName $rgname `
+            -Name "myLoadBalancer" `
+            -Sku "Standard" `
+            -Tier "Regional" `
+            -Location $loc `
+            -FrontendIpConfiguration $frontendIP `
+            -BackendAddressPool $backendPool ;
+
+        # # Create a load balancer health probe for TCP port 80
+        Add-AzLoadBalancerProbeConfig -Name "myHealthProbe" `
+            -LoadBalancer $lb `
+            -Protocol TCP `
+            -Port 80 `
+            -IntervalInSeconds 15 `
+            -ProbeCount 2;
+
+        # # Create a load balancer rule to distribute traffic on port TCP 80
+        # # The health probe from the previous step is used to make sure that traffic is
+        # # only directed to healthy VM instances
+        Add-AzLoadBalancerRuleConfig `
+            -Name "myLoadBalancerRule" `
+            -LoadBalancer $lb `
+            -FrontendIpConfiguration $lb.FrontendIpConfigurations[0] `
+            -BackendAddressPool $lb.BackendAddressPools[0] `
+            -Protocol TCP `
+            -FrontendPort 80 `
+            -BackendPort 80 `
+            -DisableOutboundSNAT `
+            -Probe (Get-AzLoadBalancerProbeConfig -Name "myHealthProbe" -LoadBalancer $lb);
+
+        # # Add outbound connectivity rule
+        Add-AzLoadBalancerOutboundRuleConfig `
+            -Name "outboundrule" `
+            -LoadBalancer $lb `
+            -AllocatedOutboundPort '10000' `
+            -Protocol 'All' `
+            -IdleTimeoutInMinutes '15' `
+            -FrontendIpConfiguration $lb.FrontendIpConfigurations[0] `
+            -BackendAddressPool $lb.BackendAddressPools[0] ;
+
+        # # Update the load balancer configuration
+        Set-AzLoadBalancer -LoadBalancer $lb;
+
+        # # Create IP address configurations
+        # # Instances will require explicit outbound connectivity, for example
+        # #   - NAT Gateway on the subnet (recommended)
+        # #   - Instances in backend pool of Standard LB with outbound connectivity rules
+        # #   - Public IP address on each instance
+        # # See aka.ms/defaultoutboundaccess for more info
+        $ipConfig = New-AzVmssIpConfig `
+            -Name "myIPConfig" `
+            -SubnetId $virtualNetwork.Subnets[0].Id `
+            -LoadBalancerBackendAddressPoolsId $lb.BackendAddressPools[0].Id `
+            -Primary;
+
+        # Create a config object
+        # The VMSS config object stores the core information for creating a scale set
+        $vmssConfig = New-AzVmssConfig `
+            -Location $loc `
+            -SkuCapacity $vmssInstanceCount `
+            -SkuName $vmssSku `
+            -OrchestrationMode 'Flexible';
+
+        # Reference a virtual machine image from the gallery
+        Set-AzVmssStorageProfile $vmssConfig `
+            -OsDiskCreateOption "FromImage" `
+            -ImageReferencePublisher "Canonical" `
+            -ImageReferenceOffer "UbuntuServer" `
+            -ImageReferenceSku "18.04-LTS" `
+            -ImageReferenceVersion "latest";
+
+        # Set up information for authenticating with the virtual machine
+        Set-AzVmssOsProfile $vmssConfig `
+            -AdminUsername $cred.UserName `
+            -AdminPassword $cred.Password `
+            -ComputerNamePrefix $vmNamePrefix ;
+
+        # Attach the virtual network to the config object
+        Add-AzVmssNetworkInterfaceConfiguration `
+            -VirtualMachineScaleSet $vmssConfig `
+            -Name "network-config" `
+            -Primary $true `
+            -IPConfiguration $ipConfig ;
+  
+        # Create the scale set with the config object (this step might take a few minutes)
+        $vmss = New-AzVmss `
+            -ResourceGroupName $rgname `
+            -Name $vmssName `
+            -VirtualMachineScaleSet $vmssConfig `
+            -Debug;
+
+        Assert-AreEqual $vmss.PlatformFaultDomainCount $flexiblePFDC;
+        Assert-AreEqual $vmss.SinglePlacementGroup $flexibleSinglePlacementGroup;
+        Assert-AreEqual $vmss.VirtualMachineProfile.NetworkProfile.NetworkApiVersion $networkAPIVersionFlexible;
     }
     finally
     {
