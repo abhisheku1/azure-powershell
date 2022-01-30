@@ -36,10 +36,58 @@ function Get-AzCloudServicePublicIPAddress {
         [string] $CloudServiceName,
 
         [Parameter(Mandatory=$true, ParameterSetName="CloudService", HelpMessage="CloudService instance.")]
-        [Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20210301.CloudService] $CloudService
+        [Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20210301.CloudService] $CloudService,
+    
+        #Region environment parameter
+        [Parameter()]
+        [Alias('AzureRMContext', 'AzureCredential')]
+        [ValidateNotNull()]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Azure')]
+        [System.Management.Automation.PSObject]
+        # The credentials, account, tenant, and subscription used for communication with Azure.
+        ${DefaultProfile},
+    
+        [Parameter(DontShow)]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [System.Management.Automation.SwitchParameter]
+        # Wait for .NET debugger to attach
+        ${Break},
+    
+        [Parameter(DontShow)]
+        [ValidateNotNull()]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Runtime.SendAsyncStep[]]
+        # SendAsync Pipeline Steps to be appended to the front of the pipeline
+        ${HttpPipelineAppend},
+    
+        [Parameter(DontShow)]
+        [ValidateNotNull()]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Runtime.SendAsyncStep[]]
+        # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+        ${HttpPipelinePrepend},
+    
+        [Parameter(DontShow)]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [System.Uri]
+        # The URI for the proxy server to use
+        ${Proxy},
+    
+        [Parameter(DontShow)]
+        [ValidateNotNull()]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [System.Management.Automation.PSCredential]
+        # Credentials for a proxy server to use for the remote call
+        ${ProxyCredential},
+    
+        [Parameter(DontShow)]
+        [Microsoft.Azure.PowerShell.Cmdlets.Aks.Category('Runtime')]
+        [System.Management.Automation.SwitchParameter]
+        # Use the default credentials for the proxy
+        ${ProxyUseDefaultCredentials}
+        #EndRegion
     )
     process {
-        $ApiVersion = "2020-06-01"
         if ($PSBoundParameters.ContainsKey("CloudService"))
         {
             $elements = $CloudService.Id.Split("/")
@@ -55,12 +103,32 @@ function Get-AzCloudServicePublicIPAddress {
                 throw "CloudService.Name should not be Null"
             }
         }
-
-        # Create the URI as per the input
-        $uriToInvoke = "/subscriptions/$SubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Compute/cloudServices/$CloudServiceName/publicIPAddresses?api-version=$ApiVersion"
-
-        # Invoke and display the information
-        $result = Az.Accounts\Invoke-AzRestMethod -Method GET -Path $uriToInvoke
-        $result.Content
+        
+        #Region environment parameter
+        $EnvPSBoundParameters = @{}
+        if ($PSBoundParameters.ContainsKey('Debug')) {
+            $EnvPSBoundParameters['Debug'] = $Debug
+        }
+        if ($PSBoundParameters.ContainsKey('HttpPipelineAppend')) {
+            $EnvPSBoundParameters['HttpPipelineAppend'] = $HttpPipelineAppend
+        }
+        if ($PSBoundParameters.ContainsKey('HttpPipelinePrepend')) {
+            $EnvPSBoundParameters['HttpPipelinePrepend'] = $HttpPipelinePrepend
+        }
+        if ($PSBoundParameters.ContainsKey('Proxy')) {
+            $EnvPSBoundParameters['Proxy'] = $Proxy
+        }
+        if ($PSBoundParameters.ContainsKey('ProxyCredential')) {
+            $EnvPSBoundParameters['ProxyCredential'] = $ProxyCredential
+        }
+        if ($PSBoundParameters.ContainsKey('ProxyUseDefaultCredentials')) {
+            $EnvPSBoundParameters['ProxyUseDefaultCredentials'] = $ProxyUseDefaultCredentials
+        }
+        $EnvPSBoundParameters['SubscriptionId'] = $SubscriptionId
+        $EnvPSBoundParameters['ResourceGroupName'] = $ResourceGroupName
+        $EnvPSBoundParameters['Name'] = $CloudServiceName
+        #EndRegion
+        $CloudService = Get-AzCloudService @EnvPSBoundParameters
+        return $CloudService.NetworkProfile.LoadBalancerConfiguration.FrontendIPConfiguration.PublicIPAddressId
     }
 }
