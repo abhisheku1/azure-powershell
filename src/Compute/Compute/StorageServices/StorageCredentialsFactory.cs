@@ -25,6 +25,7 @@ namespace Microsoft.Azure.Commands.Compute.StorageServices
     {
         private StorageManagementClient client;
         private IAzureSubscription currentSubscription;
+        private Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.StorageManagementClient clientVer2019;
         public string resourceGroupName { get; set; }
 
         public static bool IsChannelRequired(Uri destination)
@@ -41,6 +42,15 @@ namespace Microsoft.Azure.Commands.Compute.StorageServices
         {
             this.resourceGroupName = resourceGroupName;
             this.client = client;
+            this.clientVer2019 = null;
+            this.currentSubscription = currentSubscription;
+        }
+        
+        public StorageCredentialsFactory(string resourceGroupName, Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.StorageManagementClient client, IAzureSubscription currentSubscription)
+        {
+            this.resourceGroupName = resourceGroupName;
+            this.clientVer2019 = client;
+            this.client = null;
             this.currentSubscription = currentSubscription;
         }
 
@@ -52,8 +62,18 @@ namespace Microsoft.Azure.Commands.Compute.StorageServices
                 {
                     throw new ArgumentException(Rsrc.StorageCredentialsFactoryCurrentSubscriptionNotSet, "SubscriptionId");
                 }
-                var storageKeys = this.client.StorageAccounts.ListKeys(this.resourceGroupName, destination.StorageAccountName);
-                return new StorageCredentials(destination.StorageAccountName, storageKeys.GetKey1());
+                
+                if (this.client != null)
+                {
+                    var storageKeys = this.client.StorageAccounts.ListKeys(this.resourceGroupName, destination.StorageAccountName);
+                    return new StorageCredentials(destination.StorageAccountName, storageKeys.GetKey1());
+                }
+                else if(this.clientVer2019 != null)
+                {
+                    Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.IStorageAccountsOperations account = this.clientVer2019.StorageAccounts;
+                    var storageKeys = Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.StorageAccountsOperationsExtensions.ListKeys(account, this.resourceGroupName, destination.StorageAccountName);
+                    return new StorageCredentials(destination.StorageAccountName, storageKeys.GetKey1());
+                }
             }
 
             return new StorageCredentials(destination.Uri.Query);
