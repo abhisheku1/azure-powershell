@@ -23,8 +23,18 @@ namespace Microsoft.Azure.Commands.Compute
         {
             return account.Sku;
         }
+        
+        public static Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.Sku Sku(this Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.StorageAccount account)
+        {
+            return account.Sku;
+        }
 
         public static string SkuName(this StorageAccount account)
+        {
+            return account.Sku.Name.ToString();
+        }
+        
+        public static string SkuName(this Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.StorageAccount account)
         {
             return account.Sku.Name.ToString();
         }
@@ -36,7 +46,14 @@ namespace Microsoft.Azure.Commands.Compute
 
         public static void SetAsStandardGRS(this StorageAccountCreateParameters createParams)
         {
-            createParams.Sku = new Sku(Microsoft.Azure.PowerShell.Cmdlets.Compute.Helpers.Storage.Models.SkuName.StandardGRS);
+            //createParams.Sku = new Sku(Microsoft.Azure.PowerShell.Cmdlets.Compute.Helpers.Storage.Models.SkuName.StandardGRS);
+            createParams.Sku = new Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.Sku(Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.SkuName.StandardGRS);
+        }
+        
+        public static bool IsPremiumLrs(this Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.StorageAccount account)
+        {
+            //return account.Sku.Name == Microsoft.Azure.Management.Storage.Version2017_10_01.Models.SkuName.PremiumLRS;
+            return account.Sku.Name == Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.SkuName.PremiumLRS;
         }
 
         public static string GetFirstAvailableKey(this StorageAccountListKeysResult listKeyResult)
@@ -45,6 +62,11 @@ namespace Microsoft.Azure.Commands.Compute
         }
 
         public static string GetKey1(this StorageAccountListKeysResult listKeyResult)
+        {
+            return listKeyResult.Keys[0].Value;
+        }
+        
+        public static string GetKey1(this Microsoft.Azure.Management.Profiles.Storage.Version2019_06_01.Models.StorageAccountListKeysResult listKeyResult)
         {
             return listKeyResult.Keys[0].Value;
         }
