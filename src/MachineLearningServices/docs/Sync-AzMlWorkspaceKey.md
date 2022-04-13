@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/invoke-azmlworkspaceresyncworkspacekey
+online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/sync-azmlworkspacekey
 schema: 2.0.0
 ---
 
-# Invoke-AzMlWorkspaceResyncWorkspaceKey
+# Sync-AzMlWorkspaceKey
 
 ## SYNOPSIS
 Resync all the keys associated with this workspace.
@@ -15,15 +15,14 @@ This includes keys for the storage account, app insights and password for contai
 
 ### Resync (Default)
 ```
-Invoke-AzMlWorkspaceResyncWorkspaceKey -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Sync-AzMlWorkspaceKey -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResyncViaIdentity
 ```
-Invoke-AzMlWorkspaceResyncWorkspaceKey -InputObject <IMachineLearningWorkspacesIdentity>
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Sync-AzMlWorkspaceKey -InputObject <IMachineLearningWorkspacesIdentity> [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

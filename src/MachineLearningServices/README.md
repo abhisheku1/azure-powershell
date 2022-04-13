@@ -60,10 +60,33 @@ directive:
     set:
       subject-prefix: MLService
       subject: VMSize
+
   # Remove private cmdlets. it been supported in the Az.Network.
   - where:
       subject: PrivateEndpointConnection|PrivateLinkResource
     remove: true
+
+  - where:
+      verb: Set
+      subject: BatchDeployment|BatchEndpoint|OnlineDeployment|OnlineEndpoint|Compute
+    remove: true
+
+  - where:
+      verb: Invoke
+      subject: ResyncWorkspaceKey
+    set:
+      verb: Sync
+      subject: Key
+
+  - where:
+      subject: DiagnoseWorkspace
+    set:
+      subject: Diagnose
+      
+  - where:
+      subject: PrepareWorkspaceNotebook
+    set:
+      subject: Notebook
 
   - where:
       verb: Get
@@ -75,8 +98,61 @@ directive:
 
   - where:
       verb: New
-      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+      subject: Datastore
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
+
+  - where:
+      verb: New
+      subject: Datastore
+      parameter-name: Body
+    set:
+      parameter-name: Datastore
+
+  - where:
+      verb: New
+      subject: Compute
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+
+  - where:
+      verb: New
+      subject: Compute
+      parameter-name: Parameter
+    set:
+      parameter-name: Compute
+
+  - where:
+      verb: New
+      subject: Job
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+
+  - where:
+      verb: New
+      subject: Job
+      parameter-name: Body
+    set:
+      parameter-name: Job
+
+  # - where:
+  #     verb: New
+  #     subject: OnlineDeployment
+  #     variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+  #   remove: true
+
+  # - where:
+  #     verb: New
+  #     subject: OnlineDeployment
+  #     parameter-name: Body
+  #   set:
+  #     parameter-name: Deployment
+
+  # - where:
+  #     verb: New
+  #     subject: BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey
+  #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+  #   remove: true
   
   - where:
       variant: ^Update$|^UpdateViaIdentity$
@@ -105,4 +181,16 @@ directive:
       parameter-name: EndpointName
     set:
       parameter-name: Name
+  - no-inline:
+    - PipelineJobComponentJobs
+  - model-cmdlet:
+    - AzureBlobDatastore
+    - AzureDataLakeGen1Datastore
+    - AzureDataLakeGen2Datastore
+    - AzureFileDatastore
+    - AmlCompute
+    - ComputeInstance
+    - CommandJob
+    - PipelineJob
+    - SweepJob
 ```

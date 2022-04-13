@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/invoke-azmlworkspaceprepareworkspacenotebook
+online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/invoke-azmlworkspacenotebook
 schema: 2.0.0
 ---
 
-# Invoke-AzMlWorkspacePrepareWorkspaceNotebook
+# Invoke-AzMlWorkspaceNotebook
 
 ## SYNOPSIS
 Prepare a notebook.
@@ -14,15 +14,14 @@ Prepare a notebook.
 
 ### Prepare (Default)
 ```
-Invoke-AzMlWorkspacePrepareWorkspaceNotebook -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-AzMlWorkspaceNotebook -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PrepareViaIdentity
 ```
-Invoke-AzMlWorkspacePrepareWorkspaceNotebook -InputObject <IMachineLearningWorkspacesIdentity>
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-AzMlWorkspaceNotebook -InputObject <IMachineLearningWorkspacesIdentity> [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -17,11 +17,8 @@ If your intent is to create a new compute, do a GET first to verify that it does
 
 ```
 New-AzMlWorkspaceCompute -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-ComputeType <ComputeType>] [-Description <String>] [-DisableLocalAuth]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssignedIdentity <Hashtable>] [-Location <String>]
- [-ResourceId <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>]
- [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -Compute <IComputeResource> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,18 +68,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ComputeType
-The type of compute
+### -Compute
+Machine Learning compute object wrapped into ARM resource envelope.
+To construct, see NOTES section for COMPUTE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ComputeType
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IComputeResource
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -93,81 +91,6 @@ The credentials, account, tenant, and subscription used for communication with A
 Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-The description of the Machine Learning compute.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableLocalAuth
-Opt-out of local authentication and ensure customers can use only MSI and AAD exclusively for authentication.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IdentityType
-The type of the ResourceIdentity
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ResourceIdentityAssignment
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IdentityUserAssignedIdentity
-Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Location
-Specifies the location of the resource.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -222,100 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-ARM resource id of the underlying compute
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkuCapacity
-If the SKU supports scale out/in then the capacity integer should be included.
-If scale out/in is not possible for the resource this may be omitted.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkuFamily
-If the service has different generations of hardware, for the same SKU, then that can be captured here.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkuName
-The name of the SKU.
-Ex - P3.
-It is typically a letter+number code
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkuSize
-The SKU size.
-When the name field is the combination of tier and some other value, this would be the standalone code.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SkuTier
-This field is required to be implemented by the Resource Provider if the service has more than one tier, but is not required on a PUT.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.SkuTier
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SubscriptionId
 The ID of the target subscription.
 
@@ -327,21 +156,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tag
-Contains resource tags defined as key/value pairs.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -397,6 +211,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IComputeResource
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IComputeResource
@@ -404,6 +220,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+COMPUTE <IComputeResource>: Machine Learning compute object wrapped into ARM resource envelope.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+  - `[ComputeType <ComputeType?>]`: The type of compute
+  - `[Description <String>]`: The description of the Machine Learning compute.
+  - `[DisableLocalAuth <Boolean?>]`: Opt-out of local authentication and ensure customers can use only MSI and AAD exclusively for authentication.
+  - `[ResourceId <String>]`: ARM resource id of the underlying compute
+  - `[AzureAsyncOperation <String>]`: 
+  - `[IdentityType <ResourceIdentityAssignment?>]`: The type of the ResourceIdentity
+  - `[IdentityUserAssignedIdentity <IResourceIdentityUserAssignedIdentities>]`: Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
+    - `[(Any) <IUserAssignedIdentityMeta>]`: This indicates any property can be added to this object.
+  - `[Location <String>]`: Specifies the location of the resource.
+  - `[SkuCapacity <Int32?>]`: If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted.
+  - `[SkuFamily <String>]`: If the service has different generations of hardware, for the same SKU, then that can be captured here.
+  - `[SkuName <String>]`: The name of the SKU. Ex - P3. It is typically a letter+number code
+  - `[SkuSize <String>]`: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code. 
+  - `[SkuTier <SkuTier?>]`: This field is required to be implemented by the Resource Provider if the service has more than one tier, but is not required on a PUT.
+  - `[Tag <IComputeResourceTags>]`: Contains resource tags defined as key/value pairs.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

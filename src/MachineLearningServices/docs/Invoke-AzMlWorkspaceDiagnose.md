@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/invoke-azmlworkspacediagnoseworkspace
+online version: https://docs.microsoft.com/powershell/module/az.machinelearningworkspaces/invoke-azmlworkspacediagnose
 schema: 2.0.0
 ---
 
-# Invoke-AzMlWorkspaceDiagnoseWorkspace
+# Invoke-AzMlWorkspaceDiagnose
 
 ## SYNOPSIS
 Diagnose workspace setup issue.
@@ -14,8 +14,8 @@ Diagnose workspace setup issue.
 
 ### DiagnoseExpanded (Default)
 ```
-Invoke-AzMlWorkspaceDiagnoseWorkspace -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-ValueApplicationInsight <Hashtable>] [-ValueContainerRegistry <Hashtable>]
+Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String>]
+ [-ValueApplicationInsight <Hashtable>] [-ValueContainerRegistry <Hashtable>]
  [-ValueDnsResolution <Hashtable>] [-ValueKeyVault <Hashtable>] [-ValueNsg <Hashtable>]
  [-ValueOthers <Hashtable>] [-ValueResourceLock <Hashtable>] [-ValueStorageAccount <Hashtable>]
  [-ValueUdr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
@@ -24,21 +24,21 @@ Invoke-AzMlWorkspaceDiagnoseWorkspace -ResourceGroupName <String> -WorkspaceName
 
 ### Diagnose
 ```
-Invoke-AzMlWorkspaceDiagnoseWorkspace -ResourceGroupName <String> -WorkspaceName <String>
+Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -WorkspaceName <String>
  -Parameter <IDiagnoseWorkspaceParameters> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob]
  [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiagnoseViaIdentity
 ```
-Invoke-AzMlWorkspaceDiagnoseWorkspace -InputObject <IMachineLearningWorkspacesIdentity>
+Invoke-AzMlWorkspaceDiagnose -InputObject <IMachineLearningWorkspacesIdentity>
  -Parameter <IDiagnoseWorkspaceParameters> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiagnoseViaIdentityExpanded
 ```
-Invoke-AzMlWorkspaceDiagnoseWorkspace -InputObject <IMachineLearningWorkspacesIdentity>
+Invoke-AzMlWorkspaceDiagnose -InputObject <IMachineLearningWorkspacesIdentity>
  [-ValueApplicationInsight <Hashtable>] [-ValueContainerRegistry <Hashtable>]
  [-ValueDnsResolution <Hashtable>] [-ValueKeyVault <Hashtable>] [-ValueNsg <Hashtable>]
  [-ValueOthers <Hashtable>] [-ValueResourceLock <Hashtable>] [-ValueStorageAccount <Hashtable>]

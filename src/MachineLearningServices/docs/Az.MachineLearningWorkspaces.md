@@ -121,18 +121,29 @@ Called by Client (Portal, CLI, etc) to get a list of all external outbound depen
 ### [Get-AzMlWorkspaceStorageAccountKey](Get-AzMlWorkspaceStorageAccountKey.md)
 List storage account keys of a workspace.
 
-### [Invoke-AzMlWorkspaceDiagnoseWorkspace](Invoke-AzMlWorkspaceDiagnoseWorkspace.md)
+### [Invoke-AzMlWorkspaceDiagnose](Invoke-AzMlWorkspaceDiagnose.md)
 Diagnose workspace setup issue.
 
-### [Invoke-AzMlWorkspacePrepareWorkspaceNotebook](Invoke-AzMlWorkspacePrepareWorkspaceNotebook.md)
+### [Invoke-AzMlWorkspaceNotebook](Invoke-AzMlWorkspaceNotebook.md)
 Prepare a notebook.
-
-### [Invoke-AzMlWorkspaceResyncWorkspaceKey](Invoke-AzMlWorkspaceResyncWorkspaceKey.md)
-Resync all the keys associated with this workspace.
-This includes keys for the storage account, app insights and password for container registry
 
 ### [New-AzMlWorkspace](New-AzMlWorkspace.md)
 Creates or updates a workspace with the specified parameters.
+
+### [New-AzMLWorkspaceAmlComputeObject](New-AzMLWorkspaceAmlComputeObject.md)
+Create an in-memory object for AmlCompute.
+
+### [New-AzMLWorkspaceAzureBlobDatastoreObject](New-AzMLWorkspaceAzureBlobDatastoreObject.md)
+Create an in-memory object for AzureBlobDatastore.
+
+### [New-AzMLWorkspaceAzureDataLakeGen1DatastoreObject](New-AzMLWorkspaceAzureDataLakeGen1DatastoreObject.md)
+Create an in-memory object for AzureDataLakeGen1Datastore.
+
+### [New-AzMLWorkspaceAzureDataLakeGen2DatastoreObject](New-AzMLWorkspaceAzureDataLakeGen2DatastoreObject.md)
+Create an in-memory object for AzureDataLakeGen2Datastore.
+
+### [New-AzMLWorkspaceAzureFileDatastoreObject](New-AzMLWorkspaceAzureFileDatastoreObject.md)
+Create an in-memory object for AzureFileDatastore.
 
 ### [New-AzMlWorkspaceBatchDeployment](New-AzMlWorkspaceBatchDeployment.md)
 Creates/updates a batch inference deployment (asynchronous).
@@ -146,6 +157,9 @@ Create or update container.
 ### [New-AzMlWorkspaceCodeVersion](New-AzMlWorkspaceCodeVersion.md)
 Create or update version.
 
+### [New-AzMLWorkspaceCommandJobObject](New-AzMLWorkspaceCommandJobObject.md)
+Create an in-memory object for CommandJob.
+
 ### [New-AzMlWorkspaceComponentContainer](New-AzMlWorkspaceComponentContainer.md)
 Create or update container.
 
@@ -157,6 +171,9 @@ Creates or updates compute.
 This call will overwrite a compute if it exists.
 This is a nonrecoverable operation.
 If your intent is to create a new compute, do a GET first to verify that it does not exist yet.
+
+### [New-AzMLWorkspaceComputeInstanceObject](New-AzMLWorkspaceComputeInstanceObject.md)
+Create an in-memory object for ComputeInstance.
 
 ### [New-AzMlWorkspaceConnection](New-AzMlWorkspaceConnection.md)
 Add a new workspace connection.
@@ -193,6 +210,12 @@ Create or update Online Endpoint (asynchronous).
 
 ### [New-AzMlWorkspaceOnlineEndpointKey](New-AzMlWorkspaceOnlineEndpointKey.md)
 Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asynchronous).
+
+### [New-AzMLWorkspacePipelineJobObject](New-AzMLWorkspacePipelineJobObject.md)
+Create an in-memory object for PipelineJob.
+
+### [New-AzMLWorkspaceSweepJobObject](New-AzMLWorkspaceSweepJobObject.md)
+Create an in-memory object for SweepJob.
 
 ### [Remove-AzMlWorkspace](Remove-AzMlWorkspace.md)
 Deletes a machine learning workspace.
@@ -257,12 +280,6 @@ Posts a restart action to a compute instance
 ### [Set-AzMlWorkspace](Set-AzMlWorkspace.md)
 Creates or updates a workspace with the specified parameters.
 
-### [Set-AzMlWorkspaceBatchDeployment](Set-AzMlWorkspaceBatchDeployment.md)
-Creates/updates a batch inference deployment (asynchronous).
-
-### [Set-AzMlWorkspaceBatchEndpoint](Set-AzMlWorkspaceBatchEndpoint.md)
-Creates a batch inference endpoint (asynchronous).
-
 ### [Set-AzMlWorkspaceCodeContainer](Set-AzMlWorkspaceCodeContainer.md)
 Create or update container.
 
@@ -274,12 +291,6 @@ Create or update container.
 
 ### [Set-AzMlWorkspaceComponentVersion](Set-AzMlWorkspaceComponentVersion.md)
 Create or update version.
-
-### [Set-AzMlWorkspaceCompute](Set-AzMlWorkspaceCompute.md)
-Creates or updates compute.
-This call will overwrite a compute if it exists.
-This is a nonrecoverable operation.
-If your intent is to create a new compute, do a GET first to verify that it does not exist yet.
 
 ### [Set-AzMlWorkspaceDatasetContainer](Set-AzMlWorkspaceDatasetContainer.md)
 Create or update container.
@@ -305,12 +316,6 @@ Create or update container.
 ### [Set-AzMlWorkspaceModelVersion](Set-AzMlWorkspaceModelVersion.md)
 Create or update version.
 
-### [Set-AzMlWorkspaceOnlineDeployment](Set-AzMlWorkspaceOnlineDeployment.md)
-Create or update Inference Endpoint Deployment (asynchronous).
-
-### [Set-AzMlWorkspaceOnlineEndpoint](Set-AzMlWorkspaceOnlineEndpoint.md)
-Create or update Online Endpoint (asynchronous).
-
 ### [Start-AzMlWorkspaceCompute](Start-AzMlWorkspaceCompute.md)
 Posts a start action to a compute instance
 
@@ -319,6 +324,10 @@ Posts a stop action to a compute instance
 
 ### [Stop-AzMlWorkspaceJob](Stop-AzMlWorkspaceJob.md)
 Cancels a Job.
+
+### [Sync-AzMlWorkspaceKey](Sync-AzMlWorkspaceKey.md)
+Resync all the keys associated with this workspace.
+This includes keys for the storage account, app insights and password for container registry
 
 ### [Update-AzMLServiceQuota](Update-AzMLServiceQuota.md)
 Update quota for each VM family in workspace.
