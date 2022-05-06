@@ -166,12 +166,6 @@ Create or update container.
 ### [New-AzMlWorkspaceComponentVersion](New-AzMlWorkspaceComponentVersion.md)
 Create or update version.
 
-### [New-AzMlWorkspaceCompute](New-AzMlWorkspaceCompute.md)
-Creates or updates compute.
-This call will overwrite a compute if it exists.
-This is a nonrecoverable operation.
-If your intent is to create a new compute, do a GET first to verify that it does not exist yet.
-
 ### [New-AzMLWorkspaceComputeInstanceObject](New-AzMLWorkspaceComputeInstanceObject.md)
 Create an in-memory object for ComputeInstance.
 
@@ -184,17 +178,11 @@ Create or update container.
 ### [New-AzMlWorkspaceDatasetVersion](New-AzMlWorkspaceDatasetVersion.md)
 Create or update version.
 
-### [New-AzMlWorkspaceDatastore](New-AzMlWorkspaceDatastore.md)
-Create or update datastore.
-
 ### [New-AzMlWorkspaceEnvironmentContainer](New-AzMlWorkspaceEnvironmentContainer.md)
 Create or update container.
 
 ### [New-AzMlWorkspaceEnvironmentVersion](New-AzMlWorkspaceEnvironmentVersion.md)
 Creates or updates an EnvironmentVersion.
-
-### [New-AzMlWorkspaceJob](New-AzMlWorkspaceJob.md)
-Creates and executes a Job.
 
 ### [New-AzMlWorkspaceModelContainer](New-AzMlWorkspaceModelContainer.md)
 Create or update container.

@@ -14,17 +14,16 @@ Creates or updates a workspace with the specified parameters.
 
 ```
 Set-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-AllowPublicAccessWhenBehindVnet] [-ApplicationInsight <String>] [-ContainerRegistry <String>]
+ [-AllowPublicAccessWhenBehindVnet] [-ApplicationInsightId <String>] [-ContainerRegistryId <String>]
  [-CosmoDbCollectionsThroughput <Int32>] [-Description <String>] [-DiscoveryUrl <String>]
- [-EncryptionStatus <EncryptionStatus>] [-FriendlyName <String>] [-HbiWorkspace]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssignedIdentity <Hashtable>]
- [-ImageBuildCompute <String>] [-KeyVault <String>] [-KeyVaultPropertyIdentityClientId <String>]
- [-KeyVaultPropertyKeyIdentifier <String>] [-KeyVaultPropertyKeyVaultArmId <String>] [-Location <String>]
- [-PrimaryUserAssignedIdentity <String>] [-PropertiesEncryptionIdentityUserAssignedIdentity <String>]
- [-PublicNetworkAccess <PublicNetworkAccess>] [-SharedPrivateLinkResource <ISharedPrivateLinkResource[]>]
- [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>]
- [-StorageAccount <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-EncryptionStatus <EncryptionStatus>] [-EncryptionUserAssignedIdentity <String>] [-FriendlyName <String>]
+ [-HbiWorkspace] [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>]
+ [-ImageBuildCompute <String>] [-KeyVaultArmId <String>] [-KeyVaultId <String>]
+ [-KeyVaultIdentityClientId <String>] [-KeyVaultKeyIdentifier <String>] [-Location <String>]
+ [-PrimaryUserAssignedIdentity <String>] [-PublicNetworkAccess <PublicNetworkAccess>]
+ [-SharedPrivateLinkResource <ISharedPrivateLinkResource[]>] [-SkuCapacity <Int32>] [-SkuFamily <String>]
+ [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-StorageAccountId <String>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +70,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ApplicationInsight
+### -ApplicationInsightId
 ARM id of the application insights associated with this workspace.
 
 ```yaml
@@ -101,7 +100,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContainerRegistry
+### -ContainerRegistryId
 ARM id of the container registry associated with this workspace.
 
 ```yaml
@@ -191,6 +190,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EncryptionUserAssignedIdentity
+The ArmId of the user assigned identity that will be used to access the customer managed key vault
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FriendlyName
 The friendly name for this workspace.
 This name in mutable
@@ -237,7 +251,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
+### -IdentityUserAssigned
 Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
 
 ```yaml
@@ -267,7 +281,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -KeyVault
+### -KeyVaultArmId
+The ArmId of the keyVault where the customer owned encryption key is present.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyVaultId
 ARM id of the key vault associated with this workspace.
 This cannot be changed once the workspace has been created
 
@@ -283,7 +312,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -KeyVaultPropertyIdentityClientId
+### -KeyVaultIdentityClientId
 For future use - The client id of the identity which will be used to access key vault.
 
 ```yaml
@@ -298,23 +327,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -KeyVaultPropertyKeyIdentifier
+### -KeyVaultKeyIdentifier
 Key vault uri to access the encryption key.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyVaultPropertyKeyVaultArmId
-The ArmId of the keyVault where the customer owned encryption key is present.
 
 ```yaml
 Type: System.String
@@ -375,21 +389,6 @@ Accept wildcard characters: False
 
 ### -PrimaryUserAssignedIdentity
 The user assigned identity resource id that represents the workspace identity.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PropertiesEncryptionIdentityUserAssignedIdentity
-The ArmId of the user assigned identity that will be used to access the customer managed key vault
 
 ```yaml
 Type: System.String
@@ -529,7 +528,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StorageAccount
+### -StorageAccountId
 ARM id of the storage account associated with this workspace.
 This cannot be changed once the workspace has been created
 

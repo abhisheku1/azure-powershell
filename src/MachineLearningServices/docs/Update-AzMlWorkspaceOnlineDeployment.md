@@ -16,7 +16,7 @@ Update Online Deployment (asynchronous).
 ```
 Update-AzMlWorkspaceOnlineDeployment -EndpointName <String> -Name <String> -ResourceGroupName <String>
  -WorkspaceName <String> [-SubscriptionId <String>] [-EndpointComputeType <EndpointComputeType>]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>]
+ [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>] [-Kind <String>]
  [-Location <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>]
  [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -26,7 +26,7 @@ Update-AzMlWorkspaceOnlineDeployment -EndpointName <String> -Name <String> -Reso
 ```
 Update-AzMlWorkspaceOnlineDeployment -InputObject <IMachineLearningWorkspacesIdentity>
  [-EndpointComputeType <EndpointComputeType>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
+ [-IdentityUserAssigned <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
  [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -135,7 +135,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
+### -IdentityUserAssigned
 Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
 
 ```yaml

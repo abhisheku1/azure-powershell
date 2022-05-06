@@ -18,7 +18,7 @@ Update-AzMlWorkspaceBatchDeployment -EndpointName <String> -Name <String> -Resou
  -WorkspaceName <String> [-SubscriptionId <String>] [-CodeConfigurationCodeId <String>]
  [-CodeConfigurationScoringScript <String>] [-Compute <String>] [-Description <String>]
  [-EnvironmentId <String>] [-EnvironmentVariable <Hashtable>] [-ErrorThreshold <Int32>]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>]
+ [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>] [-Kind <String>]
  [-Location <String>] [-LoggingLevel <BatchLoggingLevel>] [-MaxConcurrencyPerInstance <Int32>]
  [-MiniBatchSize <Int64>] [-ModelReferenceType <ReferenceType>] [-OutputAction <BatchOutputAction>]
  [-OutputFileName <String>] [-PartialBatchDeploymentProperty <Hashtable>] [-RetrySettingMaxRetry <Int32>]
@@ -32,14 +32,13 @@ Update-AzMlWorkspaceBatchDeployment -EndpointName <String> -Name <String> -Resou
 Update-AzMlWorkspaceBatchDeployment -InputObject <IMachineLearningWorkspacesIdentity>
  [-CodeConfigurationCodeId <String>] [-CodeConfigurationScoringScript <String>] [-Compute <String>]
  [-Description <String>] [-EnvironmentId <String>] [-EnvironmentVariable <Hashtable>]
- [-ErrorThreshold <Int32>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>] [-Location <String>]
- [-LoggingLevel <BatchLoggingLevel>] [-MaxConcurrencyPerInstance <Int32>] [-MiniBatchSize <Int64>]
- [-ModelReferenceType <ReferenceType>] [-OutputAction <BatchOutputAction>] [-OutputFileName <String>]
- [-PartialBatchDeploymentProperty <Hashtable>] [-RetrySettingMaxRetry <Int32>]
- [-RetrySettingTimeout <TimeSpan>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>]
- [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ErrorThreshold <Int32>] [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>]
+ [-Kind <String>] [-Location <String>] [-LoggingLevel <BatchLoggingLevel>]
+ [-MaxConcurrencyPerInstance <Int32>] [-MiniBatchSize <Int64>] [-ModelReferenceType <ReferenceType>]
+ [-OutputAction <BatchOutputAction>] [-OutputFileName <String>] [-PartialBatchDeploymentProperty <Hashtable>]
+ [-RetrySettingMaxRetry <Int32>] [-RetrySettingTimeout <TimeSpan>] [-SkuCapacity <Int32>]
+ [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -239,7 +238,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
+### -IdentityUserAssigned
 Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
 
 ```yaml

@@ -5,48 +5,36 @@ swagger:
 - path: https://github.com/zhaomuzhi/azure-rest-api-specs/blob/newVersion20211001/specification/machinelearning/resource-manager/Microsoft.MachineLearning/stable/2021-10-01/machineLearningServices.json#L68
 - example: https://github.com/zhaomuzhi/azure-rest-api-specs/tree/newVersion20211001/specification/machinelearning/resource-manager/Microsoft.MachineLearning/stable/2021-10-01/examples/Workspace
 
-```
-New-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-AllowPublicAccessWhenBehindVnet] [-ApplicationInsight <String>] [-ContainerRegistry <String>]
- [-CosmoDbCollectionsThroughput <Int32>] [-Description <String>] [-DiscoveryUrl <String>]
- [-EncryptionStatus <EncryptionStatus>] [-FriendlyName <String>] [-HbiWorkspace]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssignedIdentity <Hashtable>]
- [-ImageBuildCompute <String>] [-KeyVault <String>] [-KeyVaultPropertyIdentityClientId <String>]
- [-KeyVaultPropertyKeyIdentifier <String>] [-KeyVaultPropertyKeyVaultArmId <String>] [-Location <String>]
- [-PrimaryUserAssignedIdentity <String>] [-PropertiesEncryptionIdentityUserAssignedIdentity <String>]
- [-PublicNetworkAccess <PublicNetworkAccess>] [-SharedPrivateLinkResource <ISharedPrivateLinkResource[]>]
- [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>]
- [-StorageAccount <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
 cmdlet:
 - Location: to be mantory
-- ApplicationInsight: ApplicationInsightId
+- ApplicationInsight: ApplicationInsightId and mantory
 - ContainerRegistry: ContainerRegistryId
-- KeyVault: KeyVaultId
+- KeyVault: KeyVaultId and mantory
 - KeyVaultPropertyIdentityClientId: KeyVaultIdentityClientId
 - KeyVaultPropertyKeyIdentifier: KeyVaultKeyIdentifier
 - KeyVaultPropertyKeyVaultArmId: KeyVaultArmId
 - PropertiesEncryptionIdentityUserAssignedIdentity:EncryptionUserAssignedIdentity
-- StorageAccount: StorageAccountId
+- StorageAccount: StorageAccountId and mantory
+- IdentityUserAssignedIdentity: IdentityUserAssigned
 - SharedPrivateLinkResource: []
 
 request:
-```pwsh
-New-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-pwsh01 -Location eastus -Debug
+```powershell
+# ApplicationInsights, KeyVault, and StorageAccount, these resources are required. Portal and cli generate them automatically
+New-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-pwsh01 -Location eastus -ApplicationInsightId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/insightsmlworkspace" -KeyVaultId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/kmlworkspace" -StorageAccountId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/storagemlworkspace01" -IdentityType 'SystemAssigned'  -Debug
 ```
 ```json
-DEBUG: ============================ HTTP REQUEST ============================
+============================ HTTP REQUEST ============================
 
+HTTP Method:
 PUT
 
 Absolute Uri:
 https://management.azure.com/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-pwsh01?api-version=2021-10-01
 
 Headers:
-x-ms-unique-id                : 3
-x-ms-client-request-id        : 28e34ec6-8bea-4b34-8ec2-6862b7fb9f73
+x-ms-unique-id                : 5
+x-ms-client-request-id        : 05aa6860-a32c-4543-920e-43275cdb4917
 CommandName                   : New-AzMlWorkspace
 FullCommandName               : New-AzMlWorkspace_CreateExpanded
 ParameterSetName              : __AllParameterSets
@@ -54,128 +42,89 @@ User-Agent                    : AzurePowershell/v0.0.0,Az.MachineLearningWorkspa
 
 Body:
 {
-  "location": "eastus"
-}
-
-DEBUG: BeforeCall:
-DEBUG: ============================ HTTP RESPONSE ============================
-
-Status Code:
-InternalServerError
-
-Headers:
-Cache-Control                 : no-cache
-Pragma                        : no-cache
-x-ms-failure-cause            : service
-Request-Context               : appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d
-x-ms-response-type            : error
-Strict-Transport-Security     : max-age=31536000; includeSubDomains
-X-Content-Type-Options        : nosniff
-x-aml-cluster                 : vienna-eastus-01
-x-request-time                : 0.244
-x-ms-ratelimit-remaining-subscription-writes: 1198
-x-ms-request-id               : eedfc2de-9568-4cc4-87d3-5803a7968a18
-x-ms-correlation-request-id   : eedfc2de-9568-4cc4-87d3-5803a7968a18
-x-ms-routing-request-id       : SOUTHEASTASIA:20220411T012809Z:eedfc2de-9568-4cc4-87d3-5803a7968a18
-    "severity": null,
-    "message": "Object reference not set to an instance of an object.",
-    "messageFormat": null,
-    "messageParameters": null,
-    "referenceCode": null,
-    "detailsUri": null,
-    "target": null,
-    "details": [],
-    "innerError": null,
-    "debugInfo": null,
-    "additionalInfo": null
-  },
-  "correlation": {
-    "operation": "b74ff0d952fff84e8833e1b1223cfbd8",
-    "request": "1fe6cc490ce24d8d"
-  },
-  "environment": "eastus",
-  "location": "eastus",
-  "time": "2022-04-11T09:28:09.8761147+08:00",
-  "componentName": "account-rp"
-}
-
-Work Body:
-{
   "properties": {
-    "description": "",
-    "friendlyName": "mlworkspace-portal02",
-    "keyVault": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/mlworkspacepor3438989530",
-    "applicationInsights": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/mlworkspacepor4743143400",
-    "containerRegistry": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.containerregistry/registries/mlcontainerregistry02",
-    "storageAccount": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/mlworkspacepor4057722609",
-    "discoveryUrl": "https://eastus.api.azureml.ms/discovery",
-    "hbiWorkspace": false,
-    "publicNetworkAccess": "Enabled"
+    "keyVault": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/kmlworkspace",
+    "applicationInsights": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/insightsmlworkspace",
+    "storageAccount": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/storagemlworkspace01"
   },
   "identity": {
     "type": "SystemAssigned"
   },
-  "sku": {
-    "name": "Basic",
-    "tier": "Basic"
-  },
   "location": "eastus"
 }
-
-Response Body:
-{
-  "id": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-portal02",
-  "name": "mlworkspace-portal02",
-  "type": "Microsoft.MachineLearningServices/workspaces",
-  "location": "eastus",
-  "tags": {},
-  "etag": null,
-  "properties": {
-    "friendlyName": "mlworkspace-portal02",
-    "description": "",
-    "storageAccount": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/mlworkspacepor4057722609",
-    "keyVault": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/mlworkspacepor3438989530",
-    "applicationInsights": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/mlworkspacepor4743143400",
-    "hbiWorkspace": false,
-    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-    "imageBuildCompute": null,
-    "provisioningState": "Succeeded",
-    "containerRegistry": "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.containerregistry/registries/mlcontainerregistry02",
-    "notebookInfo": {
-      "resourceId": "6089789c91a74be7ba9e235e9fed24b0",
-      "fqdn": "ml-mlworkspace-port-eastus-03ce50c0-2e18-48ad-9e4a-ca338f571072.notebooks.azure.net",
-      "isPrivateLinkEnabled": false,
-      "notebookPreparationError": null
-    },
-    "storageHnsEnabled": false,
-    "workspaceId": "03ce50c0-2e18-48ad-9e4a-ca338f571072",
-    "linkedModelInventoryArmId": null,
-    "privateLinkCount": 0,
-    "publicNetworkAccess": "Enabled",
-    "discoveryUrl": "https://eastus.api.azureml.ms/discovery",
-    "mlFlowTrackingUri": "azureml://eastus.api.azureml.ms/mlflow/v1.0/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-portal02",
-    "sdkTelemetryAppInsightsKey": "f5784ccd-178d-4ecc-9998-b05841b44ae9",
-    "sasGetterUri": null
-  },
-  "identity": {
-    "type": "SystemAssigned",
-    "principalId": "0e0ab400-1387-4bd2-a2ab-9d6ff0ec6466",
-    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-  },
-  "sku": {
-    "name": "Basic",
-    "tier": "Basic"
-  },
-  "systemData": {
-    "createdAt": "2022-04-11T01:28:08.1553574Z",
-    "createdBy": "v-diya@microsoft.com",
-    "createdByType": "User",
-    "lastModifiedAt": "2022-04-11T01:35:39.6854637Z",
-    "lastModifiedBy": "v-diya@microsoft.com",
-    "lastModifiedByType": "User"
-  }
-}
 ```
+## Get-AzMlWorkspace
+```powershell
+Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-pwsh01 | fl                                                                                                                                                                                                                                                                                                                                     AllowPublicAccessWhenBehindVnet                  : 
+ApplicationInsight                               : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/insightsmlworkspace
+ContainerRegistry                                :
+CosmoDbCollectionsThroughput                     :
+Description                                      :
+DiscoveryUrl                                     : https://eastus.api.azureml.ms/discovery
+EncryptionStatus                                 :
+FriendlyName                                     :
+HbiWorkspace                                     : False
+Id                                               : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-pwsh01
+IdentityPrincipalId                              : 3f252394-0f79-4a5f-abb6-82c084775afd
+IdentityTenantId                                 : 72f988bf-86f1-41af-91ab-2d7cd011db47
+IdentityType                                     : SystemAssigned
+IdentityUserAssignedIdentity                     : {
+                                                   }
+ImageBuildCompute                                :
+KeyVault                                         : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/kmlworkspace
+KeyVaultPropertyIdentityClientId                 :
+KeyVaultPropertyKeyIdentifier                    :
+KeyVaultPropertyKeyVaultArmId                    :
+Location                                         : eastus
+MlFlowTrackingUri                                : azureml://eastus.api.azureml.ms/mlflow/v1.0/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-pwsh01
+Name                                             : mlworkspace-pwsh01
+NotebookInfoFqdn                                 : ml-mlworkspace-pwsh-eastus-b4496e11-21c7-4f5a-bb25-b410e8da0c52.notebooks.azure.net
+NotebookInfoResourceId                           : 3631a7a1d6444d49a71139bdfa5fe8da
+NotebookPreparationErrorMessage                  :
+NotebookPreparationErrorStatusCode               :
+PrimaryUserAssignedIdentity                      :
+PrivateEndpointConnection                        :
+PrivateLinkCount                                 : 0
+PropertiesEncryptionIdentityUserAssignedIdentity :
+ProvisioningState                                : Succeeded
+PublicNetworkAccess                              : Enabled
+ResourceGroupName                                : ml-rg-test
+ServiceProvisionedResourceGroup                  :
+SharedPrivateLinkResource                        :
+SkuCapacity                                      :
+SkuFamily                                        :
+SkuName                                          : Basic
+SkuSize                                          :
+SkuTier                                          : Basic
+StorageAccount                                   : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/storagemlworkspace01
+StorageHnsEnabled                                : False
+SystemData                                       : {
+                                                     "createdAt": "2022-04-14T08:39:51.7821208Z",
+                                                     "lastModifiedBy": "v-diya@microsoft.com",
+                                                     "lastModifiedByType": "User",
+                                                     "lastModifiedAt": "2022-04-14T08:39:48.7509298Z"
+                                                   }
+SystemDataCreatedAt                              : 4/14/2022 8:39:51 AM
+SystemDataCreatedBy                              :
+SystemDataCreatedByType                          :
+SystemDataLastModifiedAt                         : 4/14/2022 8:39:48 AM
+SystemDataLastModifiedBy                         : v-diya@microsoft.com
+SystemDataLastModifiedByType                     : User
+Tag                                              : {
+                                                   }
+TenantId                                         : 72f988bf-86f1-41af-91ab-2d7cd011db47
+Type                                             : Microsoft.MachineLearningServices/workspaces
+WorkspaceId                                      : b4496e11-21c7-4f5a-bb25-b410e8da0c52
+```
+
+# Dataset
+## New-AzMlWorkspaceDatasetVersion
+swagger:
+- path:
+- example:
+
+cmdlet:
+-ResourceBaseProperty: remove?
 
 # Job
 ## Create Job requirement
@@ -192,9 +141,9 @@ Response Body:
 # Datastore operations
 ## Get-AzMlWorkspaceDatastoreSecret
 ```powershell
-PS [Az.MachineLearningWorkspaces]> Get-AzMlWorkspaceDatastoreSecret -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceblobstore
+Get-AzMlWorkspaceDatastoreSecret -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceblobstore
 AccountKey
-PS [Az.MachineLearningWorkspaces]> Get-AzMlWorkspaceDatastoreSecret -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceblobstore -debug
+Get-AzMlWorkspaceDatastoreSecret -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceblobstore -debug
 
 DEBUG: 11:02:33 AM - GetAzureRMContextCommand end processing.
 DEBUG: [CmdletBeginProcessing]: Starting command

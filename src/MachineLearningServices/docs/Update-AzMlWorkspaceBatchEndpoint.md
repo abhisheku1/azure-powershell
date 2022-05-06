@@ -16,7 +16,7 @@ Update a batch inference endpoint (asynchronous).
 ```
 Update-AzMlWorkspaceBatchEndpoint -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  [-SubscriptionId <String>] [-DefaultDeploymentName <String>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
+ [-IdentityUserAssigned <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
  [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -25,7 +25,7 @@ Update-AzMlWorkspaceBatchEndpoint -Name <String> -ResourceGroupName <String> -Wo
 ```
 Update-AzMlWorkspaceBatchEndpoint -InputObject <IMachineLearningWorkspacesIdentity>
  [-DefaultDeploymentName <String>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
+ [-IdentityUserAssigned <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
  [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -119,7 +119,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
+### -IdentityUserAssigned
 Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
 
 ```yaml

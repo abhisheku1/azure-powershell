@@ -15,23 +15,23 @@ Updates a machine learning workspace with the specified parameters.
 ### UpdateExpanded (Default)
 ```
 Update-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-ApplicationInsight <String>] [-ContainerRegistry <String>] [-CosmoDbCollectionsThroughput <Int32>]
+ [-ApplicationInsightId <String>] [-ContainerRegistryId <String>] [-CosmoDbCollectionsThroughput <Int32>]
  [-Description <String>] [-FriendlyName <String>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-ImageBuildCompute <String>]
- [-PrimaryUserAssignedIdentity <String>] [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>]
- [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IdentityUserAssigned <Hashtable>] [-ImageBuildCompute <String>] [-PrimaryUserAssignedIdentity <String>]
+ [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>]
+ [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzMlWorkspace -InputObject <IMachineLearningWorkspacesIdentity> [-ApplicationInsight <String>]
- [-ContainerRegistry <String>] [-CosmoDbCollectionsThroughput <Int32>] [-Description <String>]
- [-FriendlyName <String>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-ImageBuildCompute <String>]
- [-PrimaryUserAssignedIdentity <String>] [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>]
- [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzMlWorkspace -InputObject <IMachineLearningWorkspacesIdentity> [-ApplicationInsightId <String>]
+ [-ContainerRegistryId <String>] [-CosmoDbCollectionsThroughput <Int32>] [-Description <String>]
+ [-FriendlyName <String>] [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>]
+ [-ImageBuildCompute <String>] [-PrimaryUserAssignedIdentity <String>]
+ [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>]
+ [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,7 +63,7 @@ Updates a machine learning workspace with the specified parameters.
 
 ## PARAMETERS
 
-### -ApplicationInsight
+### -ApplicationInsightId
 ARM id of the application insights associated with this workspace.
 
 ```yaml
@@ -93,7 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContainerRegistry
+### -ContainerRegistryId
 ARM id of the container registry associated with this workspace.
 
 ```yaml
@@ -183,7 +183,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
+### -IdentityUserAssigned
 Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
 
 ```yaml

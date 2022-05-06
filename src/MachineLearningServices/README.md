@@ -153,11 +153,72 @@ directive:
   #     subject: BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey
   #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
   #   remove: true
-  
   - where:
       variant: ^Update$|^UpdateViaIdentity$
     remove: true
 
+  # cutom workspace cmdlet
+  # workspace
+  - where:
+      verb: New
+      subject: ''
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+    
+  - where:
+      subject: ''
+      parameter-name: ApplicationInsight
+    set:
+      parameter-name: ApplicationInsightId
+
+  - where:
+      subject: ''
+      parameter-name: ContainerRegistry
+    set:
+      parameter-name: ContainerRegistryId
+
+  - where:
+      subject: ''
+      parameter-name: KeyVault
+    set:
+      parameter-name: KeyVaultId
+
+  - where:
+      subject: ''
+      parameter-name: KeyVaultPropertyIdentityClientId
+    set:
+      parameter-name: KeyVaultIdentityClientId
+
+  - where:
+      subject: ''
+      parameter-name: KeyVaultPropertyKeyIdentifier
+    set:
+      parameter-name: KeyVaultKeyIdentifier
+
+  - where:
+      subject: ''
+      parameter-name: KeyVaultPropertyKeyVaultArmId
+    set:
+      parameter-name: KeyVaultArmId
+
+  - where:
+      subject: ''
+      parameter-name: PropertiesEncryptionIdentityUserAssignedIdentity
+    set:
+      parameter-name: EncryptionUserAssignedIdentity
+
+  - where:
+      subject: ''
+      parameter-name: IdentityUserAssignedIdentity
+    set:
+      parameter-name: IdentityUserAssigned
+
+  - where:
+      subject: ''
+      parameter-name: StorageAccount
+    set:
+      parameter-name: StorageAccountId
+  # --------------------------
   - where:
       subject: ComputeKey|ComputeNode
       parameter-name: ComputeName
@@ -181,6 +242,8 @@ directive:
       parameter-name: EndpointName
     set:
       parameter-name: Name
+  
+  
   - no-inline:
     - PipelineJobComponentJobs
   - model-cmdlet:
