@@ -21,6 +21,9 @@ using System.Threading.Tasks;
 
 using Azure.Core;
 using Azure.Identity;
+#if true
+using Azure.Identity.BrokeredAuthentication;
+#endif
 
 using Hyak.Common;
 
@@ -46,10 +49,14 @@ namespace Microsoft.Azure.PowerShell.Authenticators
         {
             var interactiveParameters = parameters as InteractiveParameters;
             var onPremise = interactiveParameters.Environment.OnPremise;
-            //null instead of "organizations" should be passed to Azure.Identity to support MSA account 
+            //null instead of "organizations" should be passed to Azure.Identity to support MSA account
             var tenantId = onPremise ? AdfsTenant :
                 (string.Equals(parameters.TenantId, OrganizationsTenant, StringComparison.OrdinalIgnoreCase) ? null : parameters.TenantId);
             var tokenCacheProvider = interactiveParameters.TokenCacheProvider;
+#if DEBUG
+            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/orgnizations");
+            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/f686d426-8d16-42db-81b7-ab578e110ccd");
+#endif
             var resource = interactiveParameters.Environment.GetEndpoint(interactiveParameters.ResourceId) ?? interactiveParameters.ResourceId;
             var scopes = AuthenticationHelpers.GetScope(onPremise, resource);
             var clientId = AuthenticationHelpers.PowerShellClientId;
@@ -57,6 +64,16 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var requestContext = new TokenRequestContext(scopes);
             var authority = interactiveParameters.Environment.ActiveDirectoryAuthority;
 
+#if true
+            var options = new InteractiveBrowserCredentialBrokerOptions()
+            {
+                ClientId = clientId,
+                TenantId = tenantId,
+                TokenCachePersistenceOptions = tokenCacheProvider.GetTokenCachePersistenceOptions(),
+                AuthorityHost = new Uri(authority),
+                RedirectUri = GetReplyUrlForWAM(clientId),
+            };
+#else
             var options = new InteractiveBrowserCredentialOptions()
             {
                 ClientId = clientId,
@@ -66,6 +83,7 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 RedirectUri = GetReplyUrl(onPremise, interactiveParameters),
                 LoginHint = interactiveParameters.UserId,
             };
+#endif
             var browserCredential = new InteractiveBrowserCredential(options);
 
             TracingAdapter.Information($"{DateTime.Now:T} - [InteractiveUserAuthenticator] Calling InteractiveBrowserCredential.AuthenticateAsync with TenantId:'{options.TenantId}', Scopes:'{string.Join(",", scopes)}', AuthorityHost:'{options.AuthorityHost}', RedirectUri:'{options.RedirectUri}'");
@@ -78,12 +96,18 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 cancellationToken);
         }
 
+#if true
+        private Uri GetReplyUrlForWAM(string clientId)
+        {
+            return new Uri($"ms-appx-web://microsoft.aad.brokerplugin/{clientId}");
+        }
+#else
         private Uri GetReplyUrl(bool onPremise, InteractiveParameters interactiveParameters)
         {
             var port = GetReplyUrlPort(onPremise, interactiveParameters);
             return new Uri($"http://localhost:{port}");
         }
-
+#endif
         private int GetReplyUrlPort(bool onPremise, InteractiveParameters interactiveParameters)
         {
             int portStart = onPremise ? AdfsPortStart : AadPortStart;

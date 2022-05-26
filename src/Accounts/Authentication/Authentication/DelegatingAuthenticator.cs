@@ -12,7 +12,9 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+using Hyak.Common;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -68,6 +70,14 @@ namespace Microsoft.Azure.Commands.Common.Authentication
             }
 
             return false;
+        }
+
+        protected void GetAccounts(PowerShellTokenCacheProvider tcp, string authority = null)
+        {
+            // foreach (var account in tcp.ListAccounts(authority))
+            // {
+            //     TracingAdapter.Information(account.ToString());
+            // }
         }
     }
 }

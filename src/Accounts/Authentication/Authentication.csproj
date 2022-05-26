@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.6.0" />
+    <PackageReference Include="Azure.Identity" Version="1.7.0-alpha.20220504.1" />
   </ItemGroup>
 
   <ItemGroup>

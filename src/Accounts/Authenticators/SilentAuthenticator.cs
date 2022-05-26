@@ -21,7 +21,8 @@ using Azure.Identity;
 using Microsoft.Azure.PowerShell.Authenticators.Factories;
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
-
+using Azure.Identity.BrokeredAuthentication;
+using System.Diagnostics;
 
 namespace Microsoft.Azure.PowerShell.Authenticators
 {
@@ -37,15 +38,18 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var scopes = AuthenticationHelpers.GetScope(onPremise, resource);
             var authority = silentParameters.Environment.ActiveDirectoryAuthority;
             var tokenCacheProvider = silentParameters.TokenCacheProvider;
-            
+#if DEBUG
+            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/orgnizations");
+            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/f686d426-8d16-42db-81b7-ab578e110ccd");
+#endif
             AzureSession.Instance.TryGetComponent(nameof(AzureCredentialFactory), out AzureCredentialFactory azureCredentialFactory);
-            var options = new SharedTokenCacheCredentialOptions(tokenCacheProvider.GetTokenCachePersistenceOptions())
+            var options = new SharedTokenCacheCredentialBrokerOptions(tokenCacheProvider.GetTokenCachePersistenceOptions())
             {
                 EnableGuestTenantAuthentication = true,
                 ClientId = AuthenticationHelpers.PowerShellClientId,
                 Username = silentParameters.UserId,
                 AuthorityHost = new Uri(authority),
-                TenantId = tenantId,
+                TenantId = tenantId
             };
             var cacheCredential = azureCredentialFactory.CreateSharedTokenCacheCredentials(options);
             var requestContext = new TokenRequestContext(scopes);

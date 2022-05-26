@@ -80,7 +80,7 @@ namespace Microsoft.Azure.Commands.Common.Authentication
 
         public IEnumerable<IAccount> ListAccounts(string authority = null)
         {
-            TracingAdapter.Information(string.Format("[AuthenticationClientFactory] Calling GetAccountsAsync on {0}", authority ?? "AzureCloud"));
+            TracingAdapter.Information(string.Format("[PowerShellTokenCacheProvider] Calling GetAccountsAsync on {0}", authority ?? "AzureCloud"));
 
             return CreatePublicClient(authority: authority)
                     .GetAccountsAsync()
@@ -164,7 +164,8 @@ namespace Microsoft.Azure.Commands.Common.Authentication
 
         public virtual IPublicClientApplication CreatePublicClient(string authority = null)
         {
-            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId);
+            // todo: need WithBroker()?
+            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId).WithBroker();
 
             if(!string.IsNullOrEmpty(authority))
             {
