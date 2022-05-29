@@ -13,11 +13,12 @@ Create an in-memory object for PipelineJob.
 ## SYNTAX
 
 ```
-New-AzMLWorkspacePipelineJobObject -JobType <JobType> [-ComputeId <String>] [-Description <String>]
- [-DisplayName <String>] [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>]
- [-Input <IPipelineJobInputs>] [-IsArchived <Boolean>] [-Job <IPipelineJobJobs>]
- [-Output <IPipelineJobOutputs>] [-Property <IResourceBaseProperties>] [-Service <IJobBaseServices>]
- [-Setting <IAny>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
+New-AzMLWorkspacePipelineJobObject [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <IPipelineJobInputs>]
+ [-IsArchived <Boolean>] [-Job <IPipelineJobJobs>] [-Output <IPipelineJobOutputs>]
+ [-Property <IResourceBaseProperties>] [-ServiceEndpoint <String>] [-ServicePort <Int32>]
+ [-ServiceProperty <IJobServiceProperties>] [-ServiceType <String>] [-Setting <IAny>]
+ [-Tag <IResourceBaseTags>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -JobType
-[Required] Specifies the type of job.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Output
 Outputs for the pipeline job.
 To construct, see NOTES section for OUTPUT properties and create a hash table.
@@ -219,13 +205,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Service
-List of JobEndpoints.
-        For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-To construct, see NOTES section for SERVICE properties and create a hash table.
+### -ServiceEndpoint
+Url for endpoint.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseServices
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServicePort
+Port for endpoint.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceProperty
+Additional properties to set on the endpoint.
+To construct, see NOTES section for SERVICEPROPERTY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobServiceProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceType
+Endpoint type.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -298,8 +328,8 @@ OUTPUT <IPipelineJobOutputs>: Outputs for the pipeline job.
 PROPERTY <IResourceBaseProperties>: The asset property dictionary.
   - `[(Any) <String>]`: This indicates any property can be added to this object.
 
-SERVICE <IJobBaseServices>: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-  - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
+SERVICEPROPERTY <IJobServiceProperties>: Additional properties to set on the endpoint.
+  - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 TAG <IResourceBaseTags>: Tag dictionary. Tags can be added, removed, and updated.
   - `[(Any) <String>]`: This indicates any property can be added to this object.

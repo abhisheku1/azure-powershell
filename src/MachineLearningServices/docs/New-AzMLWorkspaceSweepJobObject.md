@@ -13,18 +13,19 @@ Create an in-memory object for SweepJob.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceSweepJobObject -JobType <JobType> -ObjectiveGoal <Goal> -ObjectivePrimaryMetric <String>
+New-AzMLWorkspaceSweepJobObject -ObjectiveGoal <Goal> -ObjectivePrimaryMetric <String>
  -SamplingAlgorithmType <SamplingAlgorithmType> -SearchSpace <IAny> -TrialCommand <String>
  -TrialEnvironmentId <String> [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
  [-DistributionType <DistributionType>] [-EarlyTerminationDelayEvaluation <Int32>]
  [-EarlyTerminationEvaluationInterval <Int32>] [-EarlyTerminationPolicyType <EarlyTerminationPolicyType>]
  [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <ISweepJobInputs>]
- [-IsArchived <Boolean>] [-LimitJobLimitsType <JobLimitsType>] [-LimitMaxConcurrentTrial <Int32>]
- [-LimitMaxTotalTrial <Int32>] [-LimitTimeout <TimeSpan>] [-LimitTrialTimeout <TimeSpan>]
- [-Output <ISweepJobOutputs>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
- [-ResourceInstanceType <String>] [-ResourceProperty <IResourceConfigurationProperties>]
- [-Service <IJobBaseServices>] [-Tag <IResourceBaseTags>] [-TrialCodeId <String>]
- [-TrialEnvironmentVariable <ITrialComponentEnvironmentVariables>] [<CommonParameters>]
+ [-IsArchived <Boolean>] [-LimitMaxConcurrentTrial <Int32>] [-LimitMaxTotalTrial <Int32>]
+ [-LimitTimeout <TimeSpan>] [-LimitTrialTimeout <TimeSpan>] [-Output <ISweepJobOutputs>]
+ [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>] [-ResourceInstanceType <String>]
+ [-ResourceProperty <IResourceConfigurationProperties>] [-ServiceEndpoint <String>] [-ServicePort <Int32>]
+ [-ServiceProperty <IJobServiceProperties>] [-ServiceType <String>] [-Tag <IResourceBaseTags>]
+ [-TrialCodeId <String>] [-TrialEnvironmentVariable <ITrialComponentEnvironmentVariables>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -213,36 +214,6 @@ Is the asset archived?.
 
 ```yaml
 Type: System.Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -JobType
-[Required] Specifies the type of job.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LimitJobLimitsType
-[Required] JobLimit type.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobLimitsType
 Parameter Sets: (All)
 Aliases:
 
@@ -453,13 +424,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Service
-List of JobEndpoints.
-        For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-To construct, see NOTES section for SERVICE properties and create a hash table.
+### -ServiceEndpoint
+Url for endpoint.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseServices
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServicePort
+Port for endpoint.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceProperty
+Additional properties to set on the endpoint.
+To construct, see NOTES section for SERVICEPROPERTY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobServiceProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceType
+Endpoint type.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -580,8 +595,8 @@ PROPERTY <IResourceBaseProperties>: The asset property dictionary.
 RESOURCEPROPERTY <IResourceConfigurationProperties>: Additional properties bag.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-SERVICE <IJobBaseServices>: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-  - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
+SERVICEPROPERTY <IJobServiceProperties>: Additional properties to set on the endpoint.
+  - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 TAG <IResourceBaseTags>: Tag dictionary. Tags can be added, removed, and updated.
   - `[(Any) <String>]`: This indicates any property can be added to this object.

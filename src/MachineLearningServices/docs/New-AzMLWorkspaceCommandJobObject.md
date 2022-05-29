@@ -13,14 +13,14 @@ Create an in-memory object for CommandJob.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> -JobType <JobType>
- [-CodeId <String>] [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
- [-DistributionType <DistributionType>] [-EnvironmentVariable <ICommandJobEnvironmentVariables>]
- [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <ICommandJobInputs>]
- [-IsArchived <Boolean>] [-LimitJobLimitsType <JobLimitsType>] [-LimitTimeout <TimeSpan>]
+New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> [-CodeId <String>]
+ [-ComputeId <String>] [-Description <String>] [-DisplayName <String>] [-DistributionType <DistributionType>]
+ [-EnvironmentVariable <Hashtable>] [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>]
+ [-Input <ICommandJobInputs>] [-IsArchived <Boolean>] [-LimitTimeout <TimeSpan>]
  [-Output <ICommandJobOutputs>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
  [-ResourceInstanceType <String>] [-ResourceProperty <IResourceConfigurationProperties>]
- [-Service <IJobBaseServices>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
+ [-ServiceEndpoint <String>] [-ServicePort <Int32>] [-ServiceProperty <IJobServiceProperties>]
+ [-ServiceType <String>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,10 +161,9 @@ Accept wildcard characters: False
 
 ### -EnvironmentVariable
 Environment variables included in the job.
-To construct, see NOTES section for ENVIRONMENTVARIABLE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobEnvironmentVariables
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -227,36 +226,6 @@ Is the asset archived?.
 
 ```yaml
 Type: System.Boolean
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -JobType
-[Required] Specifies the type of job.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LimitJobLimitsType
-[Required] JobLimit type.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobLimitsType
 Parameter Sets: (All)
 Aliases:
 
@@ -361,13 +330,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Service
-List of JobEndpoints.
-        For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-To construct, see NOTES section for SERVICE properties and create a hash table.
+### -ServiceEndpoint
+Url for endpoint.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseServices
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServicePort
+Port for endpoint.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceProperty
+Additional properties to set on the endpoint.
+To construct, see NOTES section for SERVICEPROPERTY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobServiceProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServiceType
+Endpoint type.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -413,9 +426,6 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ENVIRONMENTVARIABLE <ICommandJobEnvironmentVariables>: Environment variables included in the job.
-  - `[(Any) <String>]`: This indicates any property can be added to this object.
-
 INPUT <ICommandJobInputs>: Mapping of input data bindings used in the job.
   - `[(Any) <IJobInput>]`: This indicates any property can be added to this object.
 
@@ -428,8 +438,8 @@ PROPERTY <IResourceBaseProperties>: The asset property dictionary.
 RESOURCEPROPERTY <IResourceConfigurationProperties>: Additional properties bag.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-SERVICE <IJobBaseServices>: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-  - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
+SERVICEPROPERTY <IJobServiceProperties>: Additional properties to set on the endpoint.
+  - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 TAG <IResourceBaseTags>: Tag dictionary. Tags can be added, removed, and updated.
   - `[(Any) <String>]`: This indicates any property can be added to this object.

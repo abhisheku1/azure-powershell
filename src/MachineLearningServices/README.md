@@ -95,7 +95,6 @@ directive:
 
   - where:
       verb: Set
-      subject: BatchDeployment|BatchEndpoint|OnlineDeployment|OnlineEndpoint|Compute
     remove: true
 
   # Rmove unnecessary variant of the environment
@@ -180,11 +179,18 @@ directive:
       parameter-name: Property
     set:
       parameter-name: Datastore
-  # Costomization compute cmdlet 
+  # Costom compute cmdlet 
   - where:
       verb: New
       subject: Compute
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+
+  # Costom job cmdlet 
+  - where:
+      verb: New
+      subject: Job
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
 
   - where:
@@ -417,6 +423,8 @@ directive:
     - ServicePrincipalDatastoreCredentials
 # Compute
     - Compute
+# Job
+    - JobBase
     
   - model-cmdlet:
 # Compute type: 'AKS', 'Kubernetes', 'AmlCompute', 'ComputeInstance','DataFactory', 'VirtualMachine', 'HDInsight', 'Databricks', 'DataLakeAnalytics', 'SynapseSpark'
@@ -426,21 +434,21 @@ directive:
     # #--> New-AzMLWorkspaceComputeInstanceObject
     # - Aks 
     ##--> New-AzMLWorkspaceAksObject
-    - Kubernetes 
-    #--> New-AzMLWorkspaceKubernetesObject
-    - VirtualMachine 
-    #--> New-AzMLWorkspaceVirtualMachineObject
-    - HDInsight 
-    #--> New-AzMLWorkspaceHDInsightObject
-    - DataFactory 
-    #--> New-AzMLWorkspaceDataFactoryObject
-    - Databricks 
-    # --> New-AzMLWorkspaceDatabricksObject
-    - DataLakeAnalytics 
-    # --> New-AzMLWorkspaceDataLakeAnalyticsObject
-    - SynapseSpark 
-    # --> New-AzMLWorkspaceSynapseSparkObject
-    - ComputeStartStopSchedule
+    # - Kubernetes 
+    # #--> New-AzMLWorkspaceKubernetesObject
+    # - VirtualMachine 
+    # #--> New-AzMLWorkspaceVirtualMachineObject
+    # - HDInsight 
+    # #--> New-AzMLWorkspaceHDInsightObject
+    # - DataFactory 
+    # #--> New-AzMLWorkspaceDataFactoryObject
+    # - Databricks 
+    # # --> New-AzMLWorkspaceDatabricksObject
+    # - DataLakeAnalytics 
+    # # --> New-AzMLWorkspaceDataLakeAnalyticsObject
+    # - SynapseSpark 
+    # # --> New-AzMLWorkspaceSynapseSparkObject
+    # - ComputeStartStopSchedule
 # Datastore
     ## Datastore Type
     # - AzureBlobDatastore --> New-AzMLWorkspaceDatastoreBlobObject
@@ -454,7 +462,27 @@ directive:
     # - SasDatastoreCredentials --> New-AzMLWorkspaceDatastoreSasCredentialsObject
     # - ServicePrincipalDatastoreCredentials --> New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject
 # Job type
-    - CommandJob
-    - PipelineJob
-    - SweepJob
+    # - CommandJob
+    ## -> New-AzMLWorkspaceCommandJobObject
+    # - PipelineJob
+    # # --> New-AzMLWorkspacePipelineJobObject
+    # - SweepJob 
+    ## --> New-AzMLWorkspaceSweepJobObject
+# Job input and output
+    - CustomModelJobInput
+    - CustomModelJobOutput
+    - LiteralJobInput   
+    - MLFlowModelJobInput
+    - MLFlowModelJobOutput
+    - MLTableJobInput
+    - MLTableJobOutput
+    - TritonModelJobInput
+    - TritonModelJobOutput
+    - UriFileJobInput
+    - UriFileJobOutput
+    - UriFolderJobInput
+    - UriFolderJobOutput
+
+    - JobService
+
 ```

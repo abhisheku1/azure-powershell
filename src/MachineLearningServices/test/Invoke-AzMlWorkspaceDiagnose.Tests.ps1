@@ -19,15 +19,7 @@ Describe 'Invoke-AzMlWorkspaceDiagnose' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Diagnose' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'DiagnoseViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'DiagnoseViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

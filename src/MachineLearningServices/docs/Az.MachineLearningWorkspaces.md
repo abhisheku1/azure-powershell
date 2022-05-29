@@ -166,11 +166,14 @@ If your intent is to create a new compute, do a GET first to verify that it does
 ### [New-AzMLWorkspaceComputeInstanceObject](New-AzMLWorkspaceComputeInstanceObject.md)
 Create an in-memory object for ComputeInstance.
 
-### [New-AzMLWorkspaceComputeStartStopScheduleObject](New-AzMLWorkspaceComputeStartStopScheduleObject.md)
-Create an in-memory object for ComputeStartStopSchedule.
-
 ### [New-AzMlWorkspaceConnection](New-AzMlWorkspaceConnection.md)
 
+
+### [New-AzMLWorkspaceCustomModelJobInputObject](New-AzMLWorkspaceCustomModelJobInputObject.md)
+Create an in-memory object for CustomModelJobInput.
+
+### [New-AzMLWorkspaceCustomModelJobOutputObject](New-AzMLWorkspaceCustomModelJobOutputObject.md)
+Create an in-memory object for CustomModelJobOutput.
 
 ### [New-AzMLWorkspaceDatabricksObject](New-AzMLWorkspaceDatabricksObject.md)
 Create an in-memory object for Databricks.
@@ -229,8 +232,26 @@ Create an in-memory object for HDInsight.
 ### [New-AzMlWorkspaceJob](New-AzMlWorkspaceJob.md)
 Creates and executes a Job.
 
+### [New-AzMLWorkspaceJobServiceObject](New-AzMLWorkspaceJobServiceObject.md)
+Create an in-memory object for JobService.
+
 ### [New-AzMLWorkspaceKubernetesObject](New-AzMLWorkspaceKubernetesObject.md)
 Create an in-memory object for Kubernetes.
+
+### [New-AzMLWorkspaceLiteralJobInputObject](New-AzMLWorkspaceLiteralJobInputObject.md)
+Create an in-memory object for LiteralJobInput.
+
+### [New-AzMLWorkspaceMLFlowModelJobInputObject](New-AzMLWorkspaceMLFlowModelJobInputObject.md)
+Create an in-memory object for MLFlowModelJobInput.
+
+### [New-AzMLWorkspaceMLFlowModelJobOutputObject](New-AzMLWorkspaceMLFlowModelJobOutputObject.md)
+Create an in-memory object for MLFlowModelJobOutput.
+
+### [New-AzMLWorkspaceMLTableJobInputObject](New-AzMLWorkspaceMLTableJobInputObject.md)
+Create an in-memory object for MLTableJobInput.
+
+### [New-AzMLWorkspaceMLTableJobOutputObject](New-AzMLWorkspaceMLTableJobOutputObject.md)
+Create an in-memory object for MLTableJobOutput.
 
 ### [New-AzMlWorkspaceModelContainer](New-AzMlWorkspaceModelContainer.md)
 Create or update container.
@@ -255,6 +276,24 @@ Create an in-memory object for SweepJob.
 
 ### [New-AzMLWorkspaceSynapseSparkObject](New-AzMLWorkspaceSynapseSparkObject.md)
 Create an in-memory object for SynapseSpark.
+
+### [New-AzMLWorkspaceTritonModelJobInputObject](New-AzMLWorkspaceTritonModelJobInputObject.md)
+Create an in-memory object for TritonModelJobInput.
+
+### [New-AzMLWorkspaceTritonModelJobOutputObject](New-AzMLWorkspaceTritonModelJobOutputObject.md)
+Create an in-memory object for TritonModelJobOutput.
+
+### [New-AzMLWorkspaceUriFileJobInputObject](New-AzMLWorkspaceUriFileJobInputObject.md)
+Create an in-memory object for UriFileJobInput.
+
+### [New-AzMLWorkspaceUriFileJobOutputObject](New-AzMLWorkspaceUriFileJobOutputObject.md)
+Create an in-memory object for UriFileJobOutput.
+
+### [New-AzMLWorkspaceUriFolderJobInputObject](New-AzMLWorkspaceUriFolderJobInputObject.md)
+Create an in-memory object for UriFolderJobInput.
+
+### [New-AzMLWorkspaceUriFolderJobOutputObject](New-AzMLWorkspaceUriFolderJobOutputObject.md)
+Create an in-memory object for UriFolderJobOutput.
 
 ### [New-AzMLWorkspaceVirtualMachineObject](New-AzMLWorkspaceVirtualMachineObject.md)
 Create an in-memory object for VirtualMachine.
@@ -318,45 +357,6 @@ Delete Online Endpoint (asynchronous).
 
 ### [Restart-AzMlWorkspaceCompute](Restart-AzMlWorkspaceCompute.md)
 Posts a restart action to a compute instance
-
-### [Set-AzMlWorkspace](Set-AzMlWorkspace.md)
-Creates or updates a workspace with the specified parameters.
-
-### [Set-AzMlWorkspaceCodeContainer](Set-AzMlWorkspaceCodeContainer.md)
-Create or update container.
-
-### [Set-AzMlWorkspaceCodeVersion](Set-AzMlWorkspaceCodeVersion.md)
-Create or update version.
-
-### [Set-AzMlWorkspaceComponentContainer](Set-AzMlWorkspaceComponentContainer.md)
-Create or update container.
-
-### [Set-AzMlWorkspaceComponentVersion](Set-AzMlWorkspaceComponentVersion.md)
-Create or update version.
-
-### [Set-AzMlWorkspaceDataContainer](Set-AzMlWorkspaceDataContainer.md)
-Create or update container.
-
-### [Set-AzMlWorkspaceDatastore](Set-AzMlWorkspaceDatastore.md)
-Create or update datastore.
-
-### [Set-AzMlWorkspaceDataVersion](Set-AzMlWorkspaceDataVersion.md)
-Create or update version.
-
-### [Set-AzMlWorkspaceEnvironmentContainer](Set-AzMlWorkspaceEnvironmentContainer.md)
-Create or update container.
-
-### [Set-AzMlWorkspaceEnvironmentVersion](Set-AzMlWorkspaceEnvironmentVersion.md)
-Creates or updates an EnvironmentVersion.
-
-### [Set-AzMlWorkspaceJob](Set-AzMlWorkspaceJob.md)
-Creates and executes a Job.
-
-### [Set-AzMlWorkspaceModelContainer](Set-AzMlWorkspaceModelContainer.md)
-Create or update container.
-
-### [Set-AzMlWorkspaceModelVersion](Set-AzMlWorkspaceModelVersion.md)
-Create or update version.
 
 ### [Start-AzMlWorkspaceCompute](Start-AzMlWorkspaceCompute.md)
 Posts a start action to a compute instance
