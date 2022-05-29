@@ -12,12 +12,20 @@ Create or update version.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
 Set-AzMlWorkspaceModelVersion -Name <String> -ResourceGroupName <String> -Version <String>
  -WorkspaceName <String> [-SubscriptionId <String>] [-Description <String>] [-Flavor <Hashtable>]
- [-IsAnonymou] [-IsArchived] [-JobName <String>] [-ModelFormat <ModelFormat>] [-ModelUri <String>]
+ [-IsAnonymou] [-IsArchived] [-JobName <String>] [-ModelType <String>] [-ModelUri <String>]
  [-ResourceBaseProperty <Hashtable>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
+```
+
+### Update
+```
+Set-AzMlWorkspaceModelVersion -Name <String> -ResourceGroupName <String> -Version <String>
+ -WorkspaceName <String> -Body <IModelVersion> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,6 +57,22 @@ Create or update version.
 
 ## PARAMETERS
 
+### -Body
+Azure Resource Manager resource envelope.
+To construct, see NOTES section for BODY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IModelVersion
+Parameter Sets: Update
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -69,7 +93,7 @@ The asset description text.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -84,7 +108,7 @@ Mapping of model flavors to their properties.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -99,7 +123,7 @@ If the name version are system generated (anonymous registration).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -114,7 +138,7 @@ Is the asset archived
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -129,7 +153,7 @@ Name of the training job which produced this model
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -139,13 +163,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ModelFormat
+### -ModelType
 The storage format for this entity.
 Used for NCD.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ModelFormat
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -160,7 +184,7 @@ The URI path to the model contents.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -191,7 +215,7 @@ The asset property dictionary.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -238,7 +262,7 @@ Tags can be added, removed, and updated.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -315,13 +339,40 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IModelVersion
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IModelVersionData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IModelVersion
 
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODY <IModelVersion>: Azure Resource Manager resource envelope.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+  - `[Description <String>]`: The asset description text.
+  - `[Flavor <IModelVersionFlavors>]`: Mapping of model flavors to their properties.
+    - `[(Any) <IFlavorData1>]`: This indicates any property can be added to this object.
+  - `[IsAnonymou <Boolean?>]`: If the name version are system generated (anonymous registration).
+  - `[IsArchived <Boolean?>]`: Is the asset archived?
+  - `[JobName <String>]`: Name of the training job which produced this model
+  - `[ModelType <String>]`: The storage format for this entity. Used for NCD.
+  - `[ModelUri <String>]`: The URI path to the model contents.
+  - `[ResourceBaseProperty <IResourceBaseProperties>]`: The asset property dictionary.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

@@ -52,7 +52,7 @@ Creates or updates an EnvironmentVersion.
 ## PARAMETERS
 
 ### -BuildContextUri
-URI of the Docker build context used to build the image.
+[Required] URI of the Docker build context used to build the image.
 Supports blob URIs on environment creation and may return blob or Git URIs.\<seealso href="https://docs.docker.com/engine/reference/commandline/build/#extended-description" /\>
 
 ```yaml
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -LivenessRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -LivenessRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadinessRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadinessRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScoringRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
@@ -310,7 +310,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScoringRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
@@ -423,7 +423,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IEnvironmentVersionData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IEnvironmentVersion
 
 ## NOTES
 

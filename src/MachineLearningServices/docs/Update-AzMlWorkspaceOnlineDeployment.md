@@ -15,18 +15,14 @@ Update Online Deployment (asynchronous).
 ### UpdateExpanded (Default)
 ```
 Update-AzMlWorkspaceOnlineDeployment -EndpointName <String> -Name <String> -ResourceGroupName <String>
- -WorkspaceName <String> [-SubscriptionId <String>] [-EndpointComputeType <EndpointComputeType>]
- [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>] [-Kind <String>]
- [-Location <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>]
- [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -WorkspaceName <String> [-SubscriptionId <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>]
+ [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzMlWorkspaceOnlineDeployment -InputObject <IMachineLearningWorkspacesIdentity>
- [-EndpointComputeType <EndpointComputeType>] [-IdentityType <ResourceIdentityAssignment>]
- [-IdentityUserAssigned <Hashtable>] [-Kind <String>] [-Location <String>] [-SkuCapacity <Int32>]
+Update-AzMlWorkspaceOnlineDeployment -InputObject <IMachineLearningWorkspacesIdentity> [-SkuCapacity <Int32>]
  [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -90,21 +86,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EndpointComputeType
-The compute type of the endpoint.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.EndpointComputeType
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -EndpointName
 Online Endpoint name.
 
@@ -114,36 +95,6 @@ Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IdentityType
-The type of the ResourceIdentity
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ResourceIdentityAssignment
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IdentityUserAssigned
-Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -163,36 +114,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Kind
-Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Location
-The geo-location where the resource lives.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -406,7 +327,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IOnlineDeploymentData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IOnlineDeployment
 
 ## NOTES
 

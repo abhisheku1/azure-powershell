@@ -14,7 +14,7 @@ Deletes a Job (asynchronous).
 
 ### Delete (Default)
 ```
-Remove-AzMlWorkspaceJob -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+Remove-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -84,22 +84,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-The name and identifier for the Job.
-This is case-sensitive.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -113,6 +97,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name
+The name and identifier for the Job.
+This is case-sensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

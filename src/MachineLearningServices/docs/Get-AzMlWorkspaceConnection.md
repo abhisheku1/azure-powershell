@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-AzMlWorkspaceConnection
 
 ## SYNOPSIS
-Get the detail of a workspace connection.
+
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-AzMlWorkspaceConnection -InputObject <IMachineLearningWorkspacesIdentity> [-
 ```
 
 ## DESCRIPTION
-Get the detail of a workspace connection.
+
 
 ## EXAMPLES
 
@@ -190,7 +190,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IWorkspaceConnection
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IWorkspaceConnectionPropertiesV2BasicResource
 
 ## NOTES
 

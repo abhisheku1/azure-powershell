@@ -13,14 +13,14 @@ Create an in-memory object for CommandJob.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> -Type <JobType> [-CodeId <String>]
- [-ComputeId <String>] [-Description <String>] [-DisplayName <String>] [-DistributionType <DistributionType>]
- [-EnvironmentVariable <ICommandJobEnvironmentVariables>] [-ExperimentName <String>]
- [-IdentityType <IdentityConfigurationType>] [-Input <ICommandJobInputs>] [-IsArchived <Boolean>]
- [-LimitJobLimitsType <JobLimitsType>] [-LimitTimeout <TimeSpan>] [-Output <ICommandJobOutputs>]
- [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>] [-ResourceInstanceType <String>]
- [-ResourceProperty <IResourceConfigurationProperties>] [-Service <IJobBaseServices>]
- [-Tag <IResourceBaseTags>] [<CommonParameters>]
+New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> -JobType <JobType>
+ [-CodeId <String>] [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
+ [-DistributionType <DistributionType>] [-EnvironmentVariable <ICommandJobEnvironmentVariables>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <ICommandJobInputs>]
+ [-IsArchived <Boolean>] [-LimitJobLimitsType <JobLimitsType>] [-LimitTimeout <TimeSpan>]
+ [-Output <ICommandJobOutputs>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
+ [-ResourceInstanceType <String>] [-ResourceProperty <IResourceConfigurationProperties>]
+ [-Service <IJobBaseServices>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Command
-The command to execute on startup of the job.
+[Required] The command to execute on startup of the job.
 eg.
 "python train.py".
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -DistributionType
-Specifies the type of distribution framework.
+[Required] Specifies the type of distribution framework.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.DistributionType
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnvironmentId
-The ARM resource ID of the Environment specification for the job.
+[Required] The ARM resource ID of the Environment specification for the job.
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ Environment variables included in the job.
 To construct, see NOTES section for ENVIRONMENTVARIABLE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.ICommandJobEnvironmentVariables
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobEnvironmentVariables
 Parameter Sets: (All)
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityType
-Specifies the type of identity framework.
+[Required] Specifies the type of identity framework.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.IdentityConfigurationType
@@ -211,7 +211,7 @@ Mapping of input data bindings used in the job.
 To construct, see NOTES section for INPUT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.ICommandJobInputs
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobInputs
 Parameter Sets: (All)
 Aliases:
 
@@ -237,8 +237,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -JobType
+[Required] Specifies the type of job.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LimitJobLimitsType
-JobLimit type.
+[Required] JobLimit type.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobLimitsType
@@ -273,7 +288,7 @@ Mapping of output data bindings used in the job.
 To construct, see NOTES section for OUTPUT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.ICommandJobOutputs
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobOutputs
 Parameter Sets: (All)
 Aliases:
 
@@ -289,7 +304,7 @@ The asset property dictionary.
 To construct, see NOTES section for PROPERTY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IResourceBaseProperties
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IResourceBaseProperties
 Parameter Sets: (All)
 Aliases:
 
@@ -335,7 +350,7 @@ Additional properties bag.
 To construct, see NOTES section for RESOURCEPROPERTY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IResourceConfigurationProperties
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IResourceConfigurationProperties
 Parameter Sets: (All)
 Aliases:
 
@@ -352,7 +367,7 @@ List of JobEndpoints.
 To construct, see NOTES section for SERVICE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IJobBaseServices
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseServices
 Parameter Sets: (All)
 Aliases:
 
@@ -369,26 +384,11 @@ Tags can be added, removed, and updated.
 To construct, see NOTES section for TAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IResourceBaseTags
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IResourceBaseTags
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Type
-Specifies the type of job.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -402,7 +402,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.CommandJob
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.CommandJob
 
 ## NOTES
 

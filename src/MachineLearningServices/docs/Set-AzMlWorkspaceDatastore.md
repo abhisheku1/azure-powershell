@@ -12,11 +12,18 @@ Create or update datastore.
 
 ## SYNTAX
 
+### Update (Default)
 ```
 Set-AzMlWorkspaceDatastore -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- -CredentialsType <CredentialsType> -DatastoreType <DatastoreType> [-SubscriptionId <String>]
- [-SkipValidation] [-Description <String>] [-ResourceBaseProperty <Hashtable>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -Body <IDatastore> [-SubscriptionId <String>] [-SkipValidation] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateExpanded
+```
+Set-AzMlWorkspaceDatastore -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
+ -Property <IDatastoreProperties> [-SubscriptionId <String>] [-SkipValidation] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,33 +55,19 @@ Create or update datastore.
 
 ## PARAMETERS
 
-### -CredentialsType
-Credential type used to authentication with storage.
+### -Body
+Azure Resource Manager resource envelope.
+To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.CredentialsType
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDatastore
+Parameter Sets: Update
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DatastoreType
-Storage type backing the datastore.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.DatastoreType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -85,21 +78,6 @@ The credentials, account, tenant, and subscription used for communication with A
 Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-The asset description text.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -123,15 +101,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceBaseProperty
-The asset property dictionary.
+### -Property
+[Required] Additional attributes of the entity.
+To construct, see NOTES section for PROPERTY properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDatastoreProperties
+Parameter Sets: UpdateExpanded
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -180,22 +159,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tag
-Tag dictionary.
-Tags can be added, removed, and updated.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -251,13 +214,47 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDatastore
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IDatastoreData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDatastore
 
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODY <IDatastore>: Azure Resource Manager resource envelope.
+  - `Property <IDatastoreProperties>`: [Required] Additional attributes of the entity.
+    - `Credentials <IDatastoreCredentials>`: [Required] Account credentials.
+      - `CredentialsType <CredentialsType>`: [Required] Credential type used to authentication with storage.
+    - `DatastoreType <DatastoreType>`: [Required] Storage type backing the datastore.
+    - `[Description <String>]`: The asset description text.
+    - `[Property <IResourceBaseProperties>]`: The asset property dictionary.
+      - `[(Any) <String>]`: This indicates any property can be added to this object.
+    - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+      - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+
+PROPERTY <IDatastoreProperties>: [Required] Additional attributes of the entity.
+  - `Credentials <IDatastoreCredentials>`: [Required] Account credentials.
+    - `CredentialsType <CredentialsType>`: [Required] Credential type used to authentication with storage.
+  - `DatastoreType <DatastoreType>`: [Required] Storage type backing the datastore.
+  - `[Description <String>]`: The asset description text.
+  - `[Property <IResourceBaseProperties>]`: The asset property dictionary.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

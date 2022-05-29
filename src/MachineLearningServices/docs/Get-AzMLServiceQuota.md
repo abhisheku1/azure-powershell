@@ -27,10 +27,6 @@ Gets the currently assigned Workspace Quotas based on VMFamily.
 {{ Add code here }}
 ```
 
-```output
-{{ Add output here }}
-```
-
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
@@ -98,7 +94,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IResourceQuota
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IResourceQuota
 
 ## NOTES
 

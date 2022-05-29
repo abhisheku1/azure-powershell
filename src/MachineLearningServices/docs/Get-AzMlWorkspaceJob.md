@@ -21,7 +21,7 @@ Get-AzMlWorkspaceJob -ResourceGroupName <String> -WorkspaceName <String> [-Subsc
 
 ### Get
 ```
-Get-AzMlWorkspaceJob -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+Get-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
@@ -75,22 +75,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-The name and identifier for the Job.
-This is case-sensitive.
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -131,6 +115,22 @@ Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name and identifier for the Job.
+This is case-sensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -222,7 +222,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IJobBaseData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
 
 ## NOTES
 

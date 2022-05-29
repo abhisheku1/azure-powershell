@@ -16,7 +16,7 @@ Updates a machine learning workspace with the specified parameters.
 ```
 Update-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-ApplicationInsightId <String>] [-ContainerRegistryId <String>] [-CosmoDbCollectionsThroughput <Int32>]
- [-Description <String>] [-FriendlyName <String>] [-IdentityType <ResourceIdentityAssignment>]
+ [-Description <String>] [-FriendlyName <String>] [-IdentityType <ManagedServiceIdentityType>]
  [-IdentityUserAssigned <Hashtable>] [-ImageBuildCompute <String>] [-PrimaryUserAssignedIdentity <String>]
  [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>]
  [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
@@ -27,7 +27,7 @@ Update-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId
 ```
 Update-AzMlWorkspace -InputObject <IMachineLearningWorkspacesIdentity> [-ApplicationInsightId <String>]
  [-ContainerRegistryId <String>] [-CosmoDbCollectionsThroughput <Int32>] [-Description <String>]
- [-FriendlyName <String>] [-IdentityType <ResourceIdentityAssignment>] [-IdentityUserAssigned <Hashtable>]
+ [-FriendlyName <String>] [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssigned <Hashtable>]
  [-ImageBuildCompute <String>] [-PrimaryUserAssignedIdentity <String>]
  [-PublicNetworkAccess <PublicNetworkAccess>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>]
  [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
@@ -169,10 +169,10 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityType
-The type of the ResourceIdentity
+Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ResourceIdentityAssignment
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ManagedServiceIdentityType
 Parameter Sets: (All)
 Aliases:
 
@@ -184,7 +184,9 @@ Accept wildcard characters: False
 ```
 
 ### -IdentityUserAssigned
-Dictionary of the user assigned identities, key is ARM resource ID of the UAI.
+The set of user assigned identities associated with the resource.
+The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.
+The dictionary values can be empty objects ({}) in requests.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -454,7 +456,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IWorkspace
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IWorkspace
 
 ## NOTES
 

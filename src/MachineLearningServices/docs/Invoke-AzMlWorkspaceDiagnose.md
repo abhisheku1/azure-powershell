@@ -14,36 +14,20 @@ Diagnose workspace setup issue.
 
 ### DiagnoseExpanded (Default)
 ```
-Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String>]
- [-ValueApplicationInsight <Hashtable>] [-ValueContainerRegistry <Hashtable>]
- [-ValueDnsResolution <Hashtable>] [-ValueKeyVault <Hashtable>] [-ValueNsg <Hashtable>]
- [-ValueOthers <Hashtable>] [-ValueResourceLock <Hashtable>] [-ValueStorageAccount <Hashtable>]
- [-ValueUdr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Diagnose
-```
-Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -WorkspaceName <String>
- -Parameter <IDiagnoseWorkspaceParameters> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DiagnoseViaIdentity
-```
-Invoke-AzMlWorkspaceDiagnose -InputObject <IMachineLearningWorkspacesIdentity>
- -Parameter <IDiagnoseWorkspaceParameters> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -Workspace <String> [-SubscriptionId <String>]
+ [-ApplicationInsightId <Hashtable>] [-ContainerRegistryId <Hashtable>] [-DnsResolution <Hashtable>]
+ [-KeyVaultId <Hashtable>] [-Nsg <Hashtable>] [-Others <Hashtable>] [-ResourceLock <Hashtable>]
+ [-StorageAccount <Hashtable>] [-Udr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiagnoseViaIdentityExpanded
 ```
 Invoke-AzMlWorkspaceDiagnose -InputObject <IMachineLearningWorkspacesIdentity>
- [-ValueApplicationInsight <Hashtable>] [-ValueContainerRegistry <Hashtable>]
- [-ValueDnsResolution <Hashtable>] [-ValueKeyVault <Hashtable>] [-ValueNsg <Hashtable>]
- [-ValueOthers <Hashtable>] [-ValueResourceLock <Hashtable>] [-ValueStorageAccount <Hashtable>]
- [-ValueUdr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ApplicationInsightId <Hashtable>] [-ContainerRegistryId <Hashtable>] [-DnsResolution <Hashtable>]
+ [-KeyVaultId <Hashtable>] [-Nsg <Hashtable>] [-Others <Hashtable>] [-ResourceLock <Hashtable>]
+ [-StorageAccount <Hashtable>] [-Udr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,11 +59,41 @@ Diagnose workspace setup issue.
 
 ## PARAMETERS
 
+### -ApplicationInsightId
+Setting for diagnosing dependent application insights
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AsJob
 Run the command as a job
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContainerRegistryId
+Setting for diagnosing dependent container registry
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -105,19 +119,49 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DnsResolution
+Setting for diagnosing dns resolution
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
-Parameter Sets: DiagnoseViaIdentity, DiagnoseViaIdentityExpanded
+Parameter Sets: DiagnoseViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -KeyVaultId
+Setting for diagnosing dependent key vault
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -136,19 +180,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Parameter
-Parameters to diagnose a workspace
-To construct, see NOTES section for PARAMETER properties and create a hash table.
+### -Nsg
+Setting for diagnosing network security group
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IDiagnoseWorkspaceParameters
-Parameter Sets: Diagnose, DiagnoseViaIdentity
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Others
+Setting for diagnosing unclassified category of problems
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -158,10 +216,40 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Diagnose, DiagnoseExpanded
+Parameter Sets: DiagnoseExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceLock
+Setting for diagnosing resource lock
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StorageAccount
+Setting for diagnosing dependent storage account
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -173,7 +261,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Diagnose, DiagnoseExpanded
+Parameter Sets: DiagnoseExpanded
 Aliases:
 
 Required: False
@@ -183,132 +271,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ValueApplicationInsight
-Setting for diagnosing dependent application insights
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueContainerRegistry
-Setting for diagnosing dependent container registry
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueDnsResolution
-Setting for diagnosing dns resolution
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueKeyVault
-Setting for diagnosing dependent key vault
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueNsg
-Setting for diagnosing network security group
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueOthers
-Setting for diagnosing unclassified category of problems
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueResourceLock
-Setting for diagnosing resource lock
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueStorageAccount
-Setting for diagnosing dependent storage account
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValueUdr
+### -Udr
 Setting for diagnosing user defined routing
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: DiagnoseExpanded, DiagnoseViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -318,12 +286,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WorkspaceName
+### -Workspace
 Name of Azure Machine Learning workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: Diagnose, DiagnoseExpanded
+Parameter Sets: DiagnoseExpanded
 Aliases:
 
 Required: True
@@ -369,13 +337,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IDiagnoseWorkspaceParameters
-
 ### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IDiagnoseResponseResultValue
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDiagnoseResponseResultValue
 
 ## NOTES
 
@@ -400,26 +366,6 @@ INPUTOBJECT <IMachineLearningWorkspacesIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The ID of the target subscription.
   - `[Version <String>]`: Version identifier. This is case-sensitive.
   - `[WorkspaceName <String>]`: Name of Azure Machine Learning workspace.
-
-PARAMETER <IDiagnoseWorkspaceParameters>: Parameters to diagnose a workspace
-  - `[ValueApplicationInsight <IDiagnoseRequestPropertiesApplicationInsights>]`: Setting for diagnosing dependent application insights
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueContainerRegistry <IDiagnoseRequestPropertiesContainerRegistry>]`: Setting for diagnosing dependent container registry
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueDnsResolution <IDiagnoseRequestPropertiesDnsResolution>]`: Setting for diagnosing dns resolution
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueKeyVault <IDiagnoseRequestPropertiesKeyVault>]`: Setting for diagnosing dependent key vault
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueNsg <IDiagnoseRequestPropertiesNsg>]`: Setting for diagnosing network security group
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueOthers <IDiagnoseRequestPropertiesOthers>]`: Setting for diagnosing unclassified category of problems
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueResourceLock <IDiagnoseRequestPropertiesResourceLock>]`: Setting for diagnosing resource lock
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueStorageAccount <IDiagnoseRequestPropertiesStorageAccount>]`: Setting for diagnosing dependent storage account
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ValueUdr <IDiagnoseRequestPropertiesUdr>]`: Setting for diagnosing user defined routing
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

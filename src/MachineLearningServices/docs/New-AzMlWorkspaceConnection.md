@@ -8,18 +8,19 @@ schema: 2.0.0
 # New-AzMlWorkspaceConnection
 
 ## SYNOPSIS
-Add a new workspace connection.
+
 
 ## SYNTAX
 
 ```
 New-AzMlWorkspaceConnection -ConnectionName <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-AuthType <String>] [-Category <String>] [-Target <String>] [-Value <String>]
- [-ValueFormat <ValueFormat>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AuthType <ConnectionAuthType> [-SubscriptionId <String>] [-Category <ConnectionCategory>] [-Target <String>]
+ [-Value <String>] [-ValueFormat <ValueFormat>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add a new workspace connection.
+
 
 ## EXAMPLES
 
@@ -48,14 +49,14 @@ Add a new workspace connection.
 ## PARAMETERS
 
 ### -AuthType
-Authorization type of the workspace connection.
+Authentication type of the connection target
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ConnectionAuthType
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -63,10 +64,10 @@ Accept wildcard characters: False
 ```
 
 ### -Category
-Category of the workspace connection.
+Category of the connection
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ConnectionCategory
 Parameter Sets: (All)
 Aliases:
 
@@ -139,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Target
-Target of the workspace connection.
+.
 
 ```yaml
 Type: System.String
@@ -236,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IWorkspaceConnection
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IWorkspaceConnectionPropertiesV2BasicResource
 
 ## NOTES
 

@@ -17,17 +17,16 @@ This is a nonrecoverable operation.
 ### UpdateExpanded (Default)
 ```
 Update-AzMlWorkspaceCompute -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-ScaleSettingMaxNodeCount <Int32>] [-ScaleSettingMinNodeCount <Int32>]
- [-ScaleSettingNodeIdleTimeBeforeScaleDown <TimeSpan>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SubscriptionId <String>] [-MaxNodeCount <Int32>] [-MinNodeCount <Int32>]
+ [-NodeIdleTimeBeforeScaleDown <TimeSpan>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzMlWorkspaceCompute -InputObject <IMachineLearningWorkspacesIdentity>
- [-ScaleSettingMaxNodeCount <Int32>] [-ScaleSettingMinNodeCount <Int32>]
- [-ScaleSettingNodeIdleTimeBeforeScaleDown <TimeSpan>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzMlWorkspaceCompute -InputObject <IMachineLearningWorkspacesIdentity> [-MaxNodeCount <Int32>]
+ [-MinNodeCount <Int32>] [-NodeIdleTimeBeforeScaleDown <TimeSpan>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,6 +106,36 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -MaxNodeCount
+Max number of nodes to use
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinNodeCount
+Min number of nodes to use
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Name of the Azure Machine Learning compute.
 
@@ -116,6 +145,22 @@ Parameter Sets: UpdateExpanded
 Aliases: ComputeName
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NodeIdleTimeBeforeScaleDown
+Node Idle Time before scaling down amlCompute.
+This string needs to be in the RFC Format.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -147,52 +192,6 @@ Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScaleSettingMaxNodeCount
-Max number of nodes to use
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScaleSettingMinNodeCount
-Min number of nodes to use
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScaleSettingNodeIdleTimeBeforeScaleDown
-Node Idle Time before scaling down amlCompute.
-This string needs to be in the RFC Format.
-
-```yaml
-Type: System.TimeSpan
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -269,7 +268,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IComputeResource
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IComputeResource
 
 ## NOTES
 

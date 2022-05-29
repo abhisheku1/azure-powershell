@@ -12,11 +12,19 @@ Creates and executes a Job.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
-Set-AzMlWorkspaceJob -Id <String> -ResourceGroupName <String> -WorkspaceName <String> -JobType <JobType>
+Set-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String> -JobType <JobType>
  [-SubscriptionId <String>] [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
- [-ExperimentName <String>] [-IsArchived] [-ResourceBaseProperty <Hashtable>] [-Service <Hashtable>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-IsArchived]
+ [-ResourceBaseProperty <Hashtable>] [-Service <Hashtable>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update
+```
+Set-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String> -Body <IJobBase>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,12 +56,28 @@ Creates and executes a Job.
 
 ## PARAMETERS
 
+### -Body
+Azure Resource Manager resource envelope.
+To construct, see NOTES section for BODY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
+Parameter Sets: Update
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -ComputeId
 ARM resource ID of the compute resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -83,7 +107,7 @@ The asset description text.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -98,7 +122,7 @@ Display name of job.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -114,7 +138,7 @@ If not set, the job is placed in the "Default" experiment.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -124,7 +148,52 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
+### -IdentityType
+[Required] Specifies the type of identity framework.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.IdentityConfigurationType
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsArchived
+Is the asset archived
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JobType
+[Required] Specifies the type of job.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
 The name and identifier for the Job.
 This is case-sensitive.
 
@@ -140,42 +209,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsArchived
-Is the asset archived
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -JobType
-Specifies the type of job.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.JobType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceBaseProperty
 The asset property dictionary.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -206,7 +245,7 @@ List of JobEndpoints.For local jobs, a job endpoint will have an endpoint value 
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -237,7 +276,7 @@ Tags can be added, removed, and updated.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -298,13 +337,41 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IJobBaseData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
 
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODY <IJobBase>: Azure Resource Manager resource envelope.
+  - `JobType <JobType>`: [Required] Specifies the type of job.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+  - `[ComputeId <String>]`: ARM resource ID of the compute resource.
+  - `[Description <String>]`: The asset description text.
+  - `[DisplayName <String>]`: Display name of job.
+  - `[ExperimentName <String>]`: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+  - `[IdentityType <IdentityConfigurationType?>]`: [Required] Specifies the type of identity framework.
+  - `[IsArchived <Boolean?>]`: Is the asset archived?
+  - `[ResourceBaseProperty <IResourceBaseProperties>]`: The asset property dictionary.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[Service <IJobBaseServices>]`: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
+    - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
+  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

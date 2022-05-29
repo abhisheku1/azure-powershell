@@ -13,9 +13,8 @@ Create an in-memory object for AmlCompute.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceAmlComputeObject -Type <ComputeType> [-Description <String>] [-DisableLocalAuth <Boolean>]
- [-EnableNodePublicIP <Boolean>] [-IsolatedNetwork <Boolean>] [-OSType <OSType>]
- [-PropertyBag <IAmlComputePropertiesPropertyBag>]
+New-AzMLWorkspaceAmlComputeObject [-Description <String>] [-DisableLocalAuth <Boolean>]
+ [-EnableNodePublicIP <Boolean>] [-IsolatedNetwork <Boolean>] [-OSType <OSType>] [-PropertyBag <IAny>]
  [-RemoteLoginPortPublicAccess <RemoteLoginPortPublicAccess>] [-ResourceId <String>]
  [-ScaleSettingMaxNodeCount <Int32>] [-ScaleSettingMinNodeCount <Int32>]
  [-ScaleSettingNodeIdleTimeBeforeScaleDown <TimeSpan>] [-SubnetId <String>]
@@ -132,10 +131,9 @@ Accept wildcard characters: False
 
 ### -PropertyBag
 A property bag containing additional properties.
-To construct, see NOTES section for PROPERTYBAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IAmlComputePropertiesPropertyBag
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IAny
 Parameter Sets: (All)
 Aliases:
 
@@ -241,21 +239,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Type
-The type of compute.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ComputeType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserAccountCredentialsAdminUserName
 Name of the administrator user account which can be used to SSH to nodes.
 
@@ -353,19 +336,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.AmlCompute
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.AmlCompute
 
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-PROPERTYBAG <IAmlComputePropertiesPropertyBag>: A property bag containing additional properties.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

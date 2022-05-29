@@ -13,14 +13,14 @@ Create an in-memory object for ComputeInstance.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceComputeInstanceObject -Type <ComputeType>
- [-ApplicationSharingPolicy <ApplicationSharingPolicy>] [-AssignedUserObjectId <String>]
- [-AssignedUserTenantId <String>] [-AuthorizationType <ComputeInstanceAuthorizationType>]
- [-CreationScriptArgument <String>] [-CreationScriptData <String>] [-CreationScriptSource <String>]
- [-CreationScriptTimeout <String>] [-Description <String>] [-DisableLocalAuth <Boolean>]
- [-EnableNodePublicIP <Boolean>] [-LastOperationName <OperationName>] [-LastOperationStatus <OperationStatus>]
- [-LastOperationTime <DateTime>] [-LastOperationTrigger <OperationTrigger>] [-ResourceId <String>]
- [-ScheduleComputeStartStop <IComputeInstanceStartStopSchedule[]>] [-SshSettingAdminPublicKey <String>]
+New-AzMLWorkspaceComputeInstanceObject [-ApplicationSharingPolicy <ApplicationSharingPolicy>]
+ [-AssignedUserObjectId <String>] [-AssignedUserTenantId <String>]
+ [-AuthorizationType <ComputeInstanceAuthorizationType>] [-CreationScriptArgument <String>]
+ [-CreationScriptData <String>] [-CreationScriptSource <String>] [-CreationScriptTimeout <String>]
+ [-Description <String>] [-DisableLocalAuth <Boolean>] [-EnableNodePublicIP <Boolean>]
+ [-LastOperationName <OperationName>] [-LastOperationStatus <OperationStatus>] [-LastOperationTime <DateTime>]
+ [-LastOperationTrigger <OperationTrigger>] [-ResourceId <String>]
+ [-ScheduleComputeStartStop <IComputeStartStopSchedule[]>] [-SshSettingAdminPublicKey <String>]
  [-SshSettingSshPublicAccess <SshPublicAccess>] [-StartupScriptArgument <String>]
  [-StartupScriptData <String>] [-StartupScriptSource <String>] [-StartupScriptTimeout <String>]
  [-SubnetId <String>] [-VersionRuntime <String>] [-VMSize <String>] [<CommonParameters>]
@@ -305,7 +305,7 @@ The list of compute start stop schedules to be applied.
 To construct, see NOTES section for SCHEDULECOMPUTESTARTSTOP properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IComputeInstanceStartStopSchedule[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IComputeStartStopSchedule[]
 Parameter Sets: (All)
 Aliases:
 
@@ -424,21 +424,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Type
-The type of compute.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ComputeType
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -VersionRuntime
 Runtime of compute instance.
 
@@ -476,7 +461,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.ComputeInstance
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ComputeInstance
 
 ## NOTES
 
@@ -487,19 +472,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-SCHEDULECOMPUTESTARTSTOP <IComputeInstanceStartStopSchedule[]>: The list of compute start stop schedules to be applied.
-  - `[Action <Action?>]`: The compute power action.
-  - `[CronExpression <String>]`: Expression of cron.
-  - `[CronStartTime <String>]`: Start time of cron.
-  - `[CronTimeZone <String>]`: Time zone of cron.
-  - `[RecurrenceFrequency <Frequency?>]`: Frequency of this schedule.
-  - `[RecurrenceInterval <Int32?>]`: The interval.
-  - `[RecurrenceStartTime <String>]`: The start time.
-  - `[RecurrenceTimeZone <String>]`: The time zone.
-  - `[ScheduleHour <Int32[]>]`: hours of recurrence schedule.
-  - `[ScheduleMinute <Int32[]>]`: minutes of recurrence schedule.
-  - `[ScheduleWeekDay <DaysOfWeek[]>]`: The days of the week.
-  - `[TriggerType <TriggerType?>]`: The schedule trigger type.
+SCHEDULECOMPUTESTARTSTOP <IComputeStartStopSchedule[]>: The list of compute start stop schedules to be applied.
+  - `[Action <ComputePowerAction?>]`: The compute power action.
+  - `[ScheduleId <String>]`: 
+  - `[ScheduleProvisioningStatus <ScheduleProvisioningState?>]`: 
+  - `[ScheduleStatus <ScheduleStatus?>]`: 
 
 ## RELATED LINKS
 

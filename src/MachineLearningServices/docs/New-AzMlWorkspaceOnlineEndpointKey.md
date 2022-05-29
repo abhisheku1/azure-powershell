@@ -89,7 +89,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IRegenerateEndpointKeysRequest
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IRegenerateEndpointKeysRequest
 Parameter Sets: Regenerate, RegenerateViaIdentity
 Aliases:
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyType
-Specification for which type of key to generate.
+[Required] Specification for which type of key to generate.
 Primary or Secondary.
 
 ```yaml
@@ -289,7 +289,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IRegenerateEndpointKeysRequest
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IRegenerateEndpointKeysRequest
 
 ### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
 
@@ -307,7 +307,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <IRegenerateEndpointKeysRequest>: .
-  - `KeyType <KeyType>`: Specification for which type of key to generate. Primary or Secondary.
+  - `KeyType <KeyType>`: [Required] Specification for which type of key to generate. Primary or Secondary.
   - `[KeyValue <String>]`: The value the key is set to.
 
 INPUTOBJECT <IMachineLearningWorkspacesIdentity>: Identity Parameter

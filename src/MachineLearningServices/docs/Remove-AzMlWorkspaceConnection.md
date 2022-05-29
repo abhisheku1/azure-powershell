@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-AzMlWorkspaceConnection
 
 ## SYNOPSIS
-Delete a workspace connection.
+
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-AzMlWorkspaceConnection -InputObject <IMachineLearningWorkspacesIdentity>
 ```
 
 ## DESCRIPTION
-Delete a workspace connection.
+
 
 ## EXAMPLES
 

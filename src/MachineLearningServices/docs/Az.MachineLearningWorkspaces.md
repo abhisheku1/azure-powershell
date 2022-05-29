@@ -55,19 +55,19 @@ Gets secrets related to Machine Learning compute (storage keys, service credenti
 Get the details (e.g IP address, port etc) of all the compute nodes in the compute.
 
 ### [Get-AzMlWorkspaceConnection](Get-AzMlWorkspaceConnection.md)
-Get the detail of a workspace connection.
 
-### [Get-AzMlWorkspaceDatasetContainer](Get-AzMlWorkspaceDatasetContainer.md)
+
+### [Get-AzMlWorkspaceDataContainer](Get-AzMlWorkspaceDataContainer.md)
 Get container.
-
-### [Get-AzMlWorkspaceDatasetVersion](Get-AzMlWorkspaceDatasetVersion.md)
-Get version.
 
 ### [Get-AzMlWorkspaceDatastore](Get-AzMlWorkspaceDatastore.md)
 Get datastore.
 
 ### [Get-AzMlWorkspaceDatastoreSecret](Get-AzMlWorkspaceDatastoreSecret.md)
 Get datastore secrets.
+
+### [Get-AzMlWorkspaceDataVersion](Get-AzMlWorkspaceDataVersion.md)
+Get version.
 
 ### [Get-AzMlWorkspaceEnvironmentContainer](Get-AzMlWorkspaceEnvironmentContainer.md)
 Get container.
@@ -130,20 +130,11 @@ Prepare a notebook.
 ### [New-AzMlWorkspace](New-AzMlWorkspace.md)
 Creates or updates a workspace with the specified parameters.
 
+### [New-AzMLWorkspaceAksObject](New-AzMLWorkspaceAksObject.md)
+Create an in-memory object for Aks.
+
 ### [New-AzMLWorkspaceAmlComputeObject](New-AzMLWorkspaceAmlComputeObject.md)
 Create an in-memory object for AmlCompute.
-
-### [New-AzMLWorkspaceAzureBlobDatastoreObject](New-AzMLWorkspaceAzureBlobDatastoreObject.md)
-Create an in-memory object for AzureBlobDatastore.
-
-### [New-AzMLWorkspaceAzureDataLakeGen1DatastoreObject](New-AzMLWorkspaceAzureDataLakeGen1DatastoreObject.md)
-Create an in-memory object for AzureDataLakeGen1Datastore.
-
-### [New-AzMLWorkspaceAzureDataLakeGen2DatastoreObject](New-AzMLWorkspaceAzureDataLakeGen2DatastoreObject.md)
-Create an in-memory object for AzureDataLakeGen2Datastore.
-
-### [New-AzMLWorkspaceAzureFileDatastoreObject](New-AzMLWorkspaceAzureFileDatastoreObject.md)
-Create an in-memory object for AzureFileDatastore.
 
 ### [New-AzMlWorkspaceBatchDeployment](New-AzMlWorkspaceBatchDeployment.md)
 Creates/updates a batch inference deployment (asynchronous).
@@ -166,16 +157,64 @@ Create or update container.
 ### [New-AzMlWorkspaceComponentVersion](New-AzMlWorkspaceComponentVersion.md)
 Create or update version.
 
+### [New-AzMlWorkspaceCompute](New-AzMlWorkspaceCompute.md)
+Creates or updates compute.
+This call will overwrite a compute if it exists.
+This is a nonrecoverable operation.
+If your intent is to create a new compute, do a GET first to verify that it does not exist yet.
+
 ### [New-AzMLWorkspaceComputeInstanceObject](New-AzMLWorkspaceComputeInstanceObject.md)
 Create an in-memory object for ComputeInstance.
 
-### [New-AzMlWorkspaceConnection](New-AzMlWorkspaceConnection.md)
-Add a new workspace connection.
+### [New-AzMLWorkspaceComputeStartStopScheduleObject](New-AzMLWorkspaceComputeStartStopScheduleObject.md)
+Create an in-memory object for ComputeStartStopSchedule.
 
-### [New-AzMlWorkspaceDatasetContainer](New-AzMlWorkspaceDatasetContainer.md)
+### [New-AzMlWorkspaceConnection](New-AzMlWorkspaceConnection.md)
+
+
+### [New-AzMLWorkspaceDatabricksObject](New-AzMLWorkspaceDatabricksObject.md)
+Create an in-memory object for Databricks.
+
+### [New-AzMlWorkspaceDataContainer](New-AzMlWorkspaceDataContainer.md)
 Create or update container.
 
-### [New-AzMlWorkspaceDatasetVersion](New-AzMlWorkspaceDatasetVersion.md)
+### [New-AzMLWorkspaceDataFactoryObject](New-AzMLWorkspaceDataFactoryObject.md)
+Create an in-memory object for DataFactory.
+
+### [New-AzMLWorkspaceDataLakeAnalyticsObject](New-AzMLWorkspaceDataLakeAnalyticsObject.md)
+Create an in-memory object for DataLakeAnalytics.
+
+### [New-AzMlWorkspaceDatastore](New-AzMlWorkspaceDatastore.md)
+Create or update datastore.
+
+### [New-AzMLWorkspaceDatastoreBlobObject](New-AzMLWorkspaceDatastoreBlobObject.md)
+Create an in-memory object for AzureBlobDatastore.
+
+### [New-AzMLWorkspaceDatastoreCredentialsObject](New-AzMLWorkspaceDatastoreCredentialsObject.md)
+Create an in-memory object for CertificateDatastoreCredentials.
+
+### [New-AzMLWorkspaceDatastoreDataLakeGen1Object](New-AzMLWorkspaceDatastoreDataLakeGen1Object.md)
+Create an in-memory object for AzureDataLakeGen1Datastore.
+
+### [New-AzMLWorkspaceDatastoreDataLakeGen2Object](New-AzMLWorkspaceDatastoreDataLakeGen2Object.md)
+Create an in-memory object for AzureDataLakeGen2Datastore.
+
+### [New-AzMLWorkspaceDatastoreFileObject](New-AzMLWorkspaceDatastoreFileObject.md)
+Create an in-memory object for AzureFileDatastore.
+
+### [New-AzMLWorkspaceDatastoreKeyCredentialObject](New-AzMLWorkspaceDatastoreKeyCredentialObject.md)
+Create an in-memory object for AccountKeyDatastoreCredentials.
+
+### [New-AzMLWorkspaceDatastoreNoneCredentialsObject](New-AzMLWorkspaceDatastoreNoneCredentialsObject.md)
+Create an in-memory object for NoneDatastoreCredentials.
+
+### [New-AzMLWorkspaceDatastoreSasCredentialsObject](New-AzMLWorkspaceDatastoreSasCredentialsObject.md)
+Create an in-memory object for SasDatastoreCredentials.
+
+### [New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject](New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject.md)
+Create an in-memory object for ServicePrincipalDatastoreCredentials.
+
+### [New-AzMlWorkspaceDataVersion](New-AzMlWorkspaceDataVersion.md)
 Create or update version.
 
 ### [New-AzMlWorkspaceEnvironmentContainer](New-AzMlWorkspaceEnvironmentContainer.md)
@@ -183,6 +222,15 @@ Create or update container.
 
 ### [New-AzMlWorkspaceEnvironmentVersion](New-AzMlWorkspaceEnvironmentVersion.md)
 Creates or updates an EnvironmentVersion.
+
+### [New-AzMLWorkspaceHDInsightObject](New-AzMLWorkspaceHDInsightObject.md)
+Create an in-memory object for HDInsight.
+
+### [New-AzMlWorkspaceJob](New-AzMlWorkspaceJob.md)
+Creates and executes a Job.
+
+### [New-AzMLWorkspaceKubernetesObject](New-AzMLWorkspaceKubernetesObject.md)
+Create an in-memory object for Kubernetes.
 
 ### [New-AzMlWorkspaceModelContainer](New-AzMlWorkspaceModelContainer.md)
 Create or update container.
@@ -204,6 +252,12 @@ Create an in-memory object for PipelineJob.
 
 ### [New-AzMLWorkspaceSweepJobObject](New-AzMLWorkspaceSweepJobObject.md)
 Create an in-memory object for SweepJob.
+
+### [New-AzMLWorkspaceSynapseSparkObject](New-AzMLWorkspaceSynapseSparkObject.md)
+Create an in-memory object for SynapseSpark.
+
+### [New-AzMLWorkspaceVirtualMachineObject](New-AzMLWorkspaceVirtualMachineObject.md)
+Create an in-memory object for VirtualMachine.
 
 ### [Remove-AzMlWorkspace](Remove-AzMlWorkspace.md)
 Deletes a machine learning workspace.
@@ -230,16 +284,16 @@ Delete version.
 Deletes specified Machine Learning compute.
 
 ### [Remove-AzMlWorkspaceConnection](Remove-AzMlWorkspaceConnection.md)
-Delete a workspace connection.
 
-### [Remove-AzMlWorkspaceDatasetContainer](Remove-AzMlWorkspaceDatasetContainer.md)
+
+### [Remove-AzMlWorkspaceDataContainer](Remove-AzMlWorkspaceDataContainer.md)
 Delete container.
-
-### [Remove-AzMlWorkspaceDatasetVersion](Remove-AzMlWorkspaceDatasetVersion.md)
-Delete version.
 
 ### [Remove-AzMlWorkspaceDatastore](Remove-AzMlWorkspaceDatastore.md)
 Delete datastore.
+
+### [Remove-AzMlWorkspaceDataVersion](Remove-AzMlWorkspaceDataVersion.md)
+Delete version.
 
 ### [Remove-AzMlWorkspaceEnvironmentContainer](Remove-AzMlWorkspaceEnvironmentContainer.md)
 Delete container.
@@ -280,14 +334,14 @@ Create or update container.
 ### [Set-AzMlWorkspaceComponentVersion](Set-AzMlWorkspaceComponentVersion.md)
 Create or update version.
 
-### [Set-AzMlWorkspaceDatasetContainer](Set-AzMlWorkspaceDatasetContainer.md)
+### [Set-AzMlWorkspaceDataContainer](Set-AzMlWorkspaceDataContainer.md)
 Create or update container.
-
-### [Set-AzMlWorkspaceDatasetVersion](Set-AzMlWorkspaceDatasetVersion.md)
-Create or update version.
 
 ### [Set-AzMlWorkspaceDatastore](Set-AzMlWorkspaceDatastore.md)
 Create or update datastore.
+
+### [Set-AzMlWorkspaceDataVersion](Set-AzMlWorkspaceDataVersion.md)
+Create or update version.
 
 ### [Set-AzMlWorkspaceEnvironmentContainer](Set-AzMlWorkspaceEnvironmentContainer.md)
 Create or update container.
@@ -311,7 +365,7 @@ Posts a start action to a compute instance
 Posts a stop action to a compute instance
 
 ### [Stop-AzMlWorkspaceJob](Stop-AzMlWorkspaceJob.md)
-Cancels a Job.
+Cancels a Job (asynchronous).
 
 ### [Sync-AzMlWorkspaceKey](Sync-AzMlWorkspaceKey.md)
 Resync all the keys associated with this workspace.

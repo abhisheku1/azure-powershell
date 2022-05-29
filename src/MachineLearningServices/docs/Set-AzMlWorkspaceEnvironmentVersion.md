@@ -12,6 +12,7 @@ Creates or updates an EnvironmentVersion.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
 Set-AzMlWorkspaceEnvironmentVersion -Name <String> -ResourceGroupName <String> -Version <String>
  -WorkspaceName <String> [-SubscriptionId <String>] [-BuildContextUri <String>]
@@ -19,6 +20,13 @@ Set-AzMlWorkspaceEnvironmentVersion -Name <String> -ResourceGroupName <String> -
  [-IsArchived] [-LivenessRoutePath <String>] [-LivenessRoutePort <Int32>] [-OSType <OperatingSystemType>]
  [-ReadinessRoutePath <String>] [-ReadinessRoutePort <Int32>] [-ResourceBaseProperty <Hashtable>]
  [-ScoringRoutePath <String>] [-ScoringRoutePort <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update
+```
+Set-AzMlWorkspaceEnvironmentVersion -Name <String> -ResourceGroupName <String> -Version <String>
+ -WorkspaceName <String> -Body <IEnvironmentVersion> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -51,13 +59,29 @@ Creates or updates an EnvironmentVersion.
 
 ## PARAMETERS
 
+### -Body
+Azure Resource Manager resource envelope.
+To construct, see NOTES section for BODY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IEnvironmentVersion
+Parameter Sets: Update
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -BuildContextUri
-URI of the Docker build context used to build the image.
+[Required] URI of the Docker build context used to build the image.
 Supports blob URIs on environment creation and may return blob or Git URIs.\<seealso href="https://docs.docker.com/engine/reference/commandline/build/#extended-description" /\>
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -72,7 +96,7 @@ Path to the Dockerfile in the build context.\<seealso href="https://docs.docker.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -87,7 +111,7 @@ Standard configuration file used by Conda that lets you install any kind of pack
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -117,7 +141,7 @@ The asset description text.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -132,7 +156,7 @@ Name of the image that will be used for the environment.\<seealso href="https://
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -147,7 +171,7 @@ If the name version are system generated (anonymous registration).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -162,7 +186,7 @@ Is the asset archived
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -173,11 +197,11 @@ Accept wildcard characters: False
 ```
 
 ### -LivenessRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -188,11 +212,11 @@ Accept wildcard characters: False
 ```
 
 ### -LivenessRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -223,7 +247,7 @@ The OS type of the environment.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.OperatingSystemType
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -234,11 +258,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReadinessRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -249,11 +273,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReadinessRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -268,7 +292,7 @@ The asset property dictionary.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -295,11 +319,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScoringRoutePath
-The path for the route.
+[Required] The path for the route.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -310,11 +334,11 @@ Accept wildcard characters: False
 ```
 
 ### -ScoringRoutePort
-The port for the route.
+[Required] The port for the route.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -345,7 +369,7 @@ Tags can be added, removed, and updated.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -421,13 +445,46 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IEnvironmentVersion
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20211001.IEnvironmentVersionData
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IEnvironmentVersion
 
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODY <IEnvironmentVersion>: Azure Resource Manager resource envelope.
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+  - `[BuildContextUri <String>]`: [Required] URI of the Docker build context used to build the image. Supports blob URIs on environment creation and may return blob or Git URIs.         <seealso href="https://docs.docker.com/engine/reference/commandline/build/#extended-description" />
+  - `[BuildDockerfilePath <String>]`: Path to the Dockerfile in the build context.         <seealso href="https://docs.docker.com/engine/reference/builder/" />
+  - `[CondaFile <String>]`: Standard configuration file used by Conda that lets you install any kind of package, including Python, R, and C/C++ packages.         <see href="https://repo2docker.readthedocs.io/en/latest/config_files.html#environment-yml-install-a-conda-environment" />
+  - `[Description <String>]`: The asset description text.
+  - `[Image <String>]`: Name of the image that will be used for the environment.         <seealso href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-custom-docker-image#use-a-custom-base-image" />
+  - `[IsAnonymou <Boolean?>]`: If the name version are system generated (anonymous registration).
+  - `[IsArchived <Boolean?>]`: Is the asset archived?
+  - `[LivenessRoutePath <String>]`: [Required] The path for the route.
+  - `[LivenessRoutePort <Int32?>]`: [Required] The port for the route.
+  - `[OSType <OperatingSystemType?>]`: The OS type of the environment.
+  - `[ReadinessRoutePath <String>]`: [Required] The path for the route.
+  - `[ReadinessRoutePort <Int32?>]`: [Required] The port for the route.
+  - `[ResourceBaseProperty <IResourceBaseProperties>]`: The asset property dictionary.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[ScoringRoutePath <String>]`: [Required] The path for the route.
+  - `[ScoringRoutePort <Int32?>]`: [Required] The port for the route.
+  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 
