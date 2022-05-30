@@ -12,32 +12,10 @@ Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asyn
 
 ## SYNTAX
 
-### RegenerateExpanded (Default)
 ```
 New-AzMlWorkspaceOnlineEndpointKey -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  -KeyType <KeyType> [-SubscriptionId <String>] [-KeyValue <String>] [-DefaultProfile <PSObject>] [-AsJob]
  [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Regenerate
-```
-New-AzMlWorkspaceOnlineEndpointKey -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- -Body <IRegenerateEndpointKeysRequest> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RegenerateViaIdentity
-```
-New-AzMlWorkspaceOnlineEndpointKey -InputObject <IMachineLearningWorkspacesIdentity>
- -Body <IRegenerateEndpointKeysRequest> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### RegenerateViaIdentityExpanded
-```
-New-AzMlWorkspaceOnlineEndpointKey -InputObject <IMachineLearningWorkspacesIdentity> -KeyType <KeyType>
- [-KeyValue <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,22 +62,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IRegenerateEndpointKeysRequest
-Parameter Sets: Regenerate, RegenerateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -115,29 +77,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
-Parameter Sets: RegenerateViaIdentity, RegenerateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -KeyType
 [Required] Specification for which type of key to generate.
 Primary or Secondary.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.KeyType
-Parameter Sets: RegenerateExpanded, RegenerateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -152,7 +98,7 @@ The value the key is set to.
 
 ```yaml
 Type: System.String
-Parameter Sets: RegenerateExpanded, RegenerateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -167,7 +113,7 @@ Online Endpoint name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Regenerate, RegenerateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -213,7 +159,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Regenerate, RegenerateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -228,7 +174,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Regenerate, RegenerateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -243,7 +189,7 @@ Name of Azure Machine Learning workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: Regenerate, RegenerateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -289,10 +235,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IRegenerateEndpointKeysRequest
-
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -300,30 +242,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODY <IRegenerateEndpointKeysRequest>: .
-  - `KeyType <KeyType>`: [Required] Specification for which type of key to generate. Primary or Secondary.
-  - `[KeyValue <String>]`: The value the key is set to.
-
-INPUTOBJECT <IMachineLearningWorkspacesIdentity>: Identity Parameter
-  - `[ComputeName <String>]`: Name of the Azure Machine Learning compute.
-  - `[ConnectionName <String>]`: Friendly name of the workspace connection
-  - `[DeploymentName <String>]`: Inference deployment identifier.
-  - `[EndpointName <String>]`: Inference Endpoint name.
-  - `[Id <String>]`: The name and identifier for the Job. This is case-sensitive.
-  - `[Id1 <String>]`: Resource identity path
-  - `[Location <String>]`: The location for which resource usage is queried.
-  - `[Name <String>]`: Container name. This is case-sensitive.
-  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection associated with the workspace
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[Version <String>]`: Version identifier. This is case-sensitive.
-  - `[WorkspaceName <String>]`: Name of Azure Machine Learning workspace.
 
 ## RELATED LINKS
 

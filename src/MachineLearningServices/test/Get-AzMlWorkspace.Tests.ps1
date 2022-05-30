@@ -15,19 +15,19 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMlWorkspace'))
 }
 
 Describe 'Get-AzMlWorkspace' {
-    It 'List1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List1' {
+        { Get-AzMlWorkspace } | Should -Not -Throw
     }
 
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        { Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01 } | Should -Not -Throw
     }
 
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        { Get-AzMlWorkspace -ResourceGroupName ml-rg-test } | Should -Not -Throw
     }
 
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+    # It 'GetViaIdentity' -skip {
+    #     { throw [System.NotImplementedException] } | Should -Not -Throw
+    # }
 }

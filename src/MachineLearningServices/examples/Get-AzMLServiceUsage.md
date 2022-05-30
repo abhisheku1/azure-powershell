@@ -1,22 +1,14 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMLServiceUsage -Location eastus
 ```
 
 ```output
-{{ Add output here }}
+AmlWorkspaceLocation CurrentValue Limit Unit
+-------------------- ------------ ----- ----
+                     9            200   Count
+                     8            100   Count
+                     0            100   Count
 ```
 
 {{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-

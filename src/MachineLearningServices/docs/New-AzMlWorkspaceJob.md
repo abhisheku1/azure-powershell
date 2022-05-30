@@ -12,17 +12,9 @@ Creates and executes a Job.
 
 ## SYNTAX
 
-### Create (Default)
 ```
 New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String> -Body <IJobBase>
  [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
-```
-New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- -Property <IJobBaseProperties> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +52,7 @@ To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
-Parameter Sets: Create
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -92,22 +84,6 @@ This is case-sensitive.
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Property
-[Required] Additional attributes of the entity.
-To construct, see NOTES section for PROPERTY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseProperties
-Parameter Sets: CreateExpanded
 Aliases:
 
 Required: True
@@ -235,21 +211,6 @@ BODY <IJobBase>: Azure Resource Manager resource envelope.
   - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
   - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
   - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
-
-PROPERTY <IJobBaseProperties>: [Required] Additional attributes of the entity.
-  - `JobType <JobType>`: [Required] Specifies the type of job.
-  - `[Description <String>]`: The asset description text.
-  - `[Property <IResourceBaseProperties>]`: The asset property dictionary.
-    - `[(Any) <String>]`: This indicates any property can be added to this object.
-  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
-    - `[(Any) <String>]`: This indicates any property can be added to this object.
-  - `[ComputeId <String>]`: ARM resource ID of the compute resource.
-  - `[DisplayName <String>]`: Display name of job.
-  - `[ExperimentName <String>]`: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
-  - `[IdentityType <IdentityConfigurationType?>]`: [Required] Specifies the type of identity framework.
-  - `[IsArchived <Boolean?>]`: Is the asset archived?
-  - `[Service <IJobBaseServices>]`: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-    - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

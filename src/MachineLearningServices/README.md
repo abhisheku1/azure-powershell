@@ -99,6 +99,12 @@ directive:
 
   # Rmove unnecessary variant of the environment
   - where:
+      verb: Get
+      subject: OnlineDeploymentLog
+      variant: ^Get$|^GetViaIdentity$|^GetViaIdentityExpanded$
+    remove: true
+
+  - where:
       verb: New
       subject: EnvironmentVersion|Connection
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
@@ -127,18 +133,75 @@ directive:
       variant: ^Diagnose$|^DiagnoseViaIdentity$
     remove: true
 
+  # Create Datastore
+  - where:
+      verb: New
+      subject: Datastore
+      variant: ^CreateViaIdentity$|^Create$|^CreateViaIdentityExpanded$
+    remove: true
+
+  # Costom compute cmdlet 
+  - where:
+      verb: New
+      subject: Compute
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+
+  # Costom job cmdlet 
+  - where:
+      verb: New
+      subject: Job
+      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+  # workspace, Cannot specified subject.
+  # - where:
+  #     verb: New
+  #     subject: $
+  #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+  #   remove: true
+
+#   # - where:
+#   #     verb: New
+#   #     subject: OnlineDeployment
+#   #     variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+#   #   remove: true
+
+#   # - where:
+#   #     verb: New
+#   #     subject: OnlineDeployment
+#   #     parameter-name: Body
+#   #   set:
+#   #     parameter-name: Deployment
+
+  - where:
+      verb: New
+      subject: BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey|DataVersion
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    remove: true
+  - where:
+      verb: New
+      subject: OnlineEndpointKey
+      variant: ^Regenerate$|^RegenerateViaIdentity$|^RegenerateViaIdentityExpanded$
+    remove: true
+  # rename parameters
+  - where:
+      subject: BatchDeployment
+      parameter-name: EndpointDeploymentPropertiesBaseProperty
+    set:
+      parameter-name: EndpointDeploymentProperties
+
+  - where:
+      subject: Connection
+      parameter-name: ConnectionName
+    set:
+      parameter-name: Name
+
   - where:
       verb: Invoke
       subject: Diagnose
       parameter-name: Value(.*)
     set:
-      parameter-name: $1  
-  - where:
-      verb: Invoke
-      subject: Diagnose
-      parameter-name: WorkspaceName
-    set:
-      parameter-name: Workspace 
+      parameter-name: $1
   - where:
       verb: Invoke
       subject: Diagnose
@@ -167,31 +230,12 @@ directive:
     set:
       parameter-name: StorageAccountId 
 
-  # Create Datastore
-  - where:
-      verb: New
-      subject: Datastore
-      variant: ^CreateViaIdentity$|^Create$|^CreateViaIdentityExpanded$
-    remove: true
   - where:
       verb: New
       subject: Datastore
       parameter-name: Property
     set:
       parameter-name: Datastore
-  # Costom compute cmdlet 
-  - where:
-      verb: New
-      subject: Compute
-      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-    remove: true
-
-  # Costom job cmdlet 
-  - where:
-      verb: New
-      subject: Job
-      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-    remove: true
 
   - where:
       verb: New
@@ -199,51 +243,6 @@ directive:
       parameter-name: Property
     set:
       parameter-name: Compute
-  # workspace, Cannot specified subject.
-  # - where:
-  #     verb: New
-  #     subject: $
-  #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-  #   remove: true
-
-  # - where:
-  #     verb: New
-  #     subject: Compute
-  #   hide: true
-
-#   - where:
-#       verb: New
-#       subject: Job
-#       variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-#     remove: true
-
-#   - where:
-#       verb: New
-#       subject: Job
-#       parameter-name: Body
-#     set:
-#       parameter-name: Job
-
-#   # - where:
-#   #     verb: New
-#   #     subject: OnlineDeployment
-#   #     variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-#   #   remove: true
-
-#   # - where:
-#   #     verb: New
-#   #     subject: OnlineDeployment
-#   #     parameter-name: Body
-#   #   set:
-#   #     parameter-name: Deployment
-
-#   # - where:
-#   #     verb: New
-#   #     subject: BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey
-#   #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-#   #   remove: true
-
-  # cutomization workspace cmdlet, rename parameters
   - where:
       verb: New|Update
       subject: ""
@@ -317,12 +316,6 @@ directive:
       parameter-name: ScaleSetting(.*)
     set:
       parameter-name: $1
-
-  - where:
-      subject: Connection
-      parameter-name: ConnectionName
-    set:
-      parameter-name: Name
 
   - where:
       subject: Job
@@ -407,7 +400,7 @@ directive:
       parameter-name: SecondaryKey
 
   - where:
-      subject: Key
+      subject: ^Key$|^Feature$|^NotebookAccessToken$|^Diagnose$|^StorageAccountKey$
       parameter-name: WorkspaceName
     set:
       parameter-name: Name
@@ -484,5 +477,6 @@ directive:
     - UriFolderJobOutput
 
     - JobService
+    # - QuotaBaseProperties --> New-AzMLWorkspaceQuotaPropertiesObject
 
 ```

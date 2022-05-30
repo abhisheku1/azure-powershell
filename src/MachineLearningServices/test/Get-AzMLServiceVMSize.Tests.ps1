@@ -15,7 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMLServiceVMSize'))
 }
 
 Describe 'Get-AzMLServiceVMSize' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        { Get-AzMLServiceVMSize -Location eastus } | Should -Not -Throw
     }
 }

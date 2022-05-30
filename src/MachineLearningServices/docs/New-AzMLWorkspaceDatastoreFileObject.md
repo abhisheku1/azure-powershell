@@ -13,10 +13,10 @@ Create an in-memory object for AzureFileDatastore.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceDatastoreFileObject -AccountName <String> -DatastoreType <DatastoreType>
- -FileShareName <String> [-Description <String>] [-Endpoint <String>] [-Property <IResourceBaseProperties>]
- [-Protocol <String>] [-ServiceDataAccessAuthIdentity <ServiceDataAccessAuthIdentity>]
- [-Tag <IResourceBaseTags>] [<CommonParameters>]
+New-AzMLWorkspaceDatastoreFileObject -AccountName <String> -FileShareName <String> [-Description <String>]
+ [-Endpoint <String>] [-Property <IResourceBaseProperties>] [-Protocol <String>]
+ [-ServiceDataAccessAuthIdentity <ServiceDataAccessAuthIdentity>] [-Tag <IResourceBaseTags>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,21 +53,6 @@ Create an in-memory object for AzureFileDatastore.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DatastoreType
-[Required] Storage type backing the datastore.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.DatastoreType
 Parameter Sets: (All)
 Aliases:
 

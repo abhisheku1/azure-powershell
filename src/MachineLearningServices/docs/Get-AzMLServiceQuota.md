@@ -24,18 +24,17 @@ Gets the currently assigned Workspace Quotas based on VMFamily.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
+Get-AzMLServiceQuota -Location eastus
 ```
 
 ```output
-{{ Add output here }}
+AmlWorkspaceLocation Limit Unit
+-------------------- ----- ----
+                     100   Count
+                     100   Count
+                     100   Count
+                     100   Count
+                     100   Count
 ```
 
 {{ Add description here }}

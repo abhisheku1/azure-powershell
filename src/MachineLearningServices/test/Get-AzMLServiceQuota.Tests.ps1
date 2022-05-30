@@ -15,7 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMLServiceQuota'))
 }
 
 Describe 'Get-AzMLServiceQuota' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'List' {
+        { Get-AzMLServiceQuota -Location eastus } | Should -Not -Throw
     }
 }

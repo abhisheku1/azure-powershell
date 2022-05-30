@@ -24,22 +24,17 @@ Returns supported VM Sizes in a location
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMLServiceVMSize -Location eastus
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Family                      Gpu LowPriorityCapable MaxResourceVolumeMb MemoryGb Name                      OSVhdSizeMb PremiumIo SupportedComputeType                         VCpUs
+------                      --- ------------------ ------------------- -------- ----                      ----------- --------- --------------------                         -----
+standardDFamily             0   True               51200               3.5      Standard_D1               1047552     False     {AmlCompute}                                 1
+standardDFamily             0   True               102400              14       Standard_D11              1047552     False     {AmlCompute}                                 2
+standardDv2Family           0   True               102400              14       Standard_D11_v2           1047552     False     {AmlCompute, ComputeInstance}                2
+standardDFamily             0   True               204800              28       Standard_D12              1047552     False     {AmlCompute}                                 4
+standardDv2Family           0   True               204800              28       Standard_D12_v2           1047552     False     {AmlCompute, ComputeInstance}                4
 ```
 
 {{ Add description here }}

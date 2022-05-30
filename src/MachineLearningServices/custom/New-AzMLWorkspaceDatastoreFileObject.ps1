@@ -46,10 +46,6 @@ function New-AzMLWorkspaceDatastoreFileObject {
         [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ServiceDataAccessAuthIdentity])]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ServiceDataAccessAuthIdentity]
         $ServiceDataAccessAuthIdentity,
-        [Parameter(Mandatory, HelpMessage="[Required] Storage type backing the datastore.")]
-        [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.DatastoreType])]
-        [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.DatastoreType]
-        $DatastoreType,
         [Parameter(HelpMessage="The asset description text.")]
         [string]
         $Description,

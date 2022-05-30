@@ -12,31 +12,10 @@ Polls an Endpoint operation.
 
 ## SYNTAX
 
-### GetExpanded (Default)
 ```
 Get-AzMlWorkspaceOnlineDeploymentLog -EndpointName <String> -Name <String> -ResourceGroupName <String>
  -WorkspaceName <String> [-SubscriptionId <String[]>] [-ContainerType <ContainerType>] [-Tail <Int32>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzMlWorkspaceOnlineDeploymentLog -EndpointName <String> -Name <String> -ResourceGroupName <String>
- -WorkspaceName <String> -Body <IDeploymentLogsRequest> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzMlWorkspaceOnlineDeploymentLog -InputObject <IMachineLearningWorkspacesIdentity>
- -Body <IDeploymentLogsRequest> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GetViaIdentityExpanded
-```
-Get-AzMlWorkspaceOnlineDeploymentLog -InputObject <IMachineLearningWorkspacesIdentity>
- [-ContainerType <ContainerType>] [-Tail <Int32>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,28 +47,12 @@ Polls an Endpoint operation.
 
 ## PARAMETERS
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDeploymentLogsRequest
-Parameter Sets: Get, GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ContainerType
 The type of container to retrieve logs from.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.ContainerType
-Parameter Sets: GetExpanded, GetViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -119,7 +82,7 @@ Inference endpoint name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, GetExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -129,28 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
 The name and identifier for the endpoint.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, GetExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -166,7 +113,7 @@ The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, GetExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -181,7 +128,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -196,7 +143,7 @@ The maximum number of lines to tail.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: GetExpanded, GetViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -211,7 +158,7 @@ Name of Azure Machine Learning workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, GetExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -257,10 +204,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IDeploymentLogsRequest
-
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IMachineLearningWorkspacesIdentity
-
 ## OUTPUTS
 
 ### System.String
@@ -268,30 +211,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODY <IDeploymentLogsRequest>: .
-  - `[ContainerType <ContainerType?>]`: The type of container to retrieve logs from.
-  - `[Tail <Int32?>]`: The maximum number of lines to tail.
-
-INPUTOBJECT <IMachineLearningWorkspacesIdentity>: Identity Parameter
-  - `[ComputeName <String>]`: Name of the Azure Machine Learning compute.
-  - `[ConnectionName <String>]`: Friendly name of the workspace connection
-  - `[DeploymentName <String>]`: Inference deployment identifier.
-  - `[EndpointName <String>]`: Inference Endpoint name.
-  - `[Id <String>]`: The name and identifier for the Job. This is case-sensitive.
-  - `[Id1 <String>]`: Resource identity path
-  - `[Location <String>]`: The location for which resource usage is queried.
-  - `[Name <String>]`: Container name. This is case-sensitive.
-  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection associated with the workspace
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[Version <String>]`: Version identifier. This is case-sensitive.
-  - `[WorkspaceName <String>]`: Name of Azure Machine Learning workspace.
 
 ## RELATED LINKS
 

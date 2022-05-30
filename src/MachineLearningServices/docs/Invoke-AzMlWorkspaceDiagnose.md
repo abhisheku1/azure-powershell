@@ -14,7 +14,7 @@ Diagnose workspace setup issue.
 
 ### DiagnoseExpanded (Default)
 ```
-Invoke-AzMlWorkspaceDiagnose -ResourceGroupName <String> -Workspace <String> [-SubscriptionId <String>]
+Invoke-AzMlWorkspaceDiagnose -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-ApplicationInsightId <Hashtable>] [-ContainerRegistryId <Hashtable>] [-DnsResolution <Hashtable>]
  [-KeyVaultId <Hashtable>] [-Nsg <Hashtable>] [-Others <Hashtable>] [-ResourceLock <Hashtable>]
  [-StorageAccount <Hashtable>] [-Udr <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
@@ -165,6 +165,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Name
+Name of Azure Machine Learning workspace.
+
+```yaml
+Type: System.String
+Parameter Sets: DiagnoseExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoWait
 Run the command asynchronously
 
@@ -280,21 +295,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Workspace
-Name of Azure Machine Learning workspace.
-
-```yaml
-Type: System.String
-Parameter Sets: DiagnoseExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

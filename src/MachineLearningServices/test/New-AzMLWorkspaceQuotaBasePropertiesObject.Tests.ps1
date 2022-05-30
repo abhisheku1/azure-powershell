@@ -1,11 +1,11 @@
-if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMLServiceUsage'))
+if(($null -eq $TestName) -or ($TestName -contains 'New-AzMLWorkspaceQuotaBasePropertiesObject'))
 {
   $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
   if (-Not (Test-Path -Path $loadEnvPath)) {
       $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
   }
   . ($loadEnvPath)
-  $TestRecordingFile = Join-Path $PSScriptRoot 'Get-AzMLServiceUsage.Recording.json'
+  $TestRecordingFile = Join-Path $PSScriptRoot 'New-AzMLWorkspaceQuotaBasePropertiesObject.Recording.json'
   $currentPath = $PSScriptRoot
   while(-not $mockingPath) {
       $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -14,8 +14,8 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMLServiceUsage'))
   . ($mockingPath | Select-Object -First 1).FullName
 }
 
-Describe 'Get-AzMLServiceUsage' {
-    It 'List' {
-        { Get-AzMLServiceUsage -Location eastus } | Should -Not -Throw
+Describe 'New-AzMLWorkspaceQuotaBasePropertiesObject' {
+    It '__AllParameterSets' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }
