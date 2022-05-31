@@ -15,11 +15,35 @@ if(($null -eq $TestName) -or ($TestName -contains 'Restart-AzMlWorkspaceCompute'
 }
 
 Describe 'Restart-AzMlWorkspaceCompute' {
-    It 'Restart' -skip {
+    It 'AmlCompute' {
+        { 
+            throw [System.NotImplementedException] 
+        } | Should -Not -Throw
+    }
+
+    It 'ComputeInstance' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RestartViaIdentity' -skip {
+    It 'Kubernetes' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'VirtualMachine' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'HDInsight' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'DataFactory' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'Databricks' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'DataLakeAnalytics' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+    It 'SynapseSpark' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

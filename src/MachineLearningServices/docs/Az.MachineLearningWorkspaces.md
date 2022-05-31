@@ -166,6 +166,9 @@ If your intent is to create a new compute, do a GET first to verify that it does
 ### [New-AzMLWorkspaceComputeInstanceObject](New-AzMLWorkspaceComputeInstanceObject.md)
 Create an in-memory object for ComputeInstance.
 
+### [New-AzMLWorkspaceComputeStartStopScheduleObject](New-AzMLWorkspaceComputeStartStopScheduleObject.md)
+Create an in-memory object for ComputeStartStopSchedule.
+
 ### [New-AzMlWorkspaceConnection](New-AzMlWorkspaceConnection.md)
 
 

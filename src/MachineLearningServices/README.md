@@ -153,29 +153,10 @@ directive:
       subject: Job
       variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
-  # workspace, Cannot specified subject.
-  # - where:
-  #     verb: New
-  #     subject: $
-  #     variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-  #   remove: true
-
-#   # - where:
-#   #     verb: New
-#   #     subject: OnlineDeployment
-#   #     variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-#   #   remove: true
-
-#   # - where:
-#   #     verb: New
-#   #     subject: OnlineDeployment
-#   #     parameter-name: Body
-#   #   set:
-#   #     parameter-name: Deployment
 
   - where:
       verb: New
-      subject: BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey|DataVersion
+      subject: ^$|BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey|DataVersion
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
   - where:
@@ -441,7 +422,7 @@ directive:
     # # --> New-AzMLWorkspaceDataLakeAnalyticsObject
     # - SynapseSpark 
     # # --> New-AzMLWorkspaceSynapseSparkObject
-    # - ComputeStartStopSchedule
+    - ComputeStartStopSchedule
 # Datastore
     ## Datastore Type
     # - AzureBlobDatastore --> New-AzMLWorkspaceDatastoreBlobObject

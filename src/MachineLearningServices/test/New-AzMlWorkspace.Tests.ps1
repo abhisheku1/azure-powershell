@@ -15,19 +15,13 @@ if(($null -eq $TestName) -or ($TestName -contains 'New-AzMlWorkspace'))
 }
 
 Describe 'New-AzMlWorkspace' {
-    It 'CreateExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'Create' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'CreateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'CreateViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'CreateExpanded' {
+        { 
+            New-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Location eastus `
+            -ApplicationInsightId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.insights/components/mlappinsights01" `
+            -KeyVaultId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/mlkeyvault01" `
+            -StorageAccountId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/mlstorageaccount02" `
+            -IdentityType 'SystemAssigned' 
+        } | Should -Not -Throw
     }
 }
