@@ -16,8 +16,8 @@ Create an in-memory object for CommandJob.
 New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> [-CodeId <String>]
  [-ComputeId <String>] [-Description <String>] [-DisplayName <String>] [-DistributionType <DistributionType>]
  [-EnvironmentVariable <Hashtable>] [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>]
- [-Input <ICommandJobInputs>] [-IsArchived <Boolean>] [-LimitTimeout <TimeSpan>]
- [-Output <ICommandJobOutputs>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
+ [-IsArchived <Boolean>] [-JobInput <ICommandJobInputs>] [-JobOutput <ICommandJobOutputs>]
+ [-LimitTimeout <TimeSpan>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
  [-ResourceInstanceType <String>] [-ResourceProperty <IResourceConfigurationProperties>]
  [-ServiceEndpoint <String>] [-ServicePort <Int32>] [-ServiceProperty <IJobServiceProperties>]
  [-ServiceType <String>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
@@ -205,9 +205,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Input
+### -IsArchived
+Is the asset archived?.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JobInput
 Mapping of input data bindings used in the job.
-To construct, see NOTES section for INPUT properties and create a hash table.
+To construct, see NOTES section for JOBINPUT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobInputs
@@ -221,11 +236,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IsArchived
-Is the asset archived?.
+### -JobOutput
+Mapping of output data bindings used in the job.
+To construct, see NOTES section for JOBOUTPUT properties and create a hash table.
 
 ```yaml
-Type: System.Boolean
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobOutputs
 Parameter Sets: (All)
 Aliases:
 
@@ -242,22 +258,6 @@ Only supports duration with precision as low as Seconds.
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Output
-Mapping of output data bindings used in the job.
-To construct, see NOTES section for OUTPUT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobOutputs
 Parameter Sets: (All)
 Aliases:
 
@@ -426,10 +426,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUT <ICommandJobInputs>: Mapping of input data bindings used in the job.
+JOBINPUT <ICommandJobInputs>: Mapping of input data bindings used in the job.
   - `[(Any) <IJobInput>]`: This indicates any property can be added to this object.
 
-OUTPUT <ICommandJobOutputs>: Mapping of output data bindings used in the job.
+JOBOUTPUT <ICommandJobOutputs>: Mapping of output data bindings used in the job.
   - `[(Any) <IJobOutput>]`: This indicates any property can be added to this object.
 
 PROPERTY <IResourceBaseProperties>: The asset property dictionary.

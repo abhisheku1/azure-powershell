@@ -15,8 +15,15 @@ if(($null -eq $TestName) -or ($TestName -contains 'New-AzMlWorkspaceJob'))
 }
 
 Describe 'New-AzMlWorkspaceJob' {
-    It 'Create' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'CommandJob' {
+        { 
+            New-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv -Version 1 -Image "library/python:latest"
+            $commandJob = New-AzMLWorkspaceCommandJobObject -Command "echo `"hello world`"" `
+            -ComputeId '/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-test01/computes/aml02' `
+            -EnvironmentId '/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.MachineLearningServices/workspaces/mlworkspace-test01/environments/commandjobenv/versions/1'`
+            -DisplayName 'commandjob01' -ExperimentName 'commandjobexperiment'
+            New-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01 -Property $commandJob
+        } | Should -Not -Throw
     }
 
     It 'CreateExpanded' -skip {

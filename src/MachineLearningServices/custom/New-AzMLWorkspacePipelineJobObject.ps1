@@ -32,13 +32,13 @@ function New-AzMLWorkspacePipelineJobObject {
 
         [Parameter(HelpMessage="Inputs for the pipeline job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobInputs]
-        $Input,
+        $JobInput,
         [Parameter(HelpMessage="Jobs construct the Pipeline Job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobJobs]
         $Job,
         [Parameter(HelpMessage="Outputs for the pipeline job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobOutputs]
-        $Output,
+        $JobOutput,
         [Parameter(HelpMessage="Pipeline settings, for things like ContinueRunOnStepFailure etc.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IAny]
         $Setting,
@@ -91,14 +91,14 @@ function New-AzMLWorkspacePipelineJobObject {
         $Object.JobType = 'Pipeline'
         $Service = [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.JobBaseServices]::New()
 
-        if ($PSBoundParameters.ContainsKey('Input')) {
-            $Object.Input = $Input
+        if ($PSBoundParameters.ContainsKey('JobInput')) {
+            $Object.Input = $JobInput
         }
         if ($PSBoundParameters.ContainsKey('Job')) {
             $Object.Job = $Job
         }
-        if ($PSBoundParameters.ContainsKey('Output')) {
-            $Object.Output = $Output
+        if ($PSBoundParameters.ContainsKey('JobOutput')) {
+            $Object.Output = $JobOutput
         }
         if ($PSBoundParameters.ContainsKey('Setting')) {
             $Object.Setting = $Setting

@@ -29,11 +29,13 @@ Creates or updates an EnvironmentVersion.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv -Version 1 -Image "library/python:latest"
 ```
 
 ```output
-{{ Add output here }}
+Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy            SystemDataLastModifiedByType ResourceGroupName
+---- -------------------  -------------------                 ----------------------- ------------------------ ------------------------            ---------------------------- -----------------
+1    5/31/2022 8:28:35 AM Lucas Yao (Wicresoft North America) User                    5/31/2022 8:28:35 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
 {{ Add description here }}

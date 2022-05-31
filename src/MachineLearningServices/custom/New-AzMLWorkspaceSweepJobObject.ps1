@@ -46,7 +46,7 @@ function New-AzMLWorkspaceSweepJobObject {
         $EarlyTerminationPolicyType,
         [Parameter(HelpMessage="Mapping of input data bindings used in the job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ISweepJobInputs]
-        $Input,
+        $JobInput,
         [Parameter(HelpMessage="Sweep Job max concurrent trials.")]
         [int]
         $LimitMaxConcurrentTrial,
@@ -68,7 +68,7 @@ function New-AzMLWorkspaceSweepJobObject {
         $ObjectivePrimaryMetric,
         [Parameter(HelpMessage="Mapping of output data bindings used in the job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ISweepJobOutputs]
-        $Output,
+        $JobOutput,
         [Parameter(HelpMessage="Optional number of instances or nodes used by the compute target.")]
         [int]
         $ResourceInstanceCount,
@@ -159,8 +159,8 @@ function New-AzMLWorkspaceSweepJobObject {
         if ($PSBoundParameters.ContainsKey('EarlyTerminationPolicyType')) {
             $Object.EarlyTerminationPolicyType = $EarlyTerminationPolicyType
         }
-        if ($PSBoundParameters.ContainsKey('Input')) {
-            $Object.Input = $Input
+        if ($PSBoundParameters.ContainsKey('JobInput')) {
+            $Object.Input = $JobInput
         }
         if ($PSBoundParameters.ContainsKey('LimitMaxConcurrentTrial')) {
             $Object.LimitMaxConcurrentTrial = $LimitMaxConcurrentTrial
@@ -180,8 +180,8 @@ function New-AzMLWorkspaceSweepJobObject {
         if ($PSBoundParameters.ContainsKey('ObjectivePrimaryMetric')) {
             $Object.ObjectivePrimaryMetric = $ObjectivePrimaryMetric
         }
-        if ($PSBoundParameters.ContainsKey('Output')) {
-            $Object.Output = $Output
+        if ($PSBoundParameters.ContainsKey('JobOutput')) {
+            $Object.Output = $JobOutput
         }
         if ($PSBoundParameters.ContainsKey('ResourceInstanceCount')) {
             $Object.ResourceInstanceCount = $ResourceInstanceCount

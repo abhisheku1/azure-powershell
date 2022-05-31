@@ -13,8 +13,9 @@ Creates and executes a Job.
 ## SYNTAX
 
 ```
-New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String> -Body <IJobBase>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
+ -Job <IJobBaseProperties> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,22 +47,6 @@ Creates and executes a Job.
 
 ## PARAMETERS
 
-### -Body
-Azure Resource Manager resource envelope.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -71,6 +56,22 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Job
+[Required] Additional attributes of the entity.
+To construct, see NOTES section for JOB properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBaseProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -175,8 +176,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
-
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IJobBase
@@ -190,27 +189,20 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <IJobBase>: Azure Resource Manager resource envelope.
-  - `Property <IJobBaseProperties>`: [Required] Additional attributes of the entity.
-    - `JobType <JobType>`: [Required] Specifies the type of job.
-    - `[Description <String>]`: The asset description text.
-    - `[Property <IResourceBaseProperties>]`: The asset property dictionary.
-      - `[(Any) <String>]`: This indicates any property can be added to this object.
-    - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
-      - `[(Any) <String>]`: This indicates any property can be added to this object.
-    - `[ComputeId <String>]`: ARM resource ID of the compute resource.
-    - `[DisplayName <String>]`: Display name of job.
-    - `[ExperimentName <String>]`: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
-    - `[IdentityType <IdentityConfigurationType?>]`: [Required] Specifies the type of identity framework.
-    - `[IsArchived <Boolean?>]`: Is the asset archived?
-    - `[Service <IJobBaseServices>]`: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
-      - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
-  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
-  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
-  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
-  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
-  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
-  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+JOB <IJobBaseProperties>: [Required] Additional attributes of the entity.
+  - `JobType <JobType>`: [Required] Specifies the type of job.
+  - `[Description <String>]`: The asset description text.
+  - `[Property <IResourceBaseProperties>]`: The asset property dictionary.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[Tag <IResourceBaseTags>]`: Tag dictionary. Tags can be added, removed, and updated.
+    - `[(Any) <String>]`: This indicates any property can be added to this object.
+  - `[ComputeId <String>]`: ARM resource ID of the compute resource.
+  - `[DisplayName <String>]`: Display name of job.
+  - `[ExperimentName <String>]`: The name of the experiment the job belongs to. If not set, the job is placed in the "Default" experiment.
+  - `[IdentityType <IdentityConfigurationType?>]`: [Required] Specifies the type of identity framework.
+  - `[IsArchived <Boolean?>]`: Is the asset archived?
+  - `[Service <IJobBaseServices>]`: List of JobEndpoints.         For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
+    - `[(Any) <IJobService>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

@@ -49,13 +49,13 @@ function New-AzMLWorkspaceCommandJobObject {
         $EnvironmentVariable,
         [Parameter(HelpMessage="Mapping of input data bindings used in the job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobInputs]
-        $Input,
+        $JobInput,
         [Parameter(HelpMessage="The max run duration in ISO 8601 format, after which the job will be cancelled. Only supports duration with precision as low as Seconds.")]
         [System.TimeSpan]
         $LimitTimeout,
         [Parameter(HelpMessage="Mapping of output data bindings used in the job.")]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.ICommandJobOutputs]
-        $Output,
+        $JobOutput,
         [Parameter(HelpMessage="Optional number of instances or nodes used by the compute target.")]
         [int]
         $ResourceInstanceCount,
@@ -133,16 +133,16 @@ function New-AzMLWorkspaceCommandJobObject {
             $EnvironmentVariableObj.CopyFrom($EnvironmentVariable);
             $Object.EnvironmentVariable = $EnvironmentVariableObj
         }
-        if ($PSBoundParameters.ContainsKey('Input')) {
-            $Object.Input = $Input
+        if ($PSBoundParameters.ContainsKey('JobInput')) {
+            $Object.Input = $JobInput
         }
         if ($PSBoundParameters.ContainsKey('LimitJobLimitsType')) {
         }
         if ($PSBoundParameters.ContainsKey('LimitTimeout')) {
             $Object.LimitTimeout = $LimitTimeout
         }
-        if ($PSBoundParameters.ContainsKey('Output')) {
-            $Object.Output = $Output
+        if ($PSBoundParameters.ContainsKey('JobOutput')) {
+            $Object.Output = $JobOutput
         }
         if ($PSBoundParameters.ContainsKey('ResourceInstanceCount')) {
             $Object.ResourceInstanceCount = $ResourceInstanceCount

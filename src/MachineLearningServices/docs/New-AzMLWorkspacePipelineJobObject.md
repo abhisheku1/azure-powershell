@@ -14,8 +14,8 @@ Create an in-memory object for PipelineJob.
 
 ```
 New-AzMLWorkspacePipelineJobObject [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
- [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <IPipelineJobInputs>]
- [-IsArchived <Boolean>] [-Job <IPipelineJobJobs>] [-Output <IPipelineJobOutputs>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-IsArchived <Boolean>]
+ [-Job <IPipelineJobJobs>] [-JobInput <IPipelineJobInputs>] [-JobOutput <IPipelineJobOutputs>]
  [-Property <IResourceBaseProperties>] [-ServiceEndpoint <String>] [-ServicePort <Int32>]
  [-ServiceProperty <IJobServiceProperties>] [-ServiceType <String>] [-Setting <IAny>]
  [-Tag <IResourceBaseTags>] [<CommonParameters>]
@@ -126,22 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Input
-Inputs for the pipeline job.
-To construct, see NOTES section for INPUT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobInputs
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IsArchived
 Is the asset archived?.
 
@@ -173,9 +157,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Output
+### -JobInput
+Inputs for the pipeline job.
+To construct, see NOTES section for JOBINPUT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobInputs
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JobOutput
 Outputs for the pipeline job.
-To construct, see NOTES section for OUTPUT properties and create a hash table.
+To construct, see NOTES section for JOBOUTPUT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.IPipelineJobOutputs
@@ -316,13 +316,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUT <IPipelineJobInputs>: Inputs for the pipeline job.
-  - `[(Any) <IJobInput>]`: This indicates any property can be added to this object.
-
 JOB <IPipelineJobJobs>: Jobs construct the Pipeline Job.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-OUTPUT <IPipelineJobOutputs>: Outputs for the pipeline job.
+JOBINPUT <IPipelineJobInputs>: Inputs for the pipeline job.
+  - `[(Any) <IJobInput>]`: This indicates any property can be added to this object.
+
+JOBOUTPUT <IPipelineJobOutputs>: Outputs for the pipeline job.
   - `[(Any) <IJobOutput>]`: This indicates any property can be added to this object.
 
 PROPERTY <IResourceBaseProperties>: The asset property dictionary.

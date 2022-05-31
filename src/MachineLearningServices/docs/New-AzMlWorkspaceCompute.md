@@ -33,11 +33,14 @@ If your intent is to create a new compute, do a GET first to verify that it does
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+$aml = New-AzMLWorkspaceAmlComputeObject -OSType 'Linux' -VMSize "STANDARD_DS3_V2" -ScaleSettingMaxNodeCount 8 -ScaleSettingMinNodeCount 0 -RemoteLoginPortPublicAccess 'NotSpecified' -EnableNodePublicIP
+New-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml01 -Location eastus -Compute $aml
 ```
 
 ```output
-{{ Add output here }}
+Name  SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Location ResourceGroupName
+----  ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- -------- -----------------
+aml01                                                                                                                                                                    eastus   ml-rg-test
 ```
 
 {{ Add description here }}

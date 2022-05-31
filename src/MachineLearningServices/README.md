@@ -151,7 +151,7 @@ directive:
   - where:
       verb: New
       subject: Job
-      variant: ^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
 
   - where:
@@ -303,6 +303,11 @@ directive:
       parameter-name: Id
     set:
       parameter-name: Name
+  - where:
+      subject: Job
+      parameter-name: Property
+    set:
+      parameter-name: Job
 
   - where:
       subject: OnlineDeployment|OnlineDeploymentLog|DeploymentSku|BatchDeployment
@@ -437,7 +442,7 @@ directive:
     # - ServicePrincipalDatastoreCredentials --> New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject
 # Job type
     # - CommandJob
-    ## -> New-AzMLWorkspaceCommandJobObject
+    # -> New-AzMLWorkspaceCommandJobObject
     # - PipelineJob
     # # --> New-AzMLWorkspacePipelineJobObject
     # - SweepJob 

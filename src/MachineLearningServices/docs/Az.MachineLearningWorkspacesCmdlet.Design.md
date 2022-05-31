@@ -79,6 +79,35 @@ New-AzMlWorkspace -Name <String> -ResourceGroupName <String> [-SubscriptionId <S
  [-V1LegacyMode] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
++ Create
+```powershell
+New-AzMlWorkspace -Name <String> -ResourceGroupName <String> -Parameter <IWorkspace>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
++ CreateViaIdentity
+```powershell
+New-AzMlWorkspace -InputObject <IMachineLearningWorkspacesIdentity> -Parameter <IWorkspace>
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
++ CreateViaIdentityExpanded
+```powershell
+New-AzMlWorkspace -InputObject <IMachineLearningWorkspacesIdentity> [-AllowPublicAccessWhenBehindVnet]
+ [-ApplicationInsightId <String>] [-ContainerRegistryId <String>] [-CosmoDbCollectionsThroughput <Int32>]
+ [-Description <String>] [-DiscoveryUrl <String>] [-EncryptionStatus <EncryptionStatus>]
+ [-EncryptionUserAssignedIdentity <String>] [-FriendlyName <String>] [-HbiWorkspace]
+ [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssigned <Hashtable>]
+ [-ImageBuildCompute <String>] [-KeyVaultArmId <String>] [-KeyVaultId <String>]
+ [-KeyVaultIdentityClientId <String>] [-KeyVaultKeyIdentifier <String>] [-Location <String>]
+ [-PrimaryUserAssignedIdentity <String>] [-PublicNetworkAccess <PublicNetworkAccess>]
+ [-SharedPrivateLinkResource <ISharedPrivateLinkResource[]>] [-SkuCapacity <Int32>] [-SkuFamily <String>]
+ [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-StorageAccountId <String>] [-Tag <Hashtable>]
+ [-V1LegacyMode] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+
 #### Get-AzMlWorkspace
 
 #### SYNOPSIS
@@ -526,8 +555,8 @@ Create an in-memory object for CommandJob.
 New-AzMLWorkspaceCommandJobObject -Command <String> -EnvironmentId <String> [-CodeId <String>]
  [-ComputeId <String>] [-Description <String>] [-DisplayName <String>] [-DistributionType <DistributionType>]
  [-EnvironmentVariable <Hashtable>] [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>]
- [-Input <ICommandJobInputs>] [-IsArchived <Boolean>] [-LimitTimeout <TimeSpan>]
- [-Output <ICommandJobOutputs>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
+ [-IsArchived <Boolean>] [-JobInput <ICommandJobInputs>] [-JobOutput <ICommandJobOutputs>]
+ [-LimitTimeout <TimeSpan>] [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>]
  [-ResourceInstanceType <String>] [-ResourceProperty <IResourceConfigurationProperties>]
  [-ServiceEndpoint <String>] [-ServicePort <Int32>] [-ServiceProperty <IJobServiceProperties>]
  [-ServiceType <String>] [-Tag <IResourceBaseTags>] [<CommonParameters>]
@@ -859,6 +888,20 @@ Get the details (e.g IP address, port etc) of all the compute nodes in the compu
 ```powershell
 Get-AzMlWorkspaceComputeNode -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+
+#### New-AzMLWorkspaceComputeStartStopScheduleObject
+
+#### SYNOPSIS
+Create an in-memory object for ComputeStartStopSchedule.
+
+#### SYNTAX
+
+```powershell
+New-AzMLWorkspaceComputeStartStopScheduleObject [-Action <ComputePowerAction>] [-ScheduleId <String>]
+ [-ScheduleProvisioningStatus <ScheduleProvisioningState>] [-ScheduleStatus <ScheduleStatus>]
+ [<CommonParameters>]
 ```
 
 
@@ -1498,8 +1541,9 @@ Creates and executes a Job.
 #### SYNTAX
 
 ```powershell
-New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String> -Body <IJobBase>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzMlWorkspaceJob -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
+ -Job <IJobBaseProperties> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 
@@ -2155,8 +2199,8 @@ Create an in-memory object for PipelineJob.
 
 ```powershell
 New-AzMLWorkspacePipelineJobObject [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
- [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <IPipelineJobInputs>]
- [-IsArchived <Boolean>] [-Job <IPipelineJobJobs>] [-Output <IPipelineJobOutputs>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-IsArchived <Boolean>]
+ [-Job <IPipelineJobJobs>] [-JobInput <IPipelineJobInputs>] [-JobOutput <IPipelineJobOutputs>]
  [-Property <IResourceBaseProperties>] [-ServiceEndpoint <String>] [-ServicePort <Int32>]
  [-ServiceProperty <IJobServiceProperties>] [-ServiceType <String>] [-Setting <IAny>]
  [-Tag <IResourceBaseTags>] [<CommonParameters>]
@@ -2215,9 +2259,9 @@ New-AzMLWorkspaceSweepJobObject -ObjectiveGoal <Goal> -ObjectivePrimaryMetric <S
  -TrialEnvironmentId <String> [-ComputeId <String>] [-Description <String>] [-DisplayName <String>]
  [-DistributionType <DistributionType>] [-EarlyTerminationDelayEvaluation <Int32>]
  [-EarlyTerminationEvaluationInterval <Int32>] [-EarlyTerminationPolicyType <EarlyTerminationPolicyType>]
- [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-Input <ISweepJobInputs>]
- [-IsArchived <Boolean>] [-LimitMaxConcurrentTrial <Int32>] [-LimitMaxTotalTrial <Int32>]
- [-LimitTimeout <TimeSpan>] [-LimitTrialTimeout <TimeSpan>] [-Output <ISweepJobOutputs>]
+ [-ExperimentName <String>] [-IdentityType <IdentityConfigurationType>] [-IsArchived <Boolean>]
+ [-JobInput <ISweepJobInputs>] [-JobOutput <ISweepJobOutputs>] [-LimitMaxConcurrentTrial <Int32>]
+ [-LimitMaxTotalTrial <Int32>] [-LimitTimeout <TimeSpan>] [-LimitTrialTimeout <TimeSpan>]
  [-Property <IResourceBaseProperties>] [-ResourceInstanceCount <Int32>] [-ResourceInstanceType <String>]
  [-ResourceProperty <IResourceConfigurationProperties>] [-ServiceEndpoint <String>] [-ServicePort <Int32>]
  [-ServiceProperty <IJobServiceProperties>] [-ServiceType <String>] [-Tag <IResourceBaseTags>]
