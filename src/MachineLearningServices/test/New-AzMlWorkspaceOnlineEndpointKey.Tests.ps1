@@ -15,19 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'New-AzMlWorkspaceOnlineEndpoi
 }
 
 Describe 'New-AzMlWorkspaceOnlineEndpointKey' {
-    It 'RegenerateExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'Regenerate' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'RegenerateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'RegenerateViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'RegenerateExpanded' {
+        { New-AzMlWorkspaceOnlineEndpointKey -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-pwsh02 -KeyType 'Primary' } | Should -Not -Throw
     }
 }

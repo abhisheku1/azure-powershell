@@ -1,21 +1,19 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Stop-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01 | Stop-AzMlWorkspaceJob
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}

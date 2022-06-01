@@ -13,14 +13,13 @@ Create an in-memory object for AmlCompute.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceAmlComputeObject [-Description <String>] [-DisableLocalAuth <Boolean>]
+New-AzMLWorkspaceAmlComputeObject [-AdminUserName <String>] [-AdminUserPassword <String>]
+ [-AdminUserSshPublicKey <String>] [-Description <String>] [-DisableLocalAuth <Boolean>]
  [-EnableNodePublicIP <Boolean>] [-IsolatedNetwork <Boolean>] [-OSType <OSType>] [-PropertyBag <IAny>]
  [-RemoteLoginPortPublicAccess <RemoteLoginPortPublicAccess>] [-ResourceId <String>]
- [-ScaleSettingMaxNodeCount <Int32>] [-ScaleSettingMinNodeCount <Int32>]
- [-ScaleSettingNodeIdleTimeBeforeScaleDown <TimeSpan>] [-SubnetId <String>]
- [-UserAccountCredentialsAdminUserName <String>] [-UserAccountCredentialsAdminUserPassword <String>]
- [-UserAccountCredentialsAdminUserSshPublicKey <String>] [-VirtualMachineImageId <String>]
- [-VMPriority <VMPriority>] [-VMSize <String>] [<CommonParameters>]
+ [-ScaleMaxNodeCount <Int32>] [-ScaleMinNodeCount <Int32>] [-ScaleNodeIdleTimeBeforeScaleDown <TimeSpan>]
+ [-SubnetId <String>] [-VirtualMachineImageId <String>] [-VMPriority <VMPriority>] [-VMSize <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,18 +38,52 @@ Create an in-memory object for AmlCompute.
 
 {{ Add description here }}
 
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
+
+### -AdminUserName
+Name of the administrator user account which can be used to SSH to nodes.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUserPassword
+Password of the administrator user account.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdminUserSshPublicKey
+SSH public key of the administrator user account.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Description
 The description of the Machine Learning compute.
@@ -178,7 +211,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ScaleSettingMaxNodeCount
+### -ScaleMaxNodeCount
 Max number of nodes to use.
 
 ```yaml
@@ -193,7 +226,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ScaleSettingMinNodeCount
+### -ScaleMinNodeCount
 Min number of nodes to use.
 
 ```yaml
@@ -208,7 +241,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ScaleSettingNodeIdleTimeBeforeScaleDown
+### -ScaleNodeIdleTimeBeforeScaleDown
 Node Idle Time before scaling down amlCompute.
 This string needs to be in the RFC Format.
 
@@ -226,51 +259,6 @@ Accept wildcard characters: False
 
 ### -SubnetId
 The ID of the resource.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAccountCredentialsAdminUserName
-Name of the administrator user account which can be used to SSH to nodes.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAccountCredentialsAdminUserPassword
-Password of the administrator user account.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAccountCredentialsAdminUserSshPublicKey
-SSH public key of the administrator user account.
 
 ```yaml
 Type: System.String

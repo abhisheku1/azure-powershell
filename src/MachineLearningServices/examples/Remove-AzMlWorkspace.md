@@ -1,21 +1,19 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Remove-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Tag @{'key1' = 'value2'}
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Remove-AzMlWorkspace -Tag @{'key1' = 'value2'}
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}

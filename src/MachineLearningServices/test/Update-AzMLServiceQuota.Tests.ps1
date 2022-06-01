@@ -15,11 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Update-AzMLServiceQuota'))
 }
 
 Describe 'Update-AzMLServiceQuota' {
-    It 'UpdateExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'UpdateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'UpdateExpanded' {
+        { Update-AzMLServiceQuota -Location eastus -Value @{'key1'='value1'} } | Should -Not -Throw
     }
 }

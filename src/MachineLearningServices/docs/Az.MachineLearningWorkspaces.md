@@ -29,12 +29,6 @@ Gets a batch inference deployment by id.
 ### [Get-AzMlWorkspaceBatchEndpoint](Get-AzMlWorkspaceBatchEndpoint.md)
 Gets a batch inference endpoint by name.
 
-### [Get-AzMlWorkspaceBatchEndpointKey](Get-AzMlWorkspaceBatchEndpointKey.md)
-Lists batch Inference Endpoint keys.
-
-### [Get-AzMlWorkspaceCodeContainer](Get-AzMlWorkspaceCodeContainer.md)
-Get container.
-
 ### [Get-AzMlWorkspaceCodeVersion](Get-AzMlWorkspaceCodeVersion.md)
 Get version.
 
@@ -142,9 +136,6 @@ Creates/updates a batch inference deployment (asynchronous).
 ### [New-AzMlWorkspaceBatchEndpoint](New-AzMlWorkspaceBatchEndpoint.md)
 Creates a batch inference endpoint (asynchronous).
 
-### [New-AzMlWorkspaceCodeContainer](New-AzMlWorkspaceCodeContainer.md)
-Create or update container.
-
 ### [New-AzMlWorkspaceCodeVersion](New-AzMlWorkspaceCodeVersion.md)
 Create or update version.
 
@@ -222,9 +213,6 @@ Create an in-memory object for ServicePrincipalDatastoreCredentials.
 
 ### [New-AzMlWorkspaceDataVersion](New-AzMlWorkspaceDataVersion.md)
 Create or update version.
-
-### [New-AzMlWorkspaceEnvironmentContainer](New-AzMlWorkspaceEnvironmentContainer.md)
-Create or update container.
 
 ### [New-AzMlWorkspaceEnvironmentVersion](New-AzMlWorkspaceEnvironmentVersion.md)
 Creates or updates an EnvironmentVersion.
@@ -315,9 +303,6 @@ Delete Batch Inference deployment (asynchronous).
 
 ### [Remove-AzMlWorkspaceBatchEndpoint](Remove-AzMlWorkspaceBatchEndpoint.md)
 Delete Batch Inference Endpoint (asynchronous).
-
-### [Remove-AzMlWorkspaceCodeContainer](Remove-AzMlWorkspaceCodeContainer.md)
-Delete container.
 
 ### [Remove-AzMlWorkspaceCodeVersion](Remove-AzMlWorkspaceCodeVersion.md)
 Delete version.

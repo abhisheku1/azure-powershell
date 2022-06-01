@@ -13,14 +13,12 @@ Create an in-memory object for Aks.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceAksObject [-AgentCount <Int32>] [-AgentVMSize <String>]
- [-AkNetworkingConfigurationDnsServiceIP <String>] [-AkNetworkingConfigurationDockerBridgeCidr <String>]
- [-AkNetworkingConfigurationServiceCidr <String>] [-AkNetworkingConfigurationSubnetId <String>]
+New-AzMLWorkspaceAksObject [-AgentCount <Int32>] [-AgentVMSize <String>] [-AkNetworkingDnsServiceIP <String>]
+ [-AkNetworkingDockerBridgeCidr <String>] [-AkNetworkingServiceCidr <String>] [-AkNetworkingSubnetId <String>]
  [-ClusterFqdn <String>] [-ClusterPurpose <ClusterPurpose>] [-Description <String>]
  [-DisableLocalAuth <Boolean>] [-LoadBalancerSubnet <String>] [-LoadBalancerType <LoadBalancerType>]
- [-ResourceId <String>] [-SslConfigurationCert <String>] [-SslConfigurationCname <String>]
- [-SslConfigurationKey <String>] [-SslConfigurationLeafDomainLabel <String>]
- [-SslConfigurationOverwriteExistingDomain <Boolean>] [-SslConfigurationStatus <SslConfigStatus>]
+ [-ResourceId <String>] [-SslCert <String>] [-SslCname <String>] [-SslKey <String>]
+ [-SslLeafDomainLabel <String>] [-SslOverwriteExistingDomain <Boolean>] [-SslStatus <SslConfigStatus>]
  [<CommonParameters>]
 ```
 
@@ -31,22 +29,7 @@ Create an in-memory object for Aks.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+New-AzMLWorkspaceAksObject -Description "aks compute"
 ```
 
 {{ Add description here }}
@@ -83,7 +66,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AkNetworkingConfigurationDnsServiceIP
+### -AkNetworkingDnsServiceIP
 An IP address assigned to the Kubernetes DNS service.
 It must be within the Kubernetes service address range specified in serviceCidr.
 
@@ -99,7 +82,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AkNetworkingConfigurationDockerBridgeCidr
+### -AkNetworkingDockerBridgeCidr
 A CIDR notation IP range assigned to the Docker bridge network.
 It must not overlap with any Subnet IP ranges or the Kubernetes service address range.
 
@@ -115,7 +98,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AkNetworkingConfigurationServiceCidr
+### -AkNetworkingServiceCidr
 A CIDR notation IP range from which to assign service cluster IPs.
 It must not overlap with any Subnet IP ranges.
 
@@ -131,7 +114,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AkNetworkingConfigurationSubnetId
+### -AkNetworkingSubnetId
 Virtual network subnet resource ID the compute nodes belong to.
 
 ```yaml
@@ -251,7 +234,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationCert
+### -SslCert
 Cert data.
 
 ```yaml
@@ -266,7 +249,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationCname
+### -SslCname
 CNAME of the cert.
 
 ```yaml
@@ -281,7 +264,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationKey
+### -SslKey
 Key data.
 
 ```yaml
@@ -296,7 +279,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationLeafDomainLabel
+### -SslLeafDomainLabel
 Leaf domain label of public endpoint.
 
 ```yaml
@@ -311,7 +294,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationOverwriteExistingDomain
+### -SslOverwriteExistingDomain
 Indicates whether to overwrite existing domain label.
 
 ```yaml
@@ -326,7 +309,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslConfigurationStatus
+### -SslStatus
 Enable or disable ssl for scoring.
 
 ```yaml

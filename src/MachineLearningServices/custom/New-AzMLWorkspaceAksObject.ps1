@@ -47,16 +47,16 @@ function New-AzMLWorkspaceAksObject {
         $AgentVMSize,
         [Parameter(HelpMessage="An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.")]
         [string]
-        $AkNetworkingConfigurationDnsServiceIP,
+        $AkNetworkingDnsServiceIP,
         [Parameter(HelpMessage="A CIDR notation IP range assigned to the Docker bridge network. It must not overlap with any Subnet IP ranges or the Kubernetes service address range.")]
         [string]
-        $AkNetworkingConfigurationDockerBridgeCidr,
+        $AkNetworkingDockerBridgeCidr,
         [Parameter(HelpMessage="A CIDR notation IP range from which to assign service cluster IPs. It must not overlap with any Subnet IP ranges.")]
         [string]
-        $AkNetworkingConfigurationServiceCidr,
+        $AkNetworkingServiceCidr,
         [Parameter(HelpMessage="Virtual network subnet resource ID the compute nodes belong to.")]
         [string]
-        $AkNetworkingConfigurationSubnetId,
+        $AkNetworkingSubnetId,
         [Parameter(HelpMessage="Cluster full qualified domain name.")]
         [string]
         $ClusterFqdn,
@@ -73,23 +73,23 @@ function New-AzMLWorkspaceAksObject {
         $LoadBalancerType,
         [Parameter(HelpMessage="Cert data.")]
         [string]
-        $SslConfigurationCert,
+        $SslCert,
         [Parameter(HelpMessage="CNAME of the cert.")]
         [string]
-        $SslConfigurationCname,
+        $SslCname,
         [Parameter(HelpMessage="Key data.")]
         [string]
-        $SslConfigurationKey,
+        $SslKey,
         [Parameter(HelpMessage="Leaf domain label of public endpoint.")]
         [string]
-        $SslConfigurationLeafDomainLabel,
+        $SslLeafDomainLabel,
         [Parameter(HelpMessage="Indicates whether to overwrite existing domain label.")]
         [bool]
-        $SslConfigurationOverwriteExistingDomain,
+        $SslOverwriteExistingDomain,
         [Parameter(HelpMessage="Enable or disable ssl for scoring.")]
         [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.SslConfigStatus])]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.SslConfigStatus]
-        $SslConfigurationStatus
+        $SslStatus
     )
 
     process {
@@ -111,17 +111,17 @@ function New-AzMLWorkspaceAksObject {
         if ($PSBoundParameters.ContainsKey('AgentVMSize')) {
             $Object.AgentVMSize = $AgentVMSize
         }
-        if ($PSBoundParameters.ContainsKey('AkNetworkingConfigurationDnsServiceIP')) {
-            $Object.AkNetworkingConfigurationDnsServiceIP = $AkNetworkingConfigurationDnsServiceIP
+        if ($PSBoundParameters.ContainsKey('AkNetworkingDnsServiceIP')) {
+            $Object.AkNetworkingConfigurationDnsServiceIP = $AkNetworkingDnsServiceIP
         }
-        if ($PSBoundParameters.ContainsKey('AkNetworkingConfigurationDockerBridgeCidr')) {
-            $Object.AkNetworkingConfigurationDockerBridgeCidr = $AkNetworkingConfigurationDockerBridgeCidr
+        if ($PSBoundParameters.ContainsKey('AkNetworkingDockerBridgeCidr')) {
+            $Object.AkNetworkingConfigurationDockerBridgeCidr = $AkNetworkingDockerBridgeCidr
         }
-        if ($PSBoundParameters.ContainsKey('AkNetworkingConfigurationServiceCidr')) {
-            $Object.AkNetworkingConfigurationServiceCidr = $AkNetworkingConfigurationServiceCidr
+        if ($PSBoundParameters.ContainsKey('AkNetworkingServiceCidr')) {
+            $Object.AkNetworkingConfigurationServiceCidr = $AkNetworkingServiceCidr
         }
-        if ($PSBoundParameters.ContainsKey('AkNetworkingConfigurationSubnetId')) {
-            $Object.AkNetworkingConfigurationSubnetId = $AkNetworkingConfigurationSubnetId
+        if ($PSBoundParameters.ContainsKey('AkNetworkingSubnetId')) {
+            $Object.AkNetworkingConfigurationSubnetId = $AkNetworkingSubnetId
         }
         if ($PSBoundParameters.ContainsKey('ClusterFqdn')) {
             $Object.ClusterFqdn = $ClusterFqdn
@@ -135,23 +135,23 @@ function New-AzMLWorkspaceAksObject {
         if ($PSBoundParameters.ContainsKey('LoadBalancerType')) {
             $Object.LoadBalancerType = $LoadBalancerType
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationCert')) {
-            $Object.SslConfigurationCert = $SslConfigurationCert
+        if ($PSBoundParameters.ContainsKey('SslCert')) {
+            $Object.SslConfigurationCert = $SslCert
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationCname')) {
-            $Object.SslConfigurationCname = $SslConfigurationCname
+        if ($PSBoundParameters.ContainsKey('SslCname')) {
+            $Object.SslConfigurationCname = $SslCname
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationKey')) {
-            $Object.SslConfigurationKey = $SslConfigurationKey
+        if ($PSBoundParameters.ContainsKey('SslKey')) {
+            $Object.SslConfigurationKey = $SslKey
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationLeafDomainLabel')) {
-            $Object.SslConfigurationLeafDomainLabel = $SslConfigurationLeafDomainLabel
+        if ($PSBoundParameters.ContainsKey('SslLeafDomainLabel')) {
+            $Object.SslConfigurationLeafDomainLabel = $SslLeafDomainLabel
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationOverwriteExistingDomain')) {
-            $Object.SslConfigurationOverwriteExistingDomain = $SslConfigurationOverwriteExistingDomain
+        if ($PSBoundParameters.ContainsKey('SslOverwriteExistingDomain')) {
+            $Object.SslConfigurationOverwriteExistingDomain = $SslOverwriteExistingDomain
         }
-        if ($PSBoundParameters.ContainsKey('SslConfigurationStatus')) {
-            $Object.SslConfigurationStatus = $SslConfigurationStatus
+        if ($PSBoundParameters.ContainsKey('SslStatus')) {
+            $Object.SslConfigurationStatus = $SslStatus
         }
         return $Object
     }

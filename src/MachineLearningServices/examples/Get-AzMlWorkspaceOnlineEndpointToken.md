@@ -1,22 +1,12 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceOnlineEndpointToken -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-portal91
 ```
 
 ```output
-{{ Add output here }}
+AccessToken
+-----------
+xxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 {{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-

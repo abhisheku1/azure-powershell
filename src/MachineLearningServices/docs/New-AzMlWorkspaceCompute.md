@@ -33,25 +33,28 @@ If your intent is to create a new compute, do a GET first to verify that it does
 
 ### Example 1: {{ Add title here }}
 ```powershell
-$aml = New-AzMLWorkspaceAmlComputeObject -OSType 'Linux' -VMSize "STANDARD_DS3_V2" -ScaleSettingMaxNodeCount 8 -ScaleSettingMinNodeCount 0 -RemoteLoginPortPublicAccess 'NotSpecified' -EnableNodePublicIP
-New-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml01 -Location eastus -Compute $aml
+# The datastore type includes 'AKS', 'Kubernetes', 'AmlCompute', 'ComputeInstance','DataFactory', 'VirtualMachine', 'HDInsight', 'Databricks', 'DataLakeAnalytics', 'SynapseSpark'.
+# You can use following command to create it then pass it as value to Compute parameter of the New-AzMlWorkspaceCompute cmdlet.
+# New-AzMLWorkspaceAmlComputeObject
+# New-AzMLWorkspaceComputeInstanceObject
+# New-AzMLWorkspaceAksObject
+# New-AzMLWorkspaceKubernetesObject
+# New-AzMLWorkspaceVirtualMachineObject
+# New-AzMLWorkspaceHDInsightObject
+# New-AzMLWorkspaceDataFactoryObject
+# New-AzMLWorkspaceDatabricksObject
+# New-AzMLWorkspaceDataLakeAnalyticsObject
+# New-AzMLWorkspaceSynapseSparkObject
+
+$aml = New-AzMLWorkspaceAmlComputeObject -OSType 'Linux' -VMSize "STANDARD_DS3_V2" `
+-ScaleSettingMaxNodeCount 8 -ScaleSettingMinNodeCount 0 -RemoteLoginPortPublicAccess 'NotSpecified' -EnableNodePublicIP $true
+New-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml02 -Location eastus -Compute $aml
 ```
 
 ```output
-Name  SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Location ResourceGroupName
-----  ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- -------- -----------------
-aml01                                                                                                                                                                    eastus   ml-rg-test
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Location ResourceGroupName
+----        ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- -------- -----------------
+aml02   
 ```
 
 {{ Add description here }}

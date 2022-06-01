@@ -1,21 +1,19 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Start-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name compute02
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name compute02 | Start-AzMlWorkspaceCompute 
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}

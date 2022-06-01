@@ -15,11 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMlWorkspaceOnlineEndpoi
 }
 
 Describe 'Get-AzMlWorkspaceOnlineEndpointToken' {
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        { Get-AzMlWorkspaceOnlineEndpointToken -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-portal91} | Should -Not -Throw
     }
 }

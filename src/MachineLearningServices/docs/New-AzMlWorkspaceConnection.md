@@ -26,22 +26,13 @@ New-AzMlWorkspaceConnection -ConnectionName <String> -ResourceGroupName <String>
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceConnection -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -ConnectionName test01 -AuthType 'None' -Category 'ContainerRegistry' -Target "www.facebook.com"
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Name   SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType ResourceGroupName
+----   ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- -----------------
+test01                                                                                                                                                ml-rg-test
 ```
 
 {{ Add description here }}

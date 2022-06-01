@@ -103,29 +103,31 @@ directive:
       subject: OnlineDeploymentLog
       variant: ^Get$|^GetViaIdentity$|^GetViaIdentityExpanded$
     remove: true
-
-  - where:
-      verb: New
-      subject: EnvironmentVersion|Connection
-      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
-    remove: true
     
   - where:
       verb: Update
       variant: ^Update$|^UpdateViaIdentity$
     remove: true
-  # # Unsupport
-  # - where:
-  #     verb: Get
-  #     subject: CodeContainer
-  #   remove: true
+  # Unsupport Get and New operations.
+  - where:
+      subject: ^CodeContainer$
+    remove: true
+  #  InternalServerError
+  - where:
+      verb: New
+      subject: ^EnvironmentContainer$
+    remove: true
 
-  # # List unsupport
-  # - where:
-  #     verb: Get
-  #     subject: CodeVersion
-  #     variant: ^List$
-  #   remove: true
+  # List unsupport
+  - where:
+      verb: Get
+      subject: CodeVersion
+      variant: ^List$
+    remove: true
+  # ListKeys is not supported
+  - where:
+      subject: BatchEndpointKey
+    remove: true
 
   - where:
       verb: Invoke
@@ -156,7 +158,7 @@ directive:
 
   - where:
       verb: New
-      subject: ^$|BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentContainer|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey|DataVersion
+      subject: ^$|BatchDeployment|BatchEndpoint|CodeContainer|CodeVersion|ComponentContainer|ComponentVersion|Connection|Container|DatasetVersion|EnvironmentVersion|ModelContainer|ModelVersion|OnlineDeployment|OnlineEndpoint|OnlineEndpointKey|DataVersion
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     remove: true
   - where:
@@ -165,6 +167,11 @@ directive:
       variant: ^Regenerate$|^RegenerateViaIdentity$|^RegenerateViaIdentityExpanded$
     remove: true
   # rename parameters
+  - where:
+      subject: BatchEndpoint
+      parameter-name: EndpointPropertiesBaseProperty
+    set:
+      parameter-name: EndpointProperties
   - where:
       subject: BatchDeployment
       parameter-name: EndpointDeploymentPropertiesBaseProperty
@@ -390,6 +397,10 @@ directive:
       parameter-name: WorkspaceName
     set:
       parameter-name: Name
+  # Bug: https://github.com/Azure/autorest.powershell/issues/952
+  - from: source-file-csharp
+    where: $
+    transform: $ = $.replace(/\(await response\)\.SecretsType/g, '\(await response\)')
 
   - no-inline:
 # Datastore
@@ -403,8 +414,7 @@ directive:
 # Compute
     - Compute
 # Job
-    - JobBase
-    
+    - JobBase    
   - model-cmdlet:
 # Compute type: 'AKS', 'Kubernetes', 'AmlCompute', 'ComputeInstance','DataFactory', 'VirtualMachine', 'HDInsight', 'Databricks', 'DataLakeAnalytics', 'SynapseSpark'
     # - AmlCompute 

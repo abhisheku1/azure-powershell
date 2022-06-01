@@ -39,22 +39,28 @@ Any secrets (storage keys, service credentials, etc) are not returned - use 'key
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
 
 ```output
-{{ Add output here }}
+Name          SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Location ResourceGroupName
+----          ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- -------- -----------------
+cpu-cluster                                                                                                                                                                      eastus   ml-rg-test
+gpu-cluster                                                                                                                                                                      eastus   ml-rg-test
+batch-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name cpu-cluster
 ```
 
 ```output
-{{ Add output here }}
+Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Location ResourceGroupName
+----        ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- -------- -----------------
+cpu-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
 {{ Add description here }}

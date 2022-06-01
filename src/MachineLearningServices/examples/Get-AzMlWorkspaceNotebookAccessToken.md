@@ -1,22 +1,12 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceNotebookAccessToken -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
 
 ```output
-{{ Add output here }}
+AccessToken ExpiresIn HostName               NotebookResourceId               PublicDns RefreshToken Scope         TokenType
+----------- --------- --------               ------------------               --------- ------------ -----         ---------
+                      Azure Machine Learning 770262087db047c88de12c933e679b88                        aznb_identity
 ```
 
 {{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-

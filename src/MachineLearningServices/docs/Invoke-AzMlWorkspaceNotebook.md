@@ -31,18 +31,20 @@ Prepare a notebook.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Invoke-AzMlWorkspaceNotebook -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
 
 ```output
-{{ Add output here }}
+Fqdn ResourceId
+---- ----------
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+$workspace = Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01
+Invoke-AzMlWorkspaceNotebook -InputObject $workspace
 ```
 
 ```output

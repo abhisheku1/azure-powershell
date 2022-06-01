@@ -15,11 +15,10 @@ Creates a batch inference endpoint (asynchronous).
 ```
 New-AzMlWorkspaceBatchEndpoint -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
  -AuthMode <EndpointAuthMode> -Location <String> [-SubscriptionId <String>] [-DefaultDeploymentName <String>]
- [-Description <String>] [-EndpointPropertiesBaseProperty <Hashtable>]
- [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssigned <Hashtable>] [-Kind <String>]
- [-PrimaryKey <String>] [-SecondaryKey <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>]
- [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-EndpointProperties <Hashtable>] [-IdentityType <ManagedServiceIdentityType>]
+ [-IdentityUserAssigned <Hashtable>] [-Kind <String>] [-PrimaryKey <String>] [-SecondaryKey <String>]
+ [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuName <String>] [-SkuSize <String>] [-SkuTier <SkuTier>]
+ [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,22 +28,13 @@ Creates a batch inference endpoint (asynchronous).
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key -AuthMode 'Key' -Location 'eastus'
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType AzureAsyncOperation Kind ResourceGroupName
+-------- ----         -------------------  -------------------                 ----------------------- ------------------------ ------------------------ ---------------------------- ------------------- ---- -----------------
+eastus   batch-pwsh03 5/20/2022 7:21:12 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:31:17 AM                                                                                    ml-rg-test
 ```
 
 {{ Add description here }}
@@ -127,7 +117,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EndpointPropertiesBaseProperty
+### -EndpointProperties
 Property dictionary.
 Properties can be added, but not removed or altered.
 

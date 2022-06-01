@@ -1,21 +1,38 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Invoke-AzMlWorkspaceDiagnose -ResourceGroupName ml-rg-test -Name mlworkspace-cli01 -ApplicationInsightId @{'key1'="/subscriptions/xxxx-xxxxx-xxxxxxxxx-xxxx/resourceGroups/ml-rg-test/providers/Microsoft.insights/components/xxxxxxxxxxx"}
 ```
 
 ```output
-{{ Add output here }}
+ValueApplicationInsightsResult : {}
+ValueContainerRegistryResult   :
+ValueDnsResolutionResult       :
+ValueKeyVaultResult            :
+ValueNetworkSecurityRuleResult :
+ValueOtherResult               :
+ValueResourceLockResult        :
+ValueStorageAccountResult      :
+ValueUserDefinedRouteResult    :
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+$workspace = Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01
+Invoke-AzMlWorkspaceDiagnose -InputObject $workspace -ApplicationInsightId @{'key1'="/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.insights/components/xxxxxxxxxxxx"}
 ```
 
 ```output
-{{ Add output here }}
+ValueApplicationInsightsResult : {}
+ValueContainerRegistryResult   :
+ValueDnsResolutionResult       :
+ValueKeyVaultResult            :
+ValueNetworkSecurityRuleResult :
+ValueOtherResult               :
+ValueResourceLockResult        :
+ValueStorageAccountResult      :
+ValueUserDefinedRouteResult    :
 ```
 
 {{ Add description here }}

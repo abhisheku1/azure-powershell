@@ -24,22 +24,21 @@ Called by Client (Portal, CLI, etc) to get a list of all external outbound depen
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceOutboundNetworkDependencyEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Category                                Endpoint
+--------                                --------
+Azure Active Directory                  {{…
+Azure portal                            {{…
+Azure Resource Manager                  {{…
+Azure Machine Learning studio           {{…
+API                                     {{…
+Integrated notebook                     {{…
+Compute                                 {{…
+Microsoft Container Registry            {{…
+Azure Machine Learning pre-built images {{…
 ```
 
 {{ Add description here }}

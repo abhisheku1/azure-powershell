@@ -25,22 +25,13 @@ Create or update container.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01 -IsArchived
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Name             SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType ResourceGroupName
+----             ------------------- ------------------- ----------------------- ------------------------ ------------------------ ---------------------------- -----------------
+component-pwsh01 6/1/2022 1:45:45 PM                                             6/1/2022 1:45:45 PM                                                            ml-rg-test
 ```
 
 {{ Add description here }}

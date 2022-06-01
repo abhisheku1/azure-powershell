@@ -40,17 +40,6 @@ Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedB
 
 {{ Add description here }}
 
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -BuildContextUri

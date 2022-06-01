@@ -58,25 +58,25 @@ function New-AzMLWorkspaceAmlComputeObject {
         $RemoteLoginPortPublicAccess,
         [Parameter(HelpMessage="Max number of nodes to use.")]
         [int]
-        $ScaleSettingMaxNodeCount,
+        $ScaleMaxNodeCount,
         [Parameter(HelpMessage="Min number of nodes to use.")]
         [int]
-        $ScaleSettingMinNodeCount,
+        $ScaleMinNodeCount,
         [Parameter(HelpMessage="Node Idle Time before scaling down amlCompute. This string needs to be in the RFC Format.")]
         [System.TimeSpan]
-        $ScaleSettingNodeIdleTimeBeforeScaleDown,
+        $ScaleNodeIdleTimeBeforeScaleDown,
         [Parameter(HelpMessage="The ID of the resource.")]
         [string]
         $SubnetId,
         [Parameter(HelpMessage="Name of the administrator user account which can be used to SSH to nodes.")]
         [string]
-        $UserAccountCredentialsAdminUserName,
+        $AdminUserName,
         [Parameter(HelpMessage="Password of the administrator user account.")]
         [string]
-        $UserAccountCredentialsAdminUserPassword,
+        $AdminUserPassword,
         [Parameter(HelpMessage="SSH public key of the administrator user account.")]
         [string]
-        $UserAccountCredentialsAdminUserSshPublicKey,
+        $AdminUserSshPublicKey,
         [Parameter(HelpMessage="Virtual Machine priority.")]
         [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.VMPriority])]
         [Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.VMPriority]
@@ -117,26 +117,26 @@ function New-AzMLWorkspaceAmlComputeObject {
         if ($PSBoundParameters.ContainsKey('RemoteLoginPortPublicAccess')) {
             $Object.RemoteLoginPortPublicAccess = $RemoteLoginPortPublicAccess
         }
-        if ($PSBoundParameters.ContainsKey('ScaleSettingMaxNodeCount')) {
-            $Object.ScaleSettingMaxNodeCount = $ScaleSettingMaxNodeCount
+        if ($PSBoundParameters.ContainsKey('ScaleMaxNodeCount')) {
+            $Object.ScaleSettingMaxNodeCount = $ScaleMaxNodeCount
         }
-        if ($PSBoundParameters.ContainsKey('ScaleSettingMinNodeCount')) {
-            $Object.ScaleSettingMinNodeCount = $ScaleSettingMinNodeCount
+        if ($PSBoundParameters.ContainsKey('ScaleMinNodeCount')) {
+            $Object.ScaleSettingMinNodeCount = $ScaleMinNodeCount
         }
-        if ($PSBoundParameters.ContainsKey('ScaleSettingNodeIdleTimeBeforeScaleDown')) {
-            $Object.ScaleSettingNodeIdleTimeBeforeScaleDown = $ScaleSettingNodeIdleTimeBeforeScaleDown
+        if ($PSBoundParameters.ContainsKey('ScaleNodeIdleTimeBeforeScaleDown')) {
+            $Object.ScaleSettingNodeIdleTimeBeforeScaleDown = $ScaleNodeIdleTimeBeforeScaleDown
         }
         if ($PSBoundParameters.ContainsKey('SubnetId')) {
             $Object.SubnetId = $SubnetId
         }
-        if ($PSBoundParameters.ContainsKey('UserAccountCredentialsAdminUserName')) {
-            $Object.UserAccountCredentialsAdminUserName = $UserAccountCredentialsAdminUserName
+        if ($PSBoundParameters.ContainsKey('AdminUserName')) {
+            $Object.UserAccountCredentialsAdminUserName = $AdminUserName
         }
-        if ($PSBoundParameters.ContainsKey('UserAccountCredentialsAdminUserPassword')) {
-            $Object.UserAccountCredentialsAdminUserPassword = $UserAccountCredentialsAdminUserPassword
+        if ($PSBoundParameters.ContainsKey('AdminUserPassword')) {
+            $Object.UserAccountCredentialsAdminUserPassword = $AdminUserPassword
         }
-        if ($PSBoundParameters.ContainsKey('UserAccountCredentialsAdminUserSshPublicKey')) {
-            $Object.UserAccountCredentialsAdminUserSshPublicKey = $UserAccountCredentialsAdminUserSshPublicKey
+        if ($PSBoundParameters.ContainsKey('AdminUserSshPublicKey')) {
+            $Object.UserAccountCredentialsAdminUserSshPublicKey = $AdminUserSshPublicKey
         }
         if ($PSBoundParameters.ContainsKey('VMPriority')) {
             $Object.VMPriority = $VMPriority

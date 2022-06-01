@@ -26,22 +26,13 @@ Create or update container.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceDataContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name datacontainer-pwsh01 -DataType 'uri_file'
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Name                 SystemDataCreatedAt SystemDataCreatedBy                 SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType ResourceGroupName
+----                 ------------------- -------------------                 ----------------------- ------------------------ ------------------------ ---------------------------- -----------------
+datacontainer-pwsh01 6/1/2022 3:03:56 PM Lucas Yao (Wicresoft North America) User                    6/1/2022 3:03:56 PM                                                            ml-rg-test
 ```
 
 {{ Add description here }}

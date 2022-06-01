@@ -1,21 +1,19 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Remove-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name 'test01' -Version 1
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name 'test01' -Version 1 | Remove-AzMlWorkspaceCodeVersion
 ```
 
 ```output
-{{ Add output here }}
 ```
 
 {{ Add description here }}

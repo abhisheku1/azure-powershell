@@ -15,15 +15,9 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-AzMlWorkspaceCodeVersion'
 }
 
 Describe 'Get-AzMlWorkspaceCodeVersion' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Get' {
+        { 
+            Get-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name 'codepwsh01' -Version 1
+        } | Should -Not -Throw
     }
 }

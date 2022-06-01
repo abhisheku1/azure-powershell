@@ -15,11 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Remove-AzMlWorkspaceEnvironme
 }
 
 Describe 'Remove-AzMlWorkspaceEnvironmentContainer' {
-    It 'Delete' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'DeleteViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Delete' {
+        { Remove-AzMlWorkspaceEnvironmentContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01 } | Should -Not -Throw
     }
 }

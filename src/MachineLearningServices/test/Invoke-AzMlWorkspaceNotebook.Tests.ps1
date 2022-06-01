@@ -15,11 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Invoke-AzMlWorkspaceNotebook'
 }
 
 Describe 'Invoke-AzMlWorkspaceNotebook' {
-    It 'Prepare' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'PrepareViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'Prepare' {
+        { Invoke-AzMlWorkspaceNotebook -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01} | Should -Not -Throw
     }
 }

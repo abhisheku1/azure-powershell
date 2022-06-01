@@ -22,6 +22,8 @@ Describe 'New-AzMlWorkspace' {
             -KeyVaultId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.keyvault/vaults/mlkeyvault01" `
             -StorageAccountId "/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/ml-rg-test/providers/microsoft.storage/storageaccounts/mlstorageaccount02" `
             -IdentityType 'SystemAssigned' 
+            Update-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Tag @{'key1' = 'value2'}
+            Remove-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01
         } | Should -Not -Throw
     }
 }
