@@ -29,19 +29,19 @@ Delete container.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete environment container
 ```powershell
 Remove-AzMlWorkspaceEnvironmentContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01
 ```
 
-{{ Add description here }}
+Delete environment container
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete environment container by pipeline
 ```powershell
 Get-AzMlWorkspaceEnvironmentContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01 | Remove-AzMlWorkspaceEnvironmentContainer 
 ```
 
-{{ Add description here }}
+Delete environment container by pipeline
 
 ## PARAMETERS
 

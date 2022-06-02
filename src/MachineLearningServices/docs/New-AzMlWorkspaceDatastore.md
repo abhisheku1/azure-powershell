@@ -23,7 +23,7 @@ Create or update datastore.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create or update datastore
 ```powershell
 # The datastore type includes AzureBlob, AzureDataLakeGen1, AzureDataLakeGen2, AzureFile.
 # You can use following command to create it then pass it as value to Datastore parameter of the New-AzMlWorkspaceDatastore cmdlet.
@@ -49,7 +49,7 @@ Name          SystemDataCreatedAt  SystemDataCreatedBy                 SystemDat
 blobdatastore 5/27/2022 7:15:04 AM Lucas Yao (Wicresoft North America) User                    5/27/2022 7:15:05 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Create or update datastore
 
 ## PARAMETERS
 

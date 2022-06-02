@@ -22,16 +22,12 @@ Create an in-memory object for TritonModelJobInput.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for TritonModelJobInput
 ```powershell
-{{ Add code here }}
+New-AzMLWorkspaceTritonModelJobInputObject
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Create an in-memory object for TritonModelJobInput
 
 ### Example 2: {{ Add title here }}
 ```powershell

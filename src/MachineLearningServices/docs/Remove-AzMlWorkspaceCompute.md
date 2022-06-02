@@ -31,19 +31,19 @@ Deletes specified Machine Learning compute.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Deletes specified Machine Learning compute
 ```powershell
 Remove-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml02
 ```
 
-{{ Add description here }}
+Deletes specified Machine Learning compute
 
-### Example 2: {{ Add title here }}
+### Example 2: Deletes specified Machine Learning compute by pipeline
 ```powershell
 Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml02 | Remove-AzMlWorkspaceCompute
 ```
 
-{{ Add description here }}
+Deletes specified Machine Learning compute by pipeline
 
 ## PARAMETERS
 

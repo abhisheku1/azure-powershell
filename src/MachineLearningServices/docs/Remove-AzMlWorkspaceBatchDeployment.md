@@ -30,23 +30,19 @@ Delete Batch Inference deployment (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete Batch Inference deployment (asynchronous)
 ```powershell
 Remove-AzMlWorkspaceBatchDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName batch-pwsh03 -Name nonmlflowdp
 ```
 
-{{ Add description here }}
+Delete Batch Inference deployment (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete Batch Inference deployment (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceBatchDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName batch-pwsh03 -Name nonmlflowdp | Remove-AzMlWorkspaceBatchDeployment
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Delete Batch Inference deployment (asynchronous) by pipeline
 
 ## PARAMETERS
 

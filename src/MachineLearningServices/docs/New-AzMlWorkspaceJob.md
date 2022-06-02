@@ -23,7 +23,7 @@ Creates and executes a Job.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Creates and executes a Job
 ```powershell
 # The job type includes CommandJob, SweepJob, PipelineJob.
 # You can use following command to create it then pass it as value to Job parameter of the New-AzMlWorkspaceJob cmdlet.
@@ -45,7 +45,7 @@ Name                       SystemDataCreatedAt  SystemDataCreatedBy             
 commandJob01               5/31/2022 7:58:38 AM Lucas Yao (Wicresoft North America) User                                                                                                   ml-rg-test
 ```
 
-
+Creates and executes a Job
 
 ## PARAMETERS
 

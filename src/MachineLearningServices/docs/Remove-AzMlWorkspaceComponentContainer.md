@@ -29,27 +29,19 @@ Delete container.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete component container
 ```powershell
 Remove-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01
 ```
 
-```output
-{{ Add output here }}
-```
+Delete component container
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+### Example 2: Delete component container by pipeline
 ```powershell
 Get-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01 | Remove-AzMlWorkspaceComponentContainer
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Delete component container by pipeline
 
 ## PARAMETERS
 

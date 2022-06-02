@@ -30,19 +30,19 @@ Deletes a Job (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Deletes a Job (asynchronous)
 ```powershell
 Remove-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01
 ```
 
-{{ Add description here }}
+Deletes a Job (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Deletes a Job (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01 | Remove-AzMlWorkspaceJob
 ```
 
-{{ Add description here }}
+Deletes a Job (asynchronous) by pipeline
 
 ## PARAMETERS
 

@@ -30,27 +30,19 @@ Delete version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete environment container version
 ```powershell
 Remove-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv
 ```
 
-```output
-{{ Add output here }}
-```
+Delete environment container
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+### Example 2: Delete environment container by pipeline
 ```powershell
 Get-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv | Remove-AzMlWorkspaceEnvironmentVersion
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Delete environment container by pipeline
 
 ## PARAMETERS
 

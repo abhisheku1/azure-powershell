@@ -31,7 +31,7 @@ Update a batch inference endpoint (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Update a batch inference endpoint (asynchronous)
 ```powershell
 Update-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key -Tag @{'key'='value'}
 ```
@@ -42,9 +42,9 @@ Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 S
 eastus   batch-pwsh03 5/20/2022 7:21:12 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:31:17 AM                                                                                    ml-rg-test
 ```
 
-{{ Add description here }}
+Update a batch inference endpoint (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Update a batch inference endpoint (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key | Update-AzMlWorkspaceBatchEndpoint-Tag @{'key'='value'}
 ```
@@ -55,7 +55,7 @@ Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 S
 eastus   batch-pwsh03 5/20/2022 7:21:12 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:31:17 AM                                                                                    ml-rg-test
 ```
 
-{{ Add description here }}
+Update a batch inference endpoint (asynchronous) by pipeline
 
 ## PARAMETERS
 

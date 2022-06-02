@@ -29,23 +29,19 @@ Delete datastore.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete datastore by pipeline
 ```powershell
 Remove-AzMlWorkspaceDatastore -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-demo -Name blobdatastore
 ```
 
-{{ Add description here }}
+Delete datastore
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete datastore by pipeline
 ```powershell
 Get-AzMlWorkspaceDatastore -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-demo -Name blobdatastore | Remove-AzMlWorkspaceDatastore
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Delete datastore
 
 ## PARAMETERS
 

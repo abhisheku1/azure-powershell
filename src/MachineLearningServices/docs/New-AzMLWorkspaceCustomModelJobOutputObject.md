@@ -22,27 +22,12 @@ Create an in-memory object for CustomModelJobOutput.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for CustomModelJobOutput
 ```powershell
-{{ Add code here }}
+New-AzMLWorkspaceCustomModelJobOutputObject
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Create an in-memory object for CustomModelJobOutput
 
 ## PARAMETERS
 

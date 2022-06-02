@@ -27,7 +27,7 @@ Creates or updates an EnvironmentVersion.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Creates or updates an EnvironmentVersion.
 ```powershell
 New-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv -Version 1 -Image "library/python:latest"
 ```
@@ -38,7 +38,7 @@ Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedB
 1    5/31/2022 8:28:35 AM Lucas Yao (Wicresoft North America) User                    5/31/2022 8:28:35 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Creates or updates an EnvironmentVersion.
 
 ## PARAMETERS
 

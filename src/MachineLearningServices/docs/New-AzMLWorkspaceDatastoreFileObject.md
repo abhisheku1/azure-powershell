@@ -24,27 +24,12 @@ Create an in-memory object for AzureFileDatastore.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for AzureFileDatastore
 ```powershell
-{{ Add code here }}
+New-AzMLWorkspaceDatastoreFileObject
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Create an in-memory object for AzureFileDatastore
 
 ## PARAMETERS
 

@@ -30,19 +30,19 @@ Delete version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete model version
 ```powershell
 Remove-AzMlWorkspaceModelVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontainerpwsh01 -Version 1
 ```
 
-{{ Add description here }}
+Delete model version
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete model version by pipeline
 ```powershell
 Get-AzMlWorkspaceModelVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontainerpwsh01 -Version 1 | Remove-AzMlWorkspaceModelVersion 
 ```
 
-{{ Add description here }}
+Delete model version by pipeline
 
 ## PARAMETERS
 

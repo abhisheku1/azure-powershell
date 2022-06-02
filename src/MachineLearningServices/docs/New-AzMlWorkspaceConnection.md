@@ -24,7 +24,7 @@ New-AzMlWorkspaceConnection -ConnectionName <String> -ResourceGroupName <String>
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Creates a workspace connection
 ```powershell
 New-AzMlWorkspaceConnection -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -ConnectionName test01 -AuthType 'None' -Category 'ContainerRegistry' -Target "www.facebook.com"
 ```
@@ -35,7 +35,7 @@ Name   SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDat
 test01                                                                                                                                                ml-rg-test
 ```
 
-{{ Add description here }}
+Creates a workspace connection
 
 ## PARAMETERS
 

@@ -25,7 +25,7 @@ Create or update version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create or update model version
 ```powershell
 New-AzMlWorkspaceModelVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontainerpwsh01 -Version 1 -ModelType "mlflow_model" -ModelUri "azureml://subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/workspaces/mlworkspace-cli01/datastores/workspaceartifactstore/paths/ExperimentRun/dcid.plucky_collar_5x0ds0fgb3/model"
 ```
@@ -36,7 +36,7 @@ Name SystemDataCreatedAt SystemDataCreatedBy                 SystemDataCreatedBy
 1    6/1/2022 4:29:14 PM Lucas Yao (Wicresoft North America) User                    6/1/2022 4:29:14 PM      Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Create or update model version
 
 ## PARAMETERS
 

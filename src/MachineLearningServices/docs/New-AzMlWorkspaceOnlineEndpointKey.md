@@ -23,7 +23,7 @@ Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asyn
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asynchronous)
 ```powershell
 New-AzMlWorkspaceOnlineEndpointKey -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-pwsh02 -KeyType 'Primary'
 ```
@@ -34,7 +34,7 @@ PrimaryKey                       SecondaryKey
 xxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asynchronous)
 
 ## PARAMETERS
 

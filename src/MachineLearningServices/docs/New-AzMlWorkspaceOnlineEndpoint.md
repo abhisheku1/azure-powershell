@@ -27,7 +27,7 @@ Create or update Online Endpoint (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create or update Online Endpoint (asynchronous)
 ```powershell
 New-AzMlWorkspaceOnlineEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-cli01 -Location eastus -AuthMode 'Key' -IdentityType 'SystemAssigned'
 ```
@@ -38,7 +38,7 @@ Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 S
 eastus   online-cli01 5/19/2022 2:47:34 AM Lucas Yao (Wicresoft North America)                         5/19/2022 2:48:26 AM                                                                               Managed ml-rg-test
 ```
 
-{{ Add description here }}
+Create or update Online Endpoint (asynchronous)
 
 ## PARAMETERS
 

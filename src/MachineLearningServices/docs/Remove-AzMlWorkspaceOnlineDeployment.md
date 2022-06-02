@@ -30,19 +30,19 @@ Delete Inference Endpoint Deployment (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Delete Inference Endpoint Deployment (asynchronous)
 ```powershell
 Remove-AzMlWorkspaceOnlineDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-pwsh01 -Name pwshblue01
 ```
 
-{{ Add description here }}
+Delete Inference Endpoint Deployment (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete Inference Endpoint Deployment (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceOnlineDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-pwsh01 -Name pwshblue01 | Remove-AzMlWorkspaceOnlineDeployment
 ```
 
-{{ Add description here }}
+Delete Inference Endpoint Deployment (asynchronous) by pipeline
 
 ## PARAMETERS
 

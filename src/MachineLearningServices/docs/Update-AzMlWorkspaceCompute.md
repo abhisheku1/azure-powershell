@@ -36,7 +36,7 @@ This is a nonrecoverable operation.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Updates properties of a compute
 ```powershell
 Update-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml02 -Tag @{'key'='value'}
 ```
@@ -47,9 +47,9 @@ Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType Syst
 cpu-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+Updates properties of a compute
 
-### Example 2: {{ Add title here }}
+### Example 2: Updates properties of a compute by pipeline
 ```powershell
 Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name aml02 | Update-AzMlWorkspaceCompute -Tag @{'key'='value'}
 ```
@@ -60,7 +60,7 @@ Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType Syst
 cpu-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+Updates properties of a compute by pipeline
 
 ## PARAMETERS
 
