@@ -23,9 +23,9 @@ Create an in-memory object for SasDatastoreCredentials.
 .Outputs
 Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.SasDatastoreCredentials
 .Link
-https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreSasCredentialsObject
+https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreSasCredentialObject
 #>
-function New-AzMLWorkspaceDatastoreSasCredentialsObject {
+function New-AzMLWorkspaceDatastoreSasCredentialObject {
     [OutputType('Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.SasDatastoreCredentials')]
     [CmdletBinding(PositionalBinding=$false)]
     Param(

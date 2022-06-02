@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Delete Code version
 ```powershell
 Remove-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name 'test01' -Version 1
 ```
@@ -6,9 +6,9 @@ Remove-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlw
 ```output
 ```
 
-{{ Add description here }}
+Delete Code version
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete Code version by pipeline
 ```powershell
 Get-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name 'test01' -Version 1 | Remove-AzMlWorkspaceCodeVersion
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlwork
 ```output
 ```
 
-{{ Add description here }}
+Delete Code version by pipeline
 

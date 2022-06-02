@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for Aks
 ```powershell
 New-AzMLWorkspaceAksObject -Description "aks compute"
 ```
@@ -6,4 +6,4 @@ New-AzMLWorkspaceAksObject -Description "aks compute"
 ```output
 ```
 
-{{ Add description here }}
+Create an in-memory object for Aks

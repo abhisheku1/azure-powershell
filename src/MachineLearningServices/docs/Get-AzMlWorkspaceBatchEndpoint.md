@@ -36,7 +36,7 @@ Gets a batch inference endpoint by name.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all batch inference endpoint under workspace
 ```powershell
 Get-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -49,9 +49,9 @@ eastus   batch-pwsh02 5/20/2022 7:17:33 AM Lucas Yao (Wicresoft North America)  
 eastus   batch-cli01  5/20/2022 7:11:11 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:11:32 AM                                                                                    ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all batch inference endpoint under workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a batch inference endpoint by name
 ```powershell
 Get-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batch-pwsh03
 ```
@@ -62,7 +62,7 @@ Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 S
 eastus   batch-pwsh03 5/20/2022 7:21:12 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:31:17 AM                                                                                    ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a batch inference endpoint by name
 
 ## PARAMETERS
 

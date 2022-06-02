@@ -36,7 +36,7 @@ Gets a Job by name/id.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all jobs under a workspace
 ```powershell
 Get-AzMlWorkspaceJob  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -51,9 +51,9 @@ heroic_quince_0vqqqpq7mt   5/18/2022 7:10:35 AM Lucas Yao (Wicresoft North Ameri
 amiable_hominy_g700h46sb5  5/18/2022 6:42:32 AM Lucas Yao (Wicresoft North America) User                                                                                                   ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all jobs under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a Job by name
 ```powershell
 Get-AzMlWorkspaceJob  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name willing_vinegar_mwjs1dyft0
 ```
@@ -64,7 +64,7 @@ Name                       SystemDataCreatedAt  SystemDataCreatedBy             
 willing_vinegar_mwjs1dyft0 5/31/2022 7:58:38 AM Lucas Yao (Wicresoft North America) User                                                                                                   ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a Job by name
 
 ## PARAMETERS
 

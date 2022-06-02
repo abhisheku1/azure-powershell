@@ -14,7 +14,7 @@ Create or update version.
 
 ```
 New-AzMlWorkspaceComponentVersion -Name <String> -ResourceGroupName <String> -Version <String>
- -WorkspaceName <String> [-SubscriptionId <String>] [-ComponentSpec <IAny>] [-Description <String>]
+ -WorkspaceName <String> [-SubscriptionId <String>] [-ComponentSpec <Hashtable>] [-Description <String>]
  [-IsAnonymou] [-IsArchived] [-ResourceBaseProperty <Hashtable>] [-Tag <Hashtable>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -24,7 +24,7 @@ Create or update version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create or update component version
 ```powershell
 $componentJson = "{
       `"name`": `"train_data_component`",
@@ -67,22 +67,7 @@ $componentJson = "{
 New-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name componentpwsh01 -Version 1 -ComponentSpec $componentJson
 ```
 
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+Create or update component version
 
 ## PARAMETERS
 
@@ -90,7 +75,7 @@ New-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceName m
 Defines Component definition details.\<see href="https://docs.microsoft.com/en-us/azure/machine-learning/reference-yaml-component-command" /\>
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.IAny
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 

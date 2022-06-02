@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create or update data container
 ```powershell
 New-AzMlWorkspaceDataContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name datacontainer-pwsh01 -DataType 'uri_file'
 ```
@@ -9,5 +9,5 @@ Name                 SystemDataCreatedAt SystemDataCreatedBy                 Sys
 datacontainer-pwsh01 6/1/2022 3:03:56 PM Lucas Yao (Wicresoft North America) User                    6/1/2022 3:03:56 PM                                                            ml-rg-test
 ```
 
-{{ Add description here }}
+Create or update data container
 

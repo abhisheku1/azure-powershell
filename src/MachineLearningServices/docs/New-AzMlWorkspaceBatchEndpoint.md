@@ -26,7 +26,7 @@ Creates a batch inference endpoint (asynchronous).
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Creates a batch inference endpoint (asynchronous)
 ```powershell
 New-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key -AuthMode 'Key' -Location 'eastus'
 ```
@@ -37,7 +37,7 @@ Location Name         SystemDataCreatedAt  SystemDataCreatedBy                 S
 eastus   batch-pwsh03 5/20/2022 7:21:12 AM Lucas Yao (Wicresoft North America)                         5/20/2022 7:31:17 AM                                                                                    ml-rg-test
 ```
 
-{{ Add description here }}
+Creates a batch inference endpoint (asynchronous)
 
 ## PARAMETERS
 

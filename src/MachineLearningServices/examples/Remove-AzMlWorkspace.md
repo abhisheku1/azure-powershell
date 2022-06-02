@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Deletes a machine learning workspace
 ```powershell
 Remove-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Tag @{'key1' = 'value2'}
 ```
@@ -6,9 +6,9 @@ Remove-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Tag
 ```output
 ```
 
-{{ Add description here }}
+Deletes a machine learning workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Deletes a machine learning workspace by pipeline
 ```powershell
 Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Remove-AzMlWorkspace -Tag @{'key1' = 'value2'}
 ```
@@ -16,5 +16,4 @@ Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Remov
 ```output
 ```
 
-{{ Add description here }}
-
+Deletes a machine learning workspace by pipeline

@@ -1,23 +1,23 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreSasCredentialsObject
+online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreNoneCredentialObject
 schema: 2.0.0
 ---
 
-# New-AzMLWorkspaceDatastoreSasCredentialsObject
+# New-AzMLWorkspaceDatastoreNoneCredentialObject
 
 ## SYNOPSIS
-Create an in-memory object for SasDatastoreCredentials.
+Create an in-memory object for NoneDatastoreCredentials.
 
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceDatastoreSasCredentialsObject -SasToken <String> [<CommonParameters>]
+New-AzMLWorkspaceDatastoreNoneCredentialObject [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an in-memory object for SasDatastoreCredentials.
+Create an in-memory object for NoneDatastoreCredentials.
 
 ## EXAMPLES
 
@@ -45,21 +45,6 @@ Create an in-memory object for SasDatastoreCredentials.
 
 ## PARAMETERS
 
-### -SasToken
-[Required] Storage container secrets.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -67,7 +52,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.SasDatastoreCredentials
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.NoneDatastoreCredentials
 
 ## NOTES
 

@@ -27,12 +27,12 @@ Create an in-memory object for Aks.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for Aks
 ```powershell
 New-AzMLWorkspaceAksObject -Description "aks compute"
 ```
 
-{{ Add description here }}
+Create an in-memory object for Aks
 
 ## PARAMETERS
 

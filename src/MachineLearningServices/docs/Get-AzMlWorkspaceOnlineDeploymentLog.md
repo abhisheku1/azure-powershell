@@ -23,7 +23,7 @@ Polls an Endpoint operation.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Gets online deployment log
 ```powershell
 Get-AzMlWorkspaceOnlineDeploymentLog -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-cli01 -Name blue
 ```
@@ -44,7 +44,7 @@ Kind: Pod, Name: Created, Type: Normal, Time: 20220519-03:12:54.798575, Message:
 Kind: Pod, Name: Started, Type: Normal, Time: 20220519-03:12:54.921722, Message: Started container inference-server
 ```
 
-{{ Add description here }}
+Gets online deployment log
 
 ## PARAMETERS
 

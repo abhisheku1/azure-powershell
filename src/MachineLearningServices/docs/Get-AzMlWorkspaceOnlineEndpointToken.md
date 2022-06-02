@@ -29,7 +29,7 @@ Retrieve a valid AAD token for an Endpoint using AMLToken-based authentication.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Retrieve a valid AAD token for an Endpoint using AMLToken-based authentication
 ```powershell
 Get-AzMlWorkspaceOnlineEndpointToken -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-portal91
 ```
@@ -40,7 +40,7 @@ AccessToken
 xxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+Retrieve a valid AAD token for an Endpoint using AMLToken-based authentication
 
 ## PARAMETERS
 

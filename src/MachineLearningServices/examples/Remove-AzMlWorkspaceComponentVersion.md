@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Delete component version
 ```powershell
 Remove-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name componentpwsh01 -Version 1
 ```
@@ -6,9 +6,9 @@ Remove-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceNam
 ```output
 ```
 
-{{ Add description here }}
+ Delete component version
 
-### Example 2: {{ Add title here }}
+### Example 2:  Delete component version by pipeline
 ```powershell
 Get-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name componentpwsh01 -Version 1 | Remove-AzMlWorkspaceComponentVersion
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceComponentVersion -ResourceGroupName ml-rg-test -WorkspaceName m
 ```output
 ```
 
-{{ Add description here }}
+ Delete component version by pipeline
 

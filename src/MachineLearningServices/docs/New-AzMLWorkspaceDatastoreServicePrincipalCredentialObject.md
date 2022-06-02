@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject
+online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreServicePrincipalCredentialObject
 schema: 2.0.0
 ---
 
-# New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject
+# New-AzMLWorkspaceDatastoreServicePrincipalCredentialObject
 
 ## SYNOPSIS
 Create an in-memory object for ServicePrincipalDatastoreCredentials.
@@ -13,7 +13,7 @@ Create an in-memory object for ServicePrincipalDatastoreCredentials.
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject -ClientId <String> -ClientSecret <String>
+New-AzMLWorkspaceDatastoreServicePrincipalCredentialObject -ClientId <String> -ClientSecret <String>
  -TenantId <String> [-AuthorityUrl <String>] [-ResourceUrl <String>] [<CommonParameters>]
 ```
 

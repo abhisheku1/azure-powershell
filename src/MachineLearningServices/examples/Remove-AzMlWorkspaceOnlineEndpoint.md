@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Delete Online Endpoint (asynchronous)
 ```powershell
 Remove-AzMlWorkspaceOnlineEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-pwsh01
 ```
@@ -6,9 +6,9 @@ Remove-AzMlWorkspaceOnlineEndpoint -ResourceGroupName ml-rg-test -WorkspaceName 
 ```output
 ```
 
-{{ Add description here }}
+Delete Online Endpoint (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete Online Endpoint (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceOnlineEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-pwsh01 | Remove-AzMlWorkspaceOnlineEndpoint
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceOnlineEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlw
 ```output
 ```
 
-{{ Add description here }}
+Delete Online Endpoint (asynchronous) by pipeline
 

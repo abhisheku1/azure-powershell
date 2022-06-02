@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create or update component container
 ```powershell
 New-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01 -IsArchived
 ```
@@ -9,4 +9,4 @@ Name             SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType
 component-pwsh01 6/1/2022 1:45:45 PM                                             6/1/2022 1:45:45 PM                                                            ml-rg-test
 ```
 
-{{ Add description here }}
+Create or update component container

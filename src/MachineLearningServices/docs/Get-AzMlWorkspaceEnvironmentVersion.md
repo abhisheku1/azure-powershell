@@ -36,7 +36,7 @@ Get version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all environment versions
 ```powershell
 Get-AzMlWorkspaceEnvironmentVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01
 ```
@@ -47,9 +47,9 @@ Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedB
 1    5/11/2022 2:31:25 AM Lucas Yao (Wicresoft North America) User                    5/11/2022 2:31:25 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all environment versions
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a environment version
 ```powershell
 Get-AzMlWorkspaceEnvironmentVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01 -Version 1
 ```
@@ -60,7 +60,7 @@ Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedB
 1    5/11/2022 2:31:25 AM Lucas Yao (Wicresoft North America) User                    5/11/2022 2:31:25 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Get a environment version
 
 ## PARAMETERS
 

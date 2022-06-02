@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Creates or updates compute. This call will overwrite a compute if it exists
 ```powershell
 # The datastore type includes 'AKS', 'Kubernetes', 'AmlCompute', 'ComputeInstance','DataFactory', 'VirtualMachine', 'HDInsight', 'Databricks', 'DataLakeAnalytics', 'SynapseSpark'.
 # You can use following command to create it then pass it as value to Compute parameter of the New-AzMlWorkspaceCompute cmdlet.
@@ -24,5 +24,4 @@ Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType Syst
 aml02   
 ```
 
-{{ Add description here }}
-
+Creates or updates compute. This call will overwrite a compute if it exists

@@ -22,7 +22,7 @@ Gets the current usage information as well as limits for AML resources for given
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Gets the current usage information as well as limits for AML resources for given subscription and location
 ```powershell
 Get-AzMLServiceUsage -Location eastus
 ```
@@ -35,7 +35,7 @@ AmlWorkspaceLocation CurrentValue Limit Unit
                      0            100   Count
 ```
 
-{{ Add description here }}
+Gets the current usage information as well as limits for AML resources for given subscription and location.
 
 ## PARAMETERS
 

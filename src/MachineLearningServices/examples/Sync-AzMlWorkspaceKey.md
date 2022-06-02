@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Resync all the keys associated with this workspace. This includes keys for the storage account, app insights and password for container registry
 ```powershell
 Sync-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01
 ```
@@ -6,9 +6,9 @@ Sync-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01
 ```output
 ```
 
-{{ Add description here }}
+Resync all the keys associated with this workspace. This includes keys for the storage account, app insights and password for
 
-### Example 2: {{ Add title here }}
+### Example 2: Resync all the keys associated with this workspace  by pipeline
 ```powershell
 Get-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Sync-AzMlWorkspaceKey
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Sy
 ```output
 ```
 
-{{ Add description here }}
+Resync all the keys associated with this workspace by pipeline
 

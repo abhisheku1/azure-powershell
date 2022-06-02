@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Posts a restart action to a compute instance
 ```powershell
 Restart-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name compute02
 ```
@@ -6,16 +6,15 @@ Restart-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlwork
 ```output
 ```
 
-{{ Add description here }}
+Posts a restart action to a compute instance
 
-### Example 2: {{ Add title here }}
+### Example 2: Posts a restart action to a compute instance by pipeline
 ```powershell
 Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name compute02 | Restart-AzMlWorkspaceCompute
 ```
 
 ```output
-{{ Add output here }}
 ```
 
-{{ Add description here }}
+Posts a restart action to a compute instance by pipeline
 

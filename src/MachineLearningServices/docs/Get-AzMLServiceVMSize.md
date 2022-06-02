@@ -22,7 +22,7 @@ Returns supported VM Sizes in a location
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Returns supported VM Sizes in a location
 ```powershell
 Get-AzMLServiceVMSize -Location eastus
 ```
@@ -37,7 +37,7 @@ standardDFamily             0   True               204800              28       
 standardDv2Family           0   True               204800              28       Standard_D12_v2           1047552     False     {AmlCompute, ComputeInstance}                4
 ```
 
-{{ Add description here }}
+Returns supported VM Sizes in a location.
 
 ## PARAMETERS
 

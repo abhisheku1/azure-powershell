@@ -35,7 +35,7 @@ Diagnose workspace setup issue.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Diagnose workspace setup issue
 ```powershell
 Invoke-AzMlWorkspaceDiagnose -ResourceGroupName ml-rg-test -Name mlworkspace-cli01 -ApplicationInsightId @{'key1'="/subscriptions/xxxx-xxxxx-xxxxxxxxx-xxxx/resourceGroups/ml-rg-test/providers/Microsoft.insights/components/xxxxxxxxxxx"}
 ```
@@ -52,9 +52,9 @@ ValueStorageAccountResult      :
 ValueUserDefinedRouteResult    :
 ```
 
-{{ Add description here }}
+Diagnose workspace setup issue
 
-### Example 2: {{ Add title here }}
+### Example 2: Diagnose workspace setup issue by workspace object
 ```powershell
 $workspace = Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01
 Invoke-AzMlWorkspaceDiagnose -InputObject $workspace -ApplicationInsightId @{'key1'="/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/ml-rg-test/providers/Microsoft.insights/components/xxxxxxxxxxxx"}
@@ -72,7 +72,7 @@ ValueStorageAccountResult      :
 ValueUserDefinedRouteResult    :
 ```
 
-{{ Add description here }}
+Diagnose workspace setup issue by workspace object
 
 ## PARAMETERS
 

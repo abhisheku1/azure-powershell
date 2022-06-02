@@ -1,11 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create an in-memory object for AmlCompute
 ```powershell
-{{ Add code here }}
+New-AzMLWorkspaceAmlComputeObject
 ```
 
 ```output
-{{ Add output here }}
 ```
 
-{{ Add description here }}
+Create an in-memory object for AmlCompute
 

@@ -35,7 +35,7 @@ Get-AzMlWorkspaceConnection -InputObject <IMachineLearningWorkspacesIdentity> [-
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all connection under a workspace
 ```powershell
 Get-AzMlWorkspaceConnection -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01
 ```
@@ -46,9 +46,9 @@ Name SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataL
 test                                                                                                                                                ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all connection under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a connection by name
 ```powershell
 Get-AzMlWorkspaceConnection -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -ConnectionName test
 ```
@@ -59,7 +59,7 @@ Name SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataL
 test                                                                                                                                                ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a connection by name
 
 ## PARAMETERS
 

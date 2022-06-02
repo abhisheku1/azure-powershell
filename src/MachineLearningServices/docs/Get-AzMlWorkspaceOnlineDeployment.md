@@ -36,7 +36,7 @@ Get Inference Deployment Deployment.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all online deployments under a online endpoint
 ```powershell
 Get-AzMlWorkspaceOnlineDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-cli01
 ```
@@ -47,9 +47,9 @@ Location Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDat
 eastus   blue 5/19/2022 2:52:06 AM Lucas Yao (Wicresoft North America)                         5/19/2022 2:52:06 AM                                                                               Managed ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all online deployments under a online endpoint
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets online deployment by name
 ```powershell
 Get-AzMlWorkspaceOnlineDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-cli01 -Name blue
 ```
@@ -60,7 +60,7 @@ Location Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDat
 eastus   blue 5/19/2022 2:52:06 AM Lucas Yao (Wicresoft North America)                         5/19/2022 2:52:06 AM                                                                               Managed ml-rg-test
 ```
 
-{{ Add description here }}
+Gets online deployment by name
 
 ## PARAMETERS
 

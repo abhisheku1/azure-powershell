@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Delete Batch Inference Endpoint (asynchronous)
 ```powershell
 Remove-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key
 ```
@@ -6,9 +6,9 @@ Remove-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName m
 ```output
 ```
 
-{{ Add description here }}
+Delete Batch Inference Endpoint (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Delete Batch Inference Endpoint (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name batchpwsh01-key | Remove-AzMlWorkspaceBatchEndpoint
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceBatchEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlwo
 ```output
 ```
 
-{{ Add description here }}
+Delete Batch Inference Endpoint (asynchronous) by pipeline
 

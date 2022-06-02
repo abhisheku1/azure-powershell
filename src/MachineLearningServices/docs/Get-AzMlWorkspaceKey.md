@@ -24,7 +24,7 @@ This includes keys for the storage account, app insights and password for contai
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all the keys associated with this workspace.This includes keys for the storage account, app insights and password for container regist
 ```powershell
 Get-AzMlWorkspaceKey  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -35,7 +35,7 @@ AppInsightsInstrumentationKey        UserStorageKey                             
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+Lists all the keys associated with this workspace.This includes keys for the storage account, app insights and password for container regist
 
 ## PARAMETERS
 

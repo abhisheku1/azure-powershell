@@ -29,7 +29,7 @@ Prepare a notebook.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Prepare a notebook
 ```powershell
 Invoke-AzMlWorkspaceNotebook -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -39,19 +39,19 @@ Fqdn ResourceId
 ---- ----------
 ```
 
-{{ Add description here }}
+Prepare a notebook
 
-### Example 2: {{ Add title here }}
+### Example 2: Prepare a notebook by pipeline
 ```powershell
-$workspace = Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01
-Invoke-AzMlWorkspaceNotebook -InputObject $workspace
+$workspace = Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01 | Invoke-AzMlWorkspaceNotebook
 ```
 
 ```output
-{{ Add output here }}
+Fqdn ResourceId
+---- ----------
 ```
 
-{{ Add description here }}
+Prepare a notebook by pipeline
 
 ## PARAMETERS
 

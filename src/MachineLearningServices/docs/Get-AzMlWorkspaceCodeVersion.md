@@ -29,7 +29,7 @@ Get version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Gets code version
 ```powershell
 Get-AzMlWorkspaceCodeVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name 'codepwsh01' -Version 1
 ```
@@ -40,7 +40,7 @@ Name SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCreatedB
 1    5/24/2022 7:14:05 AM Lucas Yao (Wicresoft North America) User                    5/24/2022 7:14:05 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Gets code version.
 
 ## PARAMETERS
 

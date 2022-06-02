@@ -36,7 +36,7 @@ Get version.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all data versions
 ```powershell
 Get-AzMlWorkspaceDataVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name iris-data
 ```
@@ -47,9 +47,9 @@ Name SystemDataCreatedAt SystemDataCreatedBy                 SystemDataCreatedBy
 1    5/5/2022 2:58:50 AM Lucas Yao (Wicresoft North America) User                    5/5/2022 2:58:50 AM                                                            ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all data versions
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a data version
 ```powershell
 Get-AzMlWorkspaceDataVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name iris-data -Version 1
 ```
@@ -60,7 +60,7 @@ Name SystemDataCreatedAt SystemDataCreatedBy                 SystemDataCreatedBy
 1    5/5/2022 2:58:50 AM Lucas Yao (Wicresoft North America) User                    5/5/2022 2:58:50 AM                                                            ml-rg-test
 ```
 
-{{ Add description here }}
+Get a data version
 
 ## PARAMETERS
 

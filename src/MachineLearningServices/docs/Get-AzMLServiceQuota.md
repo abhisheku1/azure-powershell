@@ -22,7 +22,7 @@ Gets the currently assigned Workspace Quotas based on VMFamily.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Gets the currently assigned Workspace Quotas based on VMFamily
 ```powershell
 Get-AzMLServiceQuota -Location eastus
 ```
@@ -37,7 +37,7 @@ AmlWorkspaceLocation Limit Unit
                      100   Count
 ```
 
-{{ Add description here }}
+Gets the currently assigned Workspace Quotas based on VMFamily.
 
 ## PARAMETERS
 

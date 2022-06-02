@@ -187,7 +187,7 @@ Create or update datastore.
 ### [New-AzMLWorkspaceDatastoreBlobObject](New-AzMLWorkspaceDatastoreBlobObject.md)
 Create an in-memory object for AzureBlobDatastore.
 
-### [New-AzMLWorkspaceDatastoreCredentialsObject](New-AzMLWorkspaceDatastoreCredentialsObject.md)
+### [New-AzMLWorkspaceDatastoreCredentialObject](New-AzMLWorkspaceDatastoreCredentialObject.md)
 Create an in-memory object for CertificateDatastoreCredentials.
 
 ### [New-AzMLWorkspaceDatastoreDataLakeGen1Object](New-AzMLWorkspaceDatastoreDataLakeGen1Object.md)
@@ -202,13 +202,13 @@ Create an in-memory object for AzureFileDatastore.
 ### [New-AzMLWorkspaceDatastoreKeyCredentialObject](New-AzMLWorkspaceDatastoreKeyCredentialObject.md)
 Create an in-memory object for AccountKeyDatastoreCredentials.
 
-### [New-AzMLWorkspaceDatastoreNoneCredentialsObject](New-AzMLWorkspaceDatastoreNoneCredentialsObject.md)
+### [New-AzMLWorkspaceDatastoreNoneCredentialObject](New-AzMLWorkspaceDatastoreNoneCredentialObject.md)
 Create an in-memory object for NoneDatastoreCredentials.
 
-### [New-AzMLWorkspaceDatastoreSasCredentialsObject](New-AzMLWorkspaceDatastoreSasCredentialsObject.md)
+### [New-AzMLWorkspaceDatastoreSasCredentialObject](New-AzMLWorkspaceDatastoreSasCredentialObject.md)
 Create an in-memory object for SasDatastoreCredentials.
 
-### [New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject](New-AzMLWorkspaceDatastoreServicePrincipalCredentialsObject.md)
+### [New-AzMLWorkspaceDatastoreServicePrincipalCredentialObject](New-AzMLWorkspaceDatastoreServicePrincipalCredentialObject.md)
 Create an in-memory object for ServicePrincipalDatastoreCredentials.
 
 ### [New-AzMlWorkspaceDataVersion](New-AzMlWorkspaceDataVersion.md)
@@ -264,6 +264,9 @@ Create an in-memory object for PipelineJob.
 
 ### [New-AzMLWorkspaceQuotaPropertiesObject](New-AzMLWorkspaceQuotaPropertiesObject.md)
 Create an in-memory object for QuotaBaseProperties.
+
+### [New-AzMLWorkspaceSharedPrivateLinkResourceObject](New-AzMLWorkspaceSharedPrivateLinkResourceObject.md)
+Create an in-memory object for SharedPrivateLinkResource.
 
 ### [New-AzMLWorkspaceSweepJobObject](New-AzMLWorkspaceSweepJobObject.md)
 Create an in-memory object for SweepJob.

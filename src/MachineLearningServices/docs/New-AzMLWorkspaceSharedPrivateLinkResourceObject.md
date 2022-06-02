@@ -1,24 +1,25 @@
 ---
 external help file:
 Module Name: Az.MachineLearningWorkspaces
-online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceDatastoreCredentialsObject
+online version: https://docs.microsoft.com/powershell/module/az.MLWorkspace/new-AzMLWorkspaceSharedPrivateLinkResourceObject
 schema: 2.0.0
 ---
 
-# New-AzMLWorkspaceDatastoreCredentialsObject
+# New-AzMLWorkspaceSharedPrivateLinkResourceObject
 
 ## SYNOPSIS
-Create an in-memory object for CertificateDatastoreCredentials.
+Create an in-memory object for SharedPrivateLinkResource.
 
 ## SYNTAX
 
 ```
-New-AzMLWorkspaceDatastoreCredentialsObject -Certificate <String> -ClientId <String> -TenantId <String>
- -Thumbprint <String> [-AuthorityUrl <String>] [-ResourceUrl <String>] [<CommonParameters>]
+New-AzMLWorkspaceSharedPrivateLinkResourceObject [-GroupId <String>] [-Name <String>]
+ [-PrivateLinkResourceId <String>] [-RequestMessage <String>]
+ [-Status <PrivateEndpointServiceConnectionStatus>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an in-memory object for CertificateDatastoreCredentials.
+Create an in-memory object for SharedPrivateLinkResource.
 
 ## EXAMPLES
 
@@ -46,8 +47,8 @@ Create an in-memory object for CertificateDatastoreCredentials.
 
 ## PARAMETERS
 
-### -AuthorityUrl
-Authority URL used for authentication.
+### -GroupId
+The private link resource group id.
 
 ```yaml
 Type: System.String
@@ -61,38 +62,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Certificate
-[Required] Service principal certificate.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClientId
-[Required] Service principal client ID.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceUrl
-Resource the service principal has access to.
+### -Name
+Unique name of the private link.
 
 ```yaml
 Type: System.String
@@ -106,30 +77,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TenantId
-[Required] ID of the tenant to which the service principal belongs.
+### -PrivateLinkResourceId
+The resource id that private link links to.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Thumbprint
-[Required] Thumbprint of the certificate used for authentication.
+### -RequestMessage
+Request message.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Status
+Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Support.PrivateEndpointServiceConnectionStatus
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -143,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.CertificateDatastoreCredentials
+### Microsoft.Azure.PowerShell.Cmdlets.MachineLearningWorkspaces.Models.Api20220501.SharedPrivateLinkResource
 
 ## NOTES
 

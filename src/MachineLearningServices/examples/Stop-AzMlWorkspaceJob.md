@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Cancels a Job (asynchronous)
 ```powershell
 Stop-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01
 ```
@@ -6,9 +6,9 @@ Stop-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-t
 ```output
 ```
 
-{{ Add description here }}
+Cancels a Job (asynchronous)
 
-### Example 2: {{ Add title here }}
+### Example 2: Cancels a Job (asynchronous) by pipeline
 ```powershell
 Get-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandJob01 | Stop-AzMlWorkspaceJob
 ```
@@ -16,5 +16,5 @@ Get-AzMlWorkspaceJob -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-te
 ```output
 ```
 
-{{ Add description here }}
+Cancels a Job (asynchronous) by pipeline
 

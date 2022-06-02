@@ -36,7 +36,7 @@ Get container.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Lists all component containers under a workspace
 ```powershell
 Get-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -47,9 +47,9 @@ Name                 SystemDataCreatedAt  SystemDataCreatedBy                 Sy
 train_data_component 5/24/2022 7:23:25 AM Lucas Yao (Wicresoft North America) User                    5/24/2022 7:23:25 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all containers under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a component container by name
 ```powershell
 Get-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name train_data_component
 ```
@@ -60,7 +60,7 @@ Name                 SystemDataCreatedAt  SystemDataCreatedBy SystemDataCreatedB
 train_data_component 5/24/2022 7:23:25 AM                                             5/24/2022 7:23:25 AM                                                           ml-rg-test
 ```
 
-{{ Add description here }}
+Get a component container by name
 
 ## PARAMETERS
 

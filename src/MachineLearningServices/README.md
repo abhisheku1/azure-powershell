@@ -45,6 +45,14 @@ nested-object-to-string: true
 identity-correction-for-post: true
 
 directive:
+  - from: swagger-document
+    where: $.definitions.ComponentVersion.properties.componentSpec
+    transform: >-
+      return {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Defines Component definition details.\r\n<see href=\"https://docs.microsoft.com/en-us/azure/machine-learning/reference-yaml-component-command\" />"
+      }
   # Fix the parameter 'Name' has multiple parameter types [String, String[]] defined, which is not supported.
   - where:
       verb: Get
@@ -473,6 +481,7 @@ directive:
     - UriFolderJobOutput
 
     - JobService
+    - SharedPrivateLinkResource
     # - QuotaBaseProperties --> New-AzMLWorkspaceQuotaPropertiesObject
 
 ```

@@ -41,7 +41,7 @@ Gets the properties of the specified machine learning workspace.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: List the properties of the specified machine learning workspace under a subscription
 ```powershell
 Get-AzMlWorkspace
 ```
@@ -54,9 +54,9 @@ mlworkspace-cli01    5/18/2022 6:33:49 AM v-diya@microsoft.com User             
 mlworkspace-demo     5/25/2022 3:06:22 AM v-diya@microsoft.com User                    5/25/2022 3:06:22 AM     v-diya@microsoft.com     User                         eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+List the properties of the specified machine learning workspace under a subscription.
 
-### Example 2: {{ Add title here }}
+### Example 2: List the properties of the specified machine learning workspace under a resource group
 ```powershell
 Get-AzMlWorkspace -ResourceGroupName ml-rg-test
 ```
@@ -69,9 +69,9 @@ mlworkspace-cli01    5/18/2022 6:33:49 AM v-diya@microsoft.com User             
 mlworkspace-demo     5/25/2022 3:06:22 AM v-diya@microsoft.com User                    5/25/2022 3:06:22 AM     v-diya@microsoft.com     User                         eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+List the properties of the specified machine learning workspace under a resource group.
 
-### Example 3: {{ Add title here }}
+### Example 3: Gets the properties of the specified machine learning workspace
 ```powershell
 Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-cli01
 ```
@@ -82,7 +82,7 @@ Name              SystemDataCreatedAt  SystemDataCreatedBy  SystemDataCreatedByT
 mlworkspace-cli01 5/18/2022 6:33:49 AM v-diya@microsoft.com User                    5/18/2022 6:33:49 AM     v-diya@microsoft.com     User                         eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+Gets the properties of the specified machine learning workspace.
 
 ## PARAMETERS
 
