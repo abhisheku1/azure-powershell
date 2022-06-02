@@ -33,22 +33,14 @@ This includes keys for the storage account, app insights and password for contai
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Sync-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Get-AzMlWorkspaceKey -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Sync-AzMlWorkspaceKey
 ```
 
 {{ Add description here }}

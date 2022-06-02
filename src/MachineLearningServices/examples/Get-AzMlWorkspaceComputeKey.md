@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Gets secrets related to Machine Learning compute (storage keys, service credentials, etc)
 ```powershell
 Get-AzMlWorkspaceComputeKey -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name cpu-cluster
 ```
@@ -6,4 +6,4 @@ Get-AzMlWorkspaceComputeKey -ResourceGroupName ml-rg-test -WorkspaceName mlworks
 ```output
 ```
 
-{{ Add description here }}
+Gets secrets related to Machine Learning compute (storage keys, service credentials, etc)

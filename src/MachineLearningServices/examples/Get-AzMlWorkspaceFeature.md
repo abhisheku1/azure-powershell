@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all enabled features for a workspace
 ```powershell
 Get-AzMlWorkspaceFeature  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01
 ```
@@ -17,4 +17,4 @@ Deploy and view explainability dashboard for inference data                     
 Create and view explainability dashboard in the SDK                                    Explainability dashboard in SDK at training time
 ```
 
-{{ Add description here }}
+Lists all enabled features for a workspace

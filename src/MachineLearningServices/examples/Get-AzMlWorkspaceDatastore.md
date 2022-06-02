@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all datastore under a workspace
 ```powershell
 Get-AzMlWorkspaceDatastore  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01
 ```
@@ -12,9 +12,9 @@ workspaceblobstore        5/5/2022 1:27:41 AM 779301c0-18b2-4cdc-801b-a0a3368fee
 workspacefilestore        5/5/2022 1:27:41 AM 779301c0-18b2-4cdc-801b-a0a3368fee0a Application             5/5/2022 1:27:42 AM      779301c0-18b2-4cdc-801b-a0a3368fee0a Application                  ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all datastore under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a datastore by name
 ```powershell
 Get-AzMlWorkspaceDatastore  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceartifactstore
 ```
@@ -25,5 +25,5 @@ Name                   SystemDataCreatedAt SystemDataCreatedBy                  
 workspaceartifactstore 5/5/2022 1:27:41 AM 779301c0-18b2-4cdc-801b-a0a3368fee0a Application             5/5/2022 1:27:42 AM      779301c0-18b2-4cdc-801b-a0a3368fee0a Application                  ml-rg-test
 ```
 
-{{ Add description here }}
+Get a datastore by name
 

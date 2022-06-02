@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: List all environment containers under a workspace
 ```powershell
 Get-AzMlWorkspaceEnvironmentContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01
 ```
@@ -17,9 +17,9 @@ test                                                             5/5/2022 1:51:4
 AzureML-responsibleai-0.18-ubuntu20.04-py38-cpu                  5/18/2022 11:07:16 PM Microsoft                           User                    5/18/2022 11:07:16 PM    Microsoft                           User                         ml-rg-test
 ```
 
-{{ Add description here }}
+List all environment containers under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a environment container by name
 ```powershell
 Get-AzMlWorkspaceEnvironmentContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name pwshenv01
 ```
@@ -30,5 +30,4 @@ Name      SystemDataCreatedAt  SystemDataCreatedBy                 SystemDataCre
 pwshenv01 5/11/2022 2:31:25 AM Lucas Yao (Wicresoft North America) User                    5/11/2022 2:31:25 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
-
+Gets a environment container by name

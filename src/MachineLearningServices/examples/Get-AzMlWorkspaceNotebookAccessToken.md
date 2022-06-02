@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: return notebook access token and refresh token
 ```powershell
 Get-AzMlWorkspaceNotebookAccessToken -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -9,4 +9,4 @@ AccessToken ExpiresIn HostName               NotebookResourceId               Pu
                       Azure Machine Learning 770262087db047c88de12c933e679b88                        aznb_identity
 ```
 
-{{ Add description here }}
+return notebook access token and refresh token

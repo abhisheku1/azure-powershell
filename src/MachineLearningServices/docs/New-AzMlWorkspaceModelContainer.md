@@ -25,22 +25,13 @@ Create or update container.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+New-AzMlWorkspaceModelContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontainerpwsh01 -Description "code container for test."
 ```
 
 ```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Name                 SystemDataCreatedAt SystemDataCreatedBy                 SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy            SystemDataLastModifiedByType ResourceGroupName
+----                 ------------------- -------------------                 ----------------------- ------------------------ ------------------------            ---------------------------- -----------------
+modelcontainerpwsh01 6/1/2022 4:04:12 PM Lucas Yao (Wicresoft North America) User                    6/1/2022 4:04:12 PM      Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
 {{ Add description here }}

@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: List storage account keys of a workspace
 ```powershell
 Get-AzMlWorkspaceStorageAccountKey -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -7,5 +7,5 @@ Get-AzMlWorkspaceStorageAccountKey -ResourceGroupName ml-rg-test -WorkspaceName 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+List storage account keys of a workspace
 

@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all computes under a workspace
 ```powershell
 Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -11,9 +11,9 @@ gpu-cluster                                                                     
 batch-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all computes under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a compute by name
 ```powershell
 Get-AzMlWorkspaceCompute -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name cpu-cluster
 ```
@@ -24,5 +24,5 @@ Name        SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType Syst
 cpu-cluster                                                                                                                                                                    eastus   ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a compute by name
 

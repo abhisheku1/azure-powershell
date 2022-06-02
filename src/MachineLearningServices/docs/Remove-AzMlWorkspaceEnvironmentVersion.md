@@ -32,7 +32,7 @@ Delete version.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Remove-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv
 ```
 
 ```output
@@ -43,7 +43,7 @@ Delete version.
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceEnvironmentVersion -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-test01 -Name commandjobenv | Remove-AzMlWorkspaceEnvironmentVersion
 ```
 
 ```output

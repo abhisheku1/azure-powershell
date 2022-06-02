@@ -31,22 +31,14 @@ Deletes a machine learning workspace.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Remove-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 -Tag @{'key1' = 'value2'}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Get-AzMlWorkspace -ResourceGroupName ml-rg-test -Name mlworkspace-test01 | Remove-AzMlWorkspace -Tag @{'key1' = 'value2'}
 ```
 
 {{ Add description here }}

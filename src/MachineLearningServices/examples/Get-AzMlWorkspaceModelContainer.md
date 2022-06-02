@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all model containers under a workspace
 ```powershell
 Get-AzMlWorkspaceModelContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -16,9 +16,9 @@ modelcontaonerpwsh01                                     5/24/2022 9:21:21 AM Lu
 c9436a28-a25c-4e36-ab9d-43be313629fc                     6/1/2022 6:18:34 AM  Lucas Yao (Wicresoft North America) User                    6/1/2022 6:18:34 AM      Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all model containers under a workspace
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a model container by name
 ```powershell
 Get-AzMlWorkspaceModelContainer  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name azureml_plucky_collar_5x0ds0fgb3_output_mlflow_log_model
 ```
@@ -29,5 +29,5 @@ Name                                                     SystemDataCreatedAt  Sy
 azureml_plucky_collar_5x0ds0fgb3_output_mlflow_log_model 5/18/2022 7:47:43 AM Lucas Yao (Wicresoft North America) User                    5/18/2022 7:47:43 AM     Lucas Yao (Wicresoft North America) User                         ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a model container by name
 

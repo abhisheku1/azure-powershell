@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: List EndpointAuthKeys for an Endpoint using Key-based authentication
 ```powershell
 Get-AzMlWorkspaceOnlineEndpointKey -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name online-cli01
 ```
@@ -9,5 +9,5 @@ PrimaryKey                       SecondaryKey
 xxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+List EndpointAuthKeys for an Endpoint using Key-based authentication
 

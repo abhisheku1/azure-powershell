@@ -262,9 +262,6 @@ Regenerate EndpointAuthKeys for an Endpoint using Key-based authentication (asyn
 ### [New-AzMLWorkspacePipelineJobObject](New-AzMLWorkspacePipelineJobObject.md)
 Create an in-memory object for PipelineJob.
 
-### [New-AzMLWorkspaceQuotaBasePropertiesObject](New-AzMLWorkspaceQuotaBasePropertiesObject.md)
-Create an in-memory object for QuotaBaseProperties.
-
 ### [New-AzMLWorkspaceQuotaPropertiesObject](New-AzMLWorkspaceQuotaPropertiesObject.md)
 Create an in-memory object for QuotaBaseProperties.
 

@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: List Inference Endpoint Deployment Skus
 ```powershell
 Get-AzMlWorkspaceOnlineDeploymentSku -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName online-cli01 -Name blue
 ```
@@ -9,4 +9,4 @@ ResourceType
 Microsoft.MachineLearning.Services/endpoints/deployments
 ```
 
-{{ Add description here }}
+List Inference Endpoint Deployment Skus

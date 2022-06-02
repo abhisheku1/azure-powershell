@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get datastore secrets
 ```powershell
 Get-AzMlWorkspaceDatastoreSecret  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-portal01 -Name workspaceartifactstore
 ```
@@ -9,4 +9,4 @@ SecretsType Key
 AccountKey  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-{{ Add description here }}
+Get datastore secrets.

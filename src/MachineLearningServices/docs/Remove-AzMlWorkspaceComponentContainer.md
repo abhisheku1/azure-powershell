@@ -31,7 +31,7 @@ Delete container.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Remove-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01
 ```
 
 ```output
@@ -42,7 +42,7 @@ Delete container.
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Get-AzMlWorkspaceComponentContainer -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name component-pwsh01 | Remove-AzMlWorkspaceComponentContainer
 ```
 
 ```output

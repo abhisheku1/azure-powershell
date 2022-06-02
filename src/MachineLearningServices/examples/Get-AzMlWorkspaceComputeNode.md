@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get the details (e.g IP address, port etc) of all the compute nodes in the compute
 ```powershell
 Get-AzMlWorkspaceComputeNode -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name cpu-cluster
 ```
@@ -6,4 +6,4 @@ Get-AzMlWorkspaceComputeNode -ResourceGroupName ml-rg-test -WorkspaceName mlwork
 ```output
 ```
 
-{{ Add description here }}
+Get the details (e.g IP address, port etc) of all the compute nodes in the compute

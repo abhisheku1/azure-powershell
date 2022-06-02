@@ -1,22 +1,20 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all model versions
 ```powershell
 Get-AzMlWorkspaceModelVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontaonerpwsh01
 ```
 
 ```output
-{{ Add output here }}
 ```
 
-{{ Add description here }}
+Lists all model versions
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets all model versions
 ```powershell
 Get-AzMlWorkspaceModelVersion  -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -Name modelcontaonerpwsh01 -Version 1
 ```
 
 ```output
-{{ Add output here }}
 ```
 
-{{ Add description here }}
+Gets all model versions
 

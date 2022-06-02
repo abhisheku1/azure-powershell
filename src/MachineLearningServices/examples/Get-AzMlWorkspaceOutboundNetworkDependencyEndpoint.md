@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Called by Client (Portal, CLI, etc) to get a list of all external outbound dependencies (FQDNs) programmatically
 ```powershell
 Get-AzMlWorkspaceOutboundNetworkDependencyEndpoint -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01
 ```
@@ -17,4 +17,4 @@ Microsoft Container Registry            {{…
 Azure Machine Learning pre-built images {{…
 ```
 
-{{ Add description here }}
+Called by Client (Portal, CLI, etc) to get a list of all external outbound dependencies (FQDNs) programmatically

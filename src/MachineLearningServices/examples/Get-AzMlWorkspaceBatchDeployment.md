@@ -1,4 +1,4 @@
-### Example 1: {{ Add title here }}
+### Example 1: Lists all batch inference deployment under a batch endpoint
 ```powershell
 Get-AzMlWorkspaceBatchDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName batch-cli02
 ```
@@ -9,9 +9,9 @@ Location Name        SystemDataCreatedAt SystemDataCreatedBy                 Sys
 eastus   nonmlflowdp 6/1/2022 6:19:16 AM Lucas Yao (Wicresoft North America)                         6/1/2022 6:19:16 AM                                                                                     ml-rg-test
 ```
 
-{{ Add description here }}
+Lists all batch inference deployment under a batch endpoint
 
-### Example 2: {{ Add title here }}
+### Example 2: Gets a batch inference deployment by Name
 ```powershell
 Get-AzMlWorkspaceBatchDeployment -ResourceGroupName ml-rg-test -WorkspaceName mlworkspace-cli01 -EndpointName batch-cli02 -Name nonmlflowdp
 ```
@@ -22,5 +22,5 @@ Location Name        SystemDataCreatedAt SystemDataCreatedBy                 Sys
 eastus   nonmlflowdp 6/1/2022 6:19:16 AM Lucas Yao (Wicresoft North America)                         6/1/2022 6:19:16 AM                                                                                     ml-rg-test
 ```
 
-{{ Add description here }}
+Gets a batch inference deployment by Name
 

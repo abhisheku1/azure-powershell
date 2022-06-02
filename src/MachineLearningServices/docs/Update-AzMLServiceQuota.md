@@ -31,22 +31,14 @@ Update quota for each VM family in workspace.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Update-AzMLServiceQuota -Location eastus -Value @{'key1'='value1'}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
+Get-AzMLServiceQuota -Location eastus | Update-AzMLServiceQuota-Value @{'key1'='value1'}
 ```
 
 {{ Add description here }}
