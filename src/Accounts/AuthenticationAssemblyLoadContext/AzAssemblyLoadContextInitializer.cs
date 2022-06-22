@@ -35,16 +35,19 @@ namespace Microsoft.Azure.PowerShell.AuthenticationAssemblyLoadContext
                 {"Azure.Identity", new Version("1.7.0.0")},
                 {"Azure.Identity.BrokeredAuthentication", new Version("1.0.0.0") },
                 {"Microsoft.Bcl.AsyncInterfaces", new Version("1.1.1.0")},
-                {"Microsoft.Identity.Client", new Version("4.42.1.0") },
+                {"Microsoft.Identity.Client", new Version("4.45.0.0") },
+                {"Microsoft.IdentityModel.Abstractions", new Version("6.18.0.0") },
                 //{"Microsoft.Identity.Client.Desktop", new Version("4.42.1.0") },
                 {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.19.6.0") },
-                {"Microsoft.Web.WebView2.Core", new Version("1.0.864.35")},
+                {"Microsoft.Identity.Client.NativeInterop", new Version("0.8.0.0")},
+                // {"Microsoft.Web.WebView2.Core", new Version("1.0.864.35")},
                 {"System.Memory.Data", new Version("1.0.2.0")},
                 {"System.Runtime.WindowsRuntime", new Version("4.0.14.0")},
                 {"System.Runtime.WindowsRuntime.UI.Xaml", new Version("4.0.4.0")},
                 {"System.Text.Json", new Version("4.0.1.2")},
-                {"Microsoft.Windows.SDK.NET", new Version("10.0.22000.23") },
+                // {"Microsoft.Windows.SDK.NET", new Version("10.0.22000.23") },
                 {"WinRT.Runtime", new Version("1.5.0.0") },
+                {"msalruntime", new Version("99.99.99.99")}
             };
 
             AzSharedAssemblyMap = new ConcurrentDictionary<string, Version>(azSharedAssemblies, StringComparer.OrdinalIgnoreCase);

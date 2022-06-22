@@ -39,8 +39,8 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var authority = silentParameters.Environment.ActiveDirectoryAuthority;
             var tokenCacheProvider = silentParameters.TokenCacheProvider;
 #if DEBUG
-            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/orgnizations");
-            GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/f686d426-8d16-42db-81b7-ab578e110ccd");
+            // GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/orgnizations");
+            // GetAccounts(tokenCacheProvider, @"https://login.windows-ppe.net/f686d426-8d16-42db-81b7-ab578e110ccd");
 #endif
             AzureSession.Instance.TryGetComponent(nameof(AzureCredentialFactory), out AzureCredentialFactory azureCredentialFactory);
             var options = new SharedTokenCacheCredentialBrokerOptions(tokenCacheProvider.GetTokenCachePersistenceOptions())

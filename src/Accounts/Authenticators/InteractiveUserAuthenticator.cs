@@ -65,7 +65,23 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var authority = interactiveParameters.Environment.ActiveDirectoryAuthority;
 
 #if true
-            var options = new InteractiveBrowserCredentialBrokerOptions()
+            IntPtr psWindowHandle;
+            Process process = null;
+            try
+            {
+                process = ParentProcessUtilities.GetFirstParentProcessWithNoneZeroMainWindowHandle();
+            }
+            catch { }
+            if (process == null)
+            {
+                psWindowHandle = (IntPtr)0;
+            }
+            else
+            {
+                psWindowHandle = process.MainWindowHandle;
+            }
+            var options = new InteractiveBrowserCredentialBrokerOptions(psWindowHandle)
+            // var options = new InteractiveBrowserCredentialBrokerOptions((IntPtr)0)
             {
                 ClientId = clientId,
                 TenantId = tenantId,

@@ -74,10 +74,10 @@ namespace Microsoft.Azure.Commands.Common.Authentication
 
         protected void GetAccounts(PowerShellTokenCacheProvider tcp, string authority = null)
         {
-            // foreach (var account in tcp.ListAccounts(authority))
-            // {
-            //     TracingAdapter.Information(account.ToString());
-            // }
+            foreach (var account in tcp.ListAccounts(authority))
+            {
+                TracingAdapter.Information(account.ToString());
+            }
         }
     }
 }
