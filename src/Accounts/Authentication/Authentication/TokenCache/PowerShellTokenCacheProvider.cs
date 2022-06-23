@@ -165,7 +165,7 @@ namespace Microsoft.Azure.Commands.Common.Authentication
         public virtual IPublicClientApplication CreatePublicClient(string authority = null)
         {
             // todo: need WithBroker()?
-            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId).WithBroker();
+            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId);
 
             if(!string.IsNullOrEmpty(authority))
             {
