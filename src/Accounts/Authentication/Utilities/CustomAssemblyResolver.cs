@@ -28,7 +28,7 @@ namespace Microsoft.Azure.Commands.Profile.Utilities
                 {"Azure.Identity", new Version("1.7.0.0")},
                 {"Microsoft.Bcl.AsyncInterfaces", new Version("1.1.1.0")},
                 {"Azure.Identity.BrokeredAuthentication", new Version("1.0.0.0") },
-                {"Microsoft.Identity.Client", new Version("4.42.1.0") },
+                {"Microsoft.Identity.Client", new Version("4.45.0.0") },
                 // {"Microsoft.Identity.Client.Desktop", new Version("4.42.1.0") },
                 {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.19.6.0") },
                 {"Microsoft.IdentityModel.Clients.ActiveDirectory", new Version("3.19.2.6005")},
