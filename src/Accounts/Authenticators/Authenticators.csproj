@@ -25,7 +25,6 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0-alpha.20220621.2" />
     <PackageReference Include="Azure.Identity.BrokeredAuthentication" Version="1.0.0-alpha.20220621.1" />
-    <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="6.18.0" />
   </ItemGroup>
 
   <ItemGroup>
