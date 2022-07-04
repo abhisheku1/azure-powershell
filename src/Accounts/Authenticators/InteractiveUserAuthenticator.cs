@@ -65,23 +65,7 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var authority = interactiveParameters.Environment.ActiveDirectoryAuthority;
 
 #if true
-            IntPtr psWindowHandle;
-            Process process = null;
-            try
-            {
-                process = ParentProcessUtilities.GetFirstParentProcessWithNoneZeroMainWindowHandle();
-            }
-            catch { }
-            if (process == null)
-            {
-                psWindowHandle = (IntPtr)0;
-            }
-            else
-            {
-                psWindowHandle = process.MainWindowHandle;
-            }
-            var options = new InteractiveBrowserCredentialBrokerOptions(psWindowHandle)
-            // var options = new InteractiveBrowserCredentialBrokerOptions((IntPtr)0)
+            var options = new InteractiveBrowserCredentialBrokerOptions(GetWindowHandle())
             {
                 ClientId = clientId,
                 TenantId = tenantId,
@@ -110,6 +94,27 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 browserCredential,
                 requestContext,
                 cancellationToken);
+        }
+
+        private static IntPtr GetWindowHandle()
+        {
+            IntPtr psWindowHandle;
+            Process process = null;
+            try
+            {
+                process = ParentProcessUtilities.GetFirstParentProcessWithNoneZeroMainWindowHandle();
+            }
+            catch { }
+            if (process == null)
+            {
+                psWindowHandle = (IntPtr)0;
+            }
+            else
+            {
+                psWindowHandle = process.MainWindowHandle;
+            }
+
+            return psWindowHandle;
         }
 
 #if true

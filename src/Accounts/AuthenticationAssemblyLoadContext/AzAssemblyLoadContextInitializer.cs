@@ -32,7 +32,7 @@ namespace Microsoft.Azure.PowerShell.AuthenticationAssemblyLoadContext
             var azSharedAssemblies = new Dictionary<string, Version>()
             {
                 {"Azure.Core", new Version("1.24.0.0")},
-                {"Azure.Identity", new Version("1.7.0.0")},
+                {"Azure.Identity", new Version("1.6.0.0")},
                 {"Azure.Identity.BrokeredAuthentication", new Version("1.0.0.0") },
                 {"Microsoft.Bcl.AsyncInterfaces", new Version("1.1.1.0")},
                 {"Microsoft.Identity.Client", new Version("4.45.0.0") },

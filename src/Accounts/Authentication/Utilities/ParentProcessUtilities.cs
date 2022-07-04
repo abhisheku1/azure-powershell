@@ -22,6 +22,7 @@ namespace Microsoft.Azure.Commands.Common.Authentication
     /// <summary>
     /// A utility class to determine a process parent.
     /// https://stackoverflow.com/a/3346055
+    /// TODO: rename me
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct ParentProcessUtilities
