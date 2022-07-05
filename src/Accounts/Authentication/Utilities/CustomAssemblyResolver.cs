@@ -25,12 +25,14 @@ namespace Microsoft.Azure.Commands.Profile.Utilities
             new Dictionary<string, Version>(StringComparer.InvariantCultureIgnoreCase)
             {
                 {"Azure.Core", new Version("1.24.0.0")},
-                {"Azure.Identity", new Version("1.6.0.0")},
+                //{"Azure.Identity", new Version("1.6.0.0")},
                 {"Microsoft.Bcl.AsyncInterfaces", new Version("1.1.1.0")},
                 {"Azure.Identity.BrokeredAuthentication", new Version("1.0.0.0") },
                 {"Microsoft.Identity.Client", new Version("4.45.0.0") },
+                {"Microsoft.Identity.Client.NativeInterop", new Version("0.8.0.0")},
                 // {"Microsoft.Identity.Client.Desktop", new Version("4.42.1.0") },
                 {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.19.6.0") },
+                {"Microsoft.IdentityModel.Abstractions", new Version("6.18.0.0")},
                 {"Microsoft.IdentityModel.Clients.ActiveDirectory", new Version("3.19.2.6005")},
                 {"Microsoft.IdentityModel.Clients.ActiveDirectory.Platform", new Version("3.19.2.6005")},
                 {"Newtonsoft.Json", new Version("10.0.0.0")},
@@ -52,7 +54,8 @@ namespace Microsoft.Azure.Commands.Profile.Utilities
                 {"System.Text.Encodings.Web", new Version("4.0.5.1")},
                 {"System.Text.Json", new Version("4.0.1.2")},
                 {"System.Threading.Tasks.Extensions", new Version("4.2.0.1")},
-                {"System.Xml.ReaderWriter", new Version("4.1.0.0")}
+                {"System.Xml.ReaderWriter", new Version("4.1.0.0")},
+                {"msalruntime", new Version("99.99.99.99")}
             };
 
         private static string PreloadAssemblyFolder { get; set; }

@@ -72,6 +72,7 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 TokenCachePersistenceOptions = tokenCacheProvider.GetTokenCachePersistenceOptions(),
                 AuthorityHost = new Uri(authority),
                 RedirectUri = GetReplyUrlForWAM(clientId),
+                LoginHint = interactiveParameters.UserId
             };
 #else
             var options = new InteractiveBrowserCredentialOptions()

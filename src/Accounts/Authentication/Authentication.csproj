@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PsModuleName>Accounts</PsModuleName>
   </PropertyGroup>
-  
+
   <Import Project="$(MSBuildThisFileDirectory)..\..\Az.props" />
 
   <PropertyGroup>
@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
+    <PackageReference Include="Azure.Identity.BrokeredAuthentication" Version="1.0.0-alpha.20220621.1" />
   </ItemGroup>
 
   <ItemGroup>

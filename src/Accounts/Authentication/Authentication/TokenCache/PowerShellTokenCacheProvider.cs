@@ -24,6 +24,7 @@ using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
 using Microsoft.Azure.Internal.Subscriptions;
 using Microsoft.Azure.Internal.Subscriptions.Models;
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Broker;
 using Microsoft.Rest;
 
 namespace Microsoft.Azure.Commands.Common.Authentication
@@ -164,8 +165,7 @@ namespace Microsoft.Azure.Commands.Common.Authentication
 
         public virtual IPublicClientApplication CreatePublicClient(string authority = null)
         {
-            // todo: need WithBroker()?
-            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId);
+            var builder = PublicClientApplicationBuilder.Create(PowerShellClientId).WithBrokerPreview();
 
             if(!string.IsNullOrEmpty(authority))
             {
