@@ -37,7 +37,7 @@ namespace Microsoft.Azure.PowerShell.AuthenticationAssemblyLoadContext
                 {"Microsoft.Bcl.AsyncInterfaces", new Version("1.1.1.0")},
                 {"Microsoft.Identity.Client", new Version("4.45.0.0") },
                 {"Microsoft.IdentityModel.Abstractions", new Version("6.18.0.0")},
-                {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.19.3.0") },
+                {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.21.0.0") },
                 {"Microsoft.Identity.Client.NativeInterop", new Version("0.8.0.0")},
                 {"System.Memory.Data", new Version("1.0.2.0")},
                 {"System.Text.Json", new Version("4.0.1.2")},

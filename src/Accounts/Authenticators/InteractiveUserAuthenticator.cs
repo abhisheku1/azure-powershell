@@ -16,6 +16,7 @@ using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -65,7 +66,7 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             var authority = interactiveParameters.Environment.ActiveDirectoryAuthority;
 
 #if true
-            var options = new InteractiveBrowserCredentialBrokerOptions(GetWindowHandle())
+            var options = new InteractiveBrowserCredentialBrokerOptions(GetConsoleWindow())
             {
                 ClientId = clientId,
                 TenantId = tenantId,
@@ -99,6 +100,8 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 cancellationToken);
         }
 
+        // todo: this causes the WAM login Window to self-close on PowerShell 7.0
+        // need investigation
         private static IntPtr GetWindowHandle()
         {
             IntPtr psWindowHandle;
@@ -119,6 +122,9 @@ namespace Microsoft.Azure.PowerShell.Authenticators
 
             return psWindowHandle;
         }
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
 
         private Uri GetReplyUrl(bool onPremise, InteractiveParameters interactiveParameters)
         {

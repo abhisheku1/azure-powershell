@@ -29,7 +29,7 @@ namespace Microsoft.Azure.Commands.Profile.Utilities
                 {"Azure.Identity.BrokeredAuthentication", new Version("1.0.0.0") },
                 {"Microsoft.Identity.Client", new Version("4.45.0.0") },
                 {"Microsoft.Identity.Client.NativeInterop", new Version("0.8.0.0")},
-                {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.19.3.0") },
+                {"Microsoft.Identity.Client.Extensions.Msal", new Version("2.21.0.0") },
                 {"Microsoft.IdentityModel.Abstractions", new Version("6.18.0.0")},
                 {"Microsoft.IdentityModel.Clients.ActiveDirectory", new Version("3.19.2.6005")},
                 {"Microsoft.IdentityModel.Clients.ActiveDirectory.Platform", new Version("3.19.2.6005")},
