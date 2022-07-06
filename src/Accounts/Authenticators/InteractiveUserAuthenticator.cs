@@ -71,7 +71,9 @@ namespace Microsoft.Azure.PowerShell.Authenticators
                 TenantId = tenantId,
                 TokenCachePersistenceOptions = tokenCacheProvider.GetTokenCachePersistenceOptions(),
                 AuthorityHost = new Uri(authority),
-                RedirectUri = GetReplyUrlForWAM(clientId),
+                // MSAL infers redirect URI using the "ms-appx-web://microsoft.aad.brokerplugin/{clientId}" pattern,
+                // so here we are actually setting the redirect URI for browser, which is the fall back for WAM.
+                RedirectUri = GetReplyUrl(onPremise, interactiveParameters),
                 LoginHint = interactiveParameters.UserId
             };
 #else
@@ -118,18 +120,12 @@ namespace Microsoft.Azure.PowerShell.Authenticators
             return psWindowHandle;
         }
 
-#if true
-        private Uri GetReplyUrlForWAM(string clientId)
-        {
-            return new Uri($"ms-appx-web://microsoft.aad.brokerplugin/{clientId}");
-        }
-#else
         private Uri GetReplyUrl(bool onPremise, InteractiveParameters interactiveParameters)
         {
             var port = GetReplyUrlPort(onPremise, interactiveParameters);
             return new Uri($"http://localhost:{port}");
         }
-#endif
+
         private int GetReplyUrlPort(bool onPremise, InteractiveParameters interactiveParameters)
         {
             int portStart = onPremise ? AdfsPortStart : AadPortStart;
