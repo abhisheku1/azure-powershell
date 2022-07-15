@@ -111,13 +111,14 @@ namespace StaticAnalysis.SignatureVerifier
                     var parentDirectory = Directory.GetParent(psd1).FullName;
                     var psd1FileName = Path.GetFileName(psd1);
                     string moduleName = psd1FileName.Replace(".psd1", "");
+                    var rootPath = Path.GetFullPath(Path.Combine(parentDirectory, "..", "..", ".."));
 
                     Directory.SetCurrentDirectory(directory);
 
                     issueLogger.Decorator.AddDecorator(a => a.AssemblyFileName = moduleName, "AssemblyFileName");
                     processedHelpFiles.Add(moduleName);
 
-                    var module = MetadataLoader.GetModuleMetadata(moduleName);
+                    var module = MetadataLoader.GetModuleMetadataByPsd1(rootPath, moduleName, psd1);
                     CmdletLoader.ModuleMetadata = module;
                     var cmdlets = module.Cmdlets;
 

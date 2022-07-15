@@ -40,7 +40,7 @@ namespace VersionController.Models
         {
             _fileHelper = fileHelper;
             _logger = new AnalysisLogger(_fileHelper.ArtifactsVersionControllerDirectory, _fileHelper.ExceptionsDirectory);
-            _newModuleMetadata = MetadataLoader.GetModuleMetadata(_fileHelper.ModuleName);
+            _newModuleMetadata = MetadataLoader.GetModuleMetadata(_fileHelper.RootDirectory, _fileHelper.ModuleName);
         }
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace VersionController.Models
 
             galleryRequiredModules.Add(galleryModuleVersionDirectory);
             var galleryModulePsd1Path = Directory.EnumerateFiles(Path.Combine(outputModuleDirectory, $"{moduleName}"), "*.psd1", SearchOption.AllDirectories).FirstOrDefault();
-            var newModuleMetadata = MetadataLoader.GetModuleMetadata(moduleName);
+            var newModuleMetadata = MetadataLoader.GetModuleMetadata(_fileHelper.RootDirectory, moduleName);
             
             var serializedCmdletName = $"{moduleName}.json";
             var serializedCmdletFile = Directory.GetFiles(serializedCmdletsDirectory, serializedCmdletName).FirstOrDefault();
@@ -411,7 +411,7 @@ namespace VersionController.Models
             var serializedCmdletsDirectory = _fileHelper.SerializedCmdletsDirectory;
             var moduleName = _fileHelper.ModuleName;
 
-            var newModuleMetadata = MetadataLoader.GetModuleMetadata(moduleName);
+            var newModuleMetadata = MetadataLoader.GetModuleMetadata(_fileHelper.RootDirectory, moduleName);
             var serializedCmdletName = $"{moduleName}.json";
             var serializedCmdletFile = Path.Combine(serializedCmdletsDirectory, serializedCmdletName);
             SerializeCmdlets(serializedCmdletFile, newModuleMetadata);

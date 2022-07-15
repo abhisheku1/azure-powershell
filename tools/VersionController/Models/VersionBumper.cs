@@ -323,6 +323,9 @@ namespace VersionController.Models
             }
         }
 
+        /// <summary>
+        /// Update {moduleName}.json file
+        /// </summary>
         private void UpdateSerializedCmdlet()
         {
             var moduleName = _fileHelper.ModuleName;
@@ -380,8 +383,12 @@ namespace VersionController.Models
             script += "Update-ModuleManifest -Path " + tempModuleManifestPath + " -ModuleVersion " + _newVersion + " -ReleaseNotes $releaseNotes";
             using (PowerShell powershell = PowerShell.Create())
             {
+                var getModuleMetadataScript = string.Format("Import-LocalizedData -BindingVariable ModuleMetadata -BaseDirectory {0} -FileName {1}", outputModuleDirectory, Path.GetFileName(tempModuleManifestPath));
+                powershell.AddScript(getModuleMetadataScript);
+                powershell.Invoke();
+                var moduleMetadata = powershell.Runspace.SessionStateProxy.PSVariable.Get("ModuleMetadata");
                 powershell.AddScript(script);
-                var result = powershell.Invoke();
+                powershell.Invoke();
                 if (powershell.Streams.Error.Any())
                 {
                     Console.WriteLine($"Found error in updating module {_fileHelper.ModuleName}: {powershell.Streams.Error.First().ToString()}");
@@ -392,6 +399,11 @@ namespace VersionController.Models
             tempModuleContent = tempModuleContent.Select(l => l = l.Replace(moduleName + "-temp", moduleName)).ToArray();
             var pattern = @"RootModule(\s*)=(\s*)(['\""])" + moduleName + @"(\.)psm1(['\""])";
             tempModuleContent = tempModuleContent.Select(l => Regex.Replace(l, pattern, @"# RootModule = ''")).ToArray();
+
+            // Update Az.Accounts to latest version
+     
+            tempModuleContent = tempModuleContent.Select(l => Regex.Replace(l, pattern, @"# RootModule = ''")).ToArray();
+
             File.WriteAllLines(projectModuleManifestPath, tempModuleContent);
             File.Delete(tempModuleManifestPath);
         }

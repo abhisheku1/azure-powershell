@@ -226,7 +226,7 @@ namespace StaticAnalysis.HelpAnalyzer
             var psd1 = manifestFiles.FirstOrDefault();
             var parentDirectory = Directory.GetParent(psd1).FullName;
             var psd1FileName = Path.GetFileName(psd1);
-
+            var rootPath = Path.GetFullPath(Path.Combine(parentDirectory, "..", "..", ".."));
             var allCmdlets = new List<CmdletMetadata>();
 
 
@@ -242,7 +242,7 @@ namespace StaticAnalysis.HelpAnalyzer
                 h.HelpFile = moduleName;
                 h.Assembly = moduleName;
             }, "Cmdlet");
-            var module = MetadataLoader.GetModuleMetadata(moduleName);
+            var module = MetadataLoader.GetModuleMetadataByPsd1(rootPath, moduleName, psd1);
             var cmdlets = module.Cmdlets;
             allCmdlets.AddRange(cmdlets);
             helpLogger.Decorator.Remove("Cmdlet");

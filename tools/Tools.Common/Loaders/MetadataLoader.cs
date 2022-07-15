@@ -30,17 +30,17 @@ namespace Tools.Common.Loaders
 {
     public class MetadataLoader
     {
-        public static ModuleMetadata GetModuleMetadata(string moduleName)
+        public static ModuleMetadata GetModuleMetadata(string rootPath, string moduleName)
         {
-            string rootPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", ".."));
             string modulePsd1Path = Directory.GetFiles(Path.Combine(rootPath, "artifacts"), $"{moduleName}.psd1", SearchOption.AllDirectories)[0];
             if (modulePsd1Path == null)
             {
                 Console.Error.WriteLine($"Cannot find {moduleName}.psd1 in {Path.Combine(rootPath, "artifacts")}!");
             }
-            return GetModuleMetadata(moduleName, modulePsd1Path);
+            return GetModuleMetadataByPsd1(rootPath, moduleName, modulePsd1Path);
         }
-        public static ModuleMetadata GetModuleMetadata(string moduleName, string modulePsd1Path)
+
+        public static ModuleMetadata GetModuleMetadataByPsd1(string rootPath, string moduleName, string modulePsd1Path)
         {
             using (var powershell = PowerShell.Create(RunspaceMode.NewRunspace))
             {
@@ -49,8 +49,7 @@ namespace Tools.Common.Loaders
                     powershell.AddScript("Set-ExecutionPolicy Unrestricted -Scope Process -ErrorAction Ignore");
                 }
                 powershell.AddScript("$error.clear()");
-                powershell.AddScript($"Write-Debug \"current directory: { AppDomain.CurrentDomain.BaseDirectory }\"");
-                string rootPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", ".."));
+                powershell.AddScript($"Write-Debug \"current directory: { rootPath }\"");
                 string repoToolsPath = Path.Combine(rootPath, "tools");
                 powershell.AddScript($"cd {repoToolsPath}\\ModuleMetadata");
                 powershell.AddScript($"Import-Module {repoToolsPath}\\ModuleMetadata\\GetModuleMetadata.psm1");

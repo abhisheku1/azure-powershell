@@ -187,7 +187,7 @@ namespace VersionController
                                               .Select(c => c.Trim()).ToArray();
                     if (cols.Length >= 2)
                     {
-                        _minimalVersion.Add(cols[0], new AzurePSVersion(cols[1]));
+                        if(!_minimalVersion.ContainsKey(cols[0])) _minimalVersion.Add(cols[0], new AzurePSVersion(cols[1]));
 
                         // Bump one module, only remove its minimal version from MinimalVersion.csv content
                         if (!string.IsNullOrEmpty(bumpingModule) && !cols[0].Equals(bumpingModule))
