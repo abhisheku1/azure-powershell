@@ -1,5 +1,9 @@
 [
   {
+    "alias": "IoT Central",
+    "module": "IoTCentral"
+  },
+  {
     "alias": "Container Apps",
     "module": "App"
   },  
