@@ -56,6 +56,7 @@ Location Name
 
 
 ```
+
 Creates a NetworkSecurityPerimeterAccessRule
 
 ### Example 2: Creates a NetworkSecurityPerimeterAccessRule
@@ -86,6 +87,7 @@ Location Name
          perimeter_ar
 
 ```
+
 Creates a NetworkSecurityPerimeterAccessRule
 
 ## PARAMETERS

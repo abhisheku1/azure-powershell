@@ -52,6 +52,7 @@ eastus2euap profile1
 
 
 ```
+
 Creates a NetworkSecurityPerimeterProfile
 
 ### Example 2: Creates a NetworkSecurityPerimeterProfile
@@ -69,6 +70,7 @@ eastus2euap profile2
 
 
 ```
+
 Creates a NetworkSecurityPerimeterProfile
 
 ## PARAMETERS

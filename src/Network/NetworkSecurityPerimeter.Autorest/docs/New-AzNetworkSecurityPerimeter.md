@@ -53,6 +53,7 @@ eastus2euap nsp1
 
 
 ```
+
 Creates a NetworkSecurityPerimeter
 
 ### Example 2: Creates a NetworkSecurityPerimeter
@@ -70,6 +71,7 @@ eastus2euap nsp2
 
 
 ```
+
 Creates a NetworkSecurityPerimeter
 
 ## PARAMETERS

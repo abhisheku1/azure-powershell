@@ -38,7 +38,6 @@ Gets the specified NSP access rule by name.
 ## EXAMPLES
 
 ### Example 1: List NetworkSecurityPerimeterAccessRule
-
 ```powershell
 
  Get-AzNetworkSecurityPerimeterAccessRule -ProfileName profile1 -ResourceGroupName ResourceGroup-1 -SecurityPerimeterName nsp3
@@ -54,6 +53,7 @@ Location Name
 
 
 ```
+
 List NetworkSecurityPerimeterAccessRule
 
 ### Example 2: Gets a NetworkSecurityPerimeterAccessRule by Name
@@ -71,6 +71,7 @@ Location Name
 
 
 ```
+
 Gets a NetworkSecurityPerimeterAccessRule by Name
 
 ### Example 3: Gets a NetworkSecurityPerimeterAccessRule by identity (using pipe)
@@ -88,6 +89,7 @@ Location Name
          ar3
 
 ```
+
 Gets a NetworkSecurityPerimeterAccessRule by identity (using pipe)
 
 ## PARAMETERS

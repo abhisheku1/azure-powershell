@@ -33,13 +33,13 @@ For information on how to develop for `Az.NetworkSecurityPerimeter`, see [how-to
 require:
 # readme.azure.noprofile.md is the common configuration file
 # - ../../../../tools/SwaggerCI/readme.azure.noprofile.md
-  - $(this-folder)/../../../readme.azure.noprofile.md
+  - $(this-folder)/../../readme.azure.noprofile.md
 input-file:
 # You need to specify your swagger files here.
   - https://github.com/kaushal087/azure-rest-api-specs/blob/nsp_powershell/specification/network/resource-manager/Microsoft.Network/preview/2021-02-01-preview/networkSecurityPerimeter.json
 #  - C:\repo\azure-rest-api-specs/specification/network/resource-manager/Microsoft.Network/preview/2021-02-01-preview/networkSecurityPerimeter.json
 # If the swagger has not been put in the repo, you may uncomment the following line and refer to it locally
-# - (this-folder)/relative-path-to-your-swagger 
+# - (this-folder)/relative-path-to-your-swagger
 
 # For new RP, the version is 0.1.0
 module-version: 0.1.0
@@ -48,7 +48,7 @@ title: NetworkSecurityPerimeter
 subject-prefix: $(service-name)
 sanitize-names: true
 
-# If there are post APIs for some kinds of actions in the RP, you may need to 
+# If there are post APIs for some kinds of actions in the RP, you may need to
 # uncomment following line to support viaIdentity for these post APIs
 # identity-correction-for-post: true
 
@@ -94,7 +94,7 @@ directive:
       parameter-name: Name
     set:
       parameter-name: Name
-      alias: 
+      alias:
         - SecurityPerimeterName
         - NSPName
 
@@ -104,7 +104,7 @@ directive:
       parameter-name: ProfileName
     set:
       parameter-name: Name
-      alias: 
+      alias:
         - ProfileName
 
   - where:
@@ -112,7 +112,7 @@ directive:
       parameter-name: NetworkSecurityPerimeterName
     set:
       parameter-name: SecurityPerimeterName
-      alias: 
+      alias:
         - NetworkSecurityPerimeterName
         - NSPName
 
@@ -122,7 +122,7 @@ directive:
       parameter-name: NetworkSecurityPerimeterName
     set:
       parameter-name: SecurityPerimeterName
-      alias: 
+      alias:
         - NetworkSecurityPerimeterName
         - NSPName
 
@@ -131,7 +131,7 @@ directive:
       parameter-name: ProfileName
     set:
       parameter-name: ProfileName
-      alias: 
+      alias:
         - SecurityPerimeterProfileName
         - NSPProfileName
 
@@ -155,7 +155,7 @@ directive:
       parameter-name: NetworkSecurityPerimeterName
     set:
       parameter-name: SecurityPerimeterName
-      alias: 
+      alias:
         - NetworkSecurityPerimeterName
         - NSPName
 
@@ -164,7 +164,7 @@ directive:
       parameter-name: ProfileName
     set:
       parameter-name: ProfileName
-      alias: 
+      alias:
         - SecurityPerimeterProfileName
         - NSPProfileName
 

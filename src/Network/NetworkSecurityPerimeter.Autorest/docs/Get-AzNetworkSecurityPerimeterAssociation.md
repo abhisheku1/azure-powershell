@@ -53,10 +53,10 @@ Location Name
 
 
 ```
+
 List NetworkSecurityPerimeterAccessAssociation
 
 ### Example 2: Gets a NetworkSecurityPerimeterAccessAssociation by Name
-
 ```powershell
 
  Get-AzNetworkSecurityPerimeterAssociation -Name association3 -ResourceGroupName ResourceGroup-1 -SecurityPerimeterName nsp3
@@ -71,6 +71,7 @@ Location Name
 
 
 ```
+
 Gets a NetworkSecurityPerimeterAccessAssociation by Name
 
 ### Example 3: Gets a NetworkSecurityPerimeterAccessAssociation by identity (using pipe)
@@ -88,6 +89,7 @@ Location Name
 
 
 ```
+
 Gets a NetworkSecurityPerimeterAccessAssociation by identity (using pipe)
 
 ## PARAMETERS

@@ -35,9 +35,7 @@ Gets the specified network security perimeter by the name.
 
 ## EXAMPLES
 
-
 ### Example 1: List NetworkSecurityPerimeter
-
 ```powershell
 
  Get-AzNetworkSecurityPerimeter -ResourceGroupName ResourceGroup-1
@@ -56,11 +54,10 @@ eastus2euap nsp5
 
 
 ```
+
 List NetworkSecurityPerimeter
 
-
 ### Example 2: Gets a NetworkSecurityPerimeter by Name
-
 ```powershell
 
  Get-AzNetworkSecurityPerimeter -Name nsp3 -ResourceGroupName ResourceGroup-1
@@ -75,11 +72,10 @@ eastus2euap nsp3
 
 
 ```
+
 Gets a NetworkSecurityPerimeter by Name
 
-
 ### Example 3: Gets a NetworkSecurityPerimeter by identity (using pipe)
-
 ```powershell
 
  $GETObj = Get-AzNetworkSecurityPerimeter -Name nsp3 -ResourceGroupName ResourceGroup-1
@@ -94,6 +90,7 @@ Location    Name
 eastus2euap nsp3
 
 ```
+
 Gets a NetworkSecurityPerimeter by identity (using pipe)
 
 ## PARAMETERS
