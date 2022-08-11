@@ -14,11 +14,13 @@
 //
 namespace Microsoft.WindowsAzure.Build.Tasks
 {
+    using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using System.Runtime.InteropServices;
     using Microsoft.Build.Framework;
     using Microsoft.Build.Utilities;
     using Octokit;
-    using System.Collections.Generic;
-    using System;
 
     /// <summary>
     /// Build task to get all of the files changed in a given PR.
@@ -41,6 +43,16 @@ namespace Microsoft.WindowsAzure.Build.Tasks
         /// Gets or set the PullRequestNumber of a GitHub Pull Request.
         /// </summary>
         public string PullRequestNumber { get; set; }
+
+        /// <summary>
+        /// Gets or set the TargetModule, e.g. Storage
+        /// </summary>
+        public string TargetModule { get; set; }
+
+        /// <summary>
+        /// Gets or set the OutputFile, store FilesChanged.txt in 'artifacts' folder
+        /// </summary>
+        public string OutputFile { get; set; }
 
         /// <summary>
         /// Gets or sets the files changed produced by the task.
@@ -66,10 +78,16 @@ namespace Microsoft.WindowsAzure.Build.Tasks
             }
 
             var debugEnvironmentVariable = Environment.GetEnvironmentVariable("DebugLocalBuildTasks");
+            Console.WriteLine("DebugLocalBuildTasks:" + debugEnvironmentVariable);
             bool debug;
             if (!Boolean.TryParse(debugEnvironmentVariable, out debug))
             {
                 debug = false;
+            }
+
+            if (debug)
+            {
+                Console.WriteLine("PullRequestNumber:" + PullRequestNumber);
             }
 
             int ParsedPullRequestNumber;
@@ -81,7 +99,13 @@ namespace Microsoft.WindowsAzure.Build.Tasks
                 List<string> filesChanged = new List<string>();
                 try
                 {
+                    //The variable is set in pipeline: "azure-powershell - powershell-core"
+                    var token = Environment.GetEnvironmentVariable("NOSCOPEPAT_ADXSDKPS");
                     var client = new GitHubClient(new ProductHeaderValue("Azure"));
+                    if(RuntimeInformation.IsOSPlatform(OSPlatform.OSX) && !string.IsNullOrEmpty(token))
+                    {
+                        client.Credentials = new Credentials(token);
+                    }
                     var files = client.PullRequest.Files(RepositoryOwner, RepositoryName, int.Parse(PullRequestNumber))
                                     .ConfigureAwait(false).GetAwaiter().GetResult();
                     if (files == null)
@@ -124,7 +148,15 @@ namespace Microsoft.WindowsAzure.Build.Tasks
                 FilesChanged = new string[] { };
             }
 
+            SerializeChangedFilesToFile(FilesChanged);
+
             return true;
+        }
+
+        // This method will record the changed files into a text file at `OutputFile` for other task to consum.
+        private void SerializeChangedFilesToFile(string[] FilesChanged)
+        {
+            File.WriteAllLines(OutputFile, FilesChanged);
         }
     }
 }
